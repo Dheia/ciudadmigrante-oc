@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <base href="/2017/ciudadmigrante/www/">
+    <title>Ciudad Migrante</title>
+
+    <!-- Le styles -->
+    <link href="js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="pages/espacios/espacios.css" rel="stylesheet">
+    <link href="pages/participa/participa.css" rel="stylesheet">
+
+	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+</head>
+<body class="page-espacios" ng-app="myApp">
+
+    <header>
+
+        <a href="ciudad" id="ciudad">CIUDAD</a>
+        
+        <a href="espacios" id="logo" title="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"><img src="images/logo.png" alt="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"></a>
+
+        <nav class="">
+            <span class="languages">
+                <a href="#">ES</a> 
+                <span class="separator">|</span> 
+                <a href="#">CAT</a>
+            </span>
+            <main>
+                <a href="participa">PARTICIPA</a> 
+                <span class="separator">|</span>
+            </main>
+            <span class="share" title="COMPARTIR">
+                <span class="links">
+                    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="images/google-plus.png" alt="Google+"></a>
+                    <a href="#"><img src="images/youtube.png" alt="Youtube"></a>
+                    <a href="#"><img src="images/vimeo.png" alt="Vimeo"></a>
+                    <a href="#"><img src="images/mail.png" alt="E-mail"></a>
+                </span>
+            </span>
+            <a href="javascript:window.history.back()" class="back" title="VOLVER"></a>
+        </nav>
+
+    </header>
+
+
+    <main ng-view></main>
+
+
+    <nav class="stories">
+        <h1 class="toggle">RELATOS</h1>
+        <div class="faces">
+            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+        </div>
+    </nav>
+		
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- Libraries -->
+    <script src="js/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/node_modules/angular/angular.min.js"></script>
+    <script src="js/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="js/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="js/node_modules/angular-animate/angular-animate.min.js"></script>
+
+    <!-- Angular Application -->
+    <script src="js/config/config.js"></script>
+    <script src="js/config/webservice.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Pages Controllers -->
+    <script src="pages/espacios/espacios-controller.js"></script>
+    <script src="pages/participa/participa-controller.js"></script>
+    
+    <!-- Services -->
+    <!-- more libraries -->
+
+</body>
+</html>
