@@ -178,7 +178,7 @@ body > main.ng-enter 	{
 /* Components	               		           */
 /***********************************************/
 
-body > header a#ciudad {
+#top-link {
 	position: absolute;
 	font-family: 'DIN Next LT Pro Condensed';
 	color: #ffffff;
@@ -189,7 +189,7 @@ body > header a#ciudad {
 	top: 25px;
 	line-height: 50px;
 }
-body > header a#ciudad::after {
+#top-link::after {
 	content: "";
 	width: 50px;
 	height: 50px;

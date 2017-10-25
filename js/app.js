@@ -22,6 +22,10 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'ParticpaController', 
             templateUrl: 'pages/participa/index.html' 
         })     
+        .when('/ciudad', { 
+            controller: 'CiudadController', 
+            templateUrl: 'pages/ciudad/index.html' 
+        })     
         .otherwise({ 
             redirectTo: '/espacios' 
         }); 

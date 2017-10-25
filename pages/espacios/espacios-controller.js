@@ -1,4 +1,4 @@
-app.controller('EspaciosController', function($scope, $rootScope, $http, config) {  
+app.controller('CiudadController', function($scope, $rootScope, $http, config) {  
 
 	$("body > header nav").removeClass("short");
 

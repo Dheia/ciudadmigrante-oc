@@ -16,19 +16,20 @@ body.page-espacios > main h1 {
 	position: relative;	
 	z-index: 2;
 }
-body.page-espacios #spaces-container {
+
+section#espacios-index {
 	display: flex;
   	align-items: center;
 	flex-grow: 1;
 	overflow: hidden;;
 }
-body.page-espacios #spaces {
+section#espacios-index .wrap {
 	width: 100%;
 	display: flex;
 	padding: 0 2vw;
 	height: calc(34vw);
 }
-body.page-espacios #spaces a {
+section#espacios-index a {
  	flex: 1;
  	margin: 0 -1vw;
  	background-size: cover;
@@ -38,7 +39,7 @@ body.page-espacios #spaces a {
  	position: relative;
  	line-height: 2.5vw;
 }
-body.page-espacios #spaces a::before {
+section#espacios-index a::before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -51,7 +52,7 @@ body.page-espacios #spaces a::before {
 	opacity: 0;
 	transition: opacity 0.2s ease-out;
 }
-body.page-espacios #spaces a span {
+section#espacios-index a span {
  	font-family: 'DIN Next LT Pro Condensed';
  	color: #ffffff;
  	text-transform: uppercase;
@@ -62,21 +63,22 @@ body.page-espacios #spaces a span {
  	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.41);
  	z-index: 2;
 }
-body.page-espacios #spaces a:hover::before,
-body.page-espacios #spaces a:focus::before {
+section#espacios-index a:hover::before,
+section#espacios-index a:focus::before {
 	opacity: 0.85;
 }
-body.page-espacios #spaces a:active::before {
+section#espacios-index a:active::before {
 	opacity: 1;
 }
-body.page-espacios #spaces a:nth-child(odd) {
+section#espacios-index a:nth-child(odd) {
 	-webkit-clip-path: polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%);
 	clip-path: polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%);
 }
-body.page-espacios #spaces a:nth-child(even) {
+section#espacios-index a:nth-child(even) {
 	-webkit-clip-path: polygon(0% 0%, 100% 0%, 82% 100%, 18% 100%);
 	clip-path: polygon(0% 0%, 100% 0%, 82% 100%, 18% 100%);
 }
+
 
 body.page-espacios > nav.stories {
 	display: block;
@@ -95,20 +97,20 @@ body.page-espacios > nav.stories {
 
 /* IE10+ CSS */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	body.page-espacios #spaces a {
+	section#espacios-index a {
 		margin: 0 0.35vw;
 	}
-	body.page-espacios #spaces {
+	section#espacios-index .wrap {
 		padding: 0 0.7vw;
 	}
 }
 /* Microsoft Edge Browser 12+ (All) - @supports method */
 @supports (-ms-ime-align:auto) {
    /* IE Edge 12+ CSS */ 
-	body.page-espacios #spaces a {
+	section#espacios-index a {
 		margin: 0 0.35vw;
 	}
-	body.page-espacios #spaces {
+	section#espacios-index .wrap {
 		padding: 0 0.7vw;
 	}
 }
