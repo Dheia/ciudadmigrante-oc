@@ -28,6 +28,7 @@ section#espacios-index .wrap {
 	display: flex;
 	padding: 0 2vw;
 	height: calc(34vw);
+	max-height: calc(100vh - 350px);
 }
 section#espacios-index a {
  	flex: 1;
