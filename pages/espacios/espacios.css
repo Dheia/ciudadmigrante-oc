@@ -5,16 +5,15 @@ body.page-espacios > header {
 	background-image: url(../../images/header-map.gif);
 }
 body.page-espacios > main {
-	padding: 0;
+	padding: 0 0 80px 0;
 	background-image: url(../../images/background-spaces.jpg);
 	display: flex;
 	flex-direction: column;
-	height: calc(100vh - 246px);
 }
-body.page-espacios > main h1 {	
+
+h1.page-title.espacios {	
 	color: #2c333c;	
 	position: relative;	
-	z-index: 2;
 }
 
 section#espacios-index {

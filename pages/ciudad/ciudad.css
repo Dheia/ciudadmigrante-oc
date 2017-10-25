@@ -4,32 +4,16 @@ body.page-ciudad > header {
 	background-image: url(../../images/header-map.gif);
 	z-index: 102;;
 }
-body.page-espacios > main {
-	padding: 0;
-	height: calc(100vh - 246px);
-}
-
-
-
-
-
-/* mobile */
-
-header {
-
+body.page-ciudad > main {
+	padding: 0 0 80px 0;
 }
 body.page-ciudad > nav.stories {
 	display: block;
-	z-index: 102;;
-}
-body.page-ciudad h1.page-title {
-	position: absolute;
-	z-index: 101;
-}
-body.page-ciudad > main {
-	padding: 0;
 }
 
+h1.page-title.ciudad {
+	position: absolute;
+}
 
 section#ciudad-map {
 	position: relative;
@@ -77,10 +61,6 @@ section#ciudad-map > aside .handle::before {
 section#ciudad-map > aside.expanded .handle::before {
 	transform: rotateY(180deg);
 }
-
-
-
-
 section#ciudad-map > main {
 	height: 100%;
 	background-color: #1a3442;
