@@ -63,7 +63,7 @@ section#ciudad-map > aside.expanded .handle::before {
 }
 section#ciudad-map > main {
 	height: 100%;
-	background-color: #1a3442;
+	background-color: #2c333c;
 	padding-left: 13px;
 
 }
@@ -73,10 +73,16 @@ section#ciudad-map > main {
 #map > div {
 	background: transparent !important;
 }
+#map .gm-style > div > div > div > div > div:not(.gm-style-iw) {
+	background-color: #203041;
+}
+#map .gm-style > div > div > div > div > div > img {
+	mix-blend-mode: luminosity;
+}
 
-
-
-
+.gm-style-iw {
+	color: #2d343d;
+}
 
 /* mobile */
 

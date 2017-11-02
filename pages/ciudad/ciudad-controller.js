@@ -13,11 +13,14 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     // Google Maps
 
     var myOptions = {
-        zoom: 13,
-        center: new google.maps.LatLng(41.3821797,2.1764733),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 14,
+        center: new google.maps.LatLng(41.3900844,2.1763873),
         disableDefaultUI: true,
         zoomControl: true,
+        // mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: 'satellite',
+        heading: 90,
+        tilt: 45,
         styles: [
     {
         "featureType": "water",
@@ -124,6 +127,21 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
 ]
     };
     var map = new google.maps.Map(document.getElementById("map"), myOptions); 
+    
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(41.3900844,2.1763873),
+        map: map,
+        icon: 'images/marker-yellow.png'
+    });
 
+    var infowindow = new google.maps.InfoWindow({
+        content: 'hola'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+       infowindow.open(map, marker);
+    });
+
+    infowindow.open(map, marker);
 
 });
