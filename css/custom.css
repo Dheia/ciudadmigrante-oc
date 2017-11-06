@@ -72,19 +72,19 @@ body {
 	background-position: center center;
 }
 a { 
-	color: #fef02e;
-	text-decoration: none;
+	color: #ffffff;
+	text-decoration: none; 
+	transition: color 0.1s ease-out;
 }
  /* on hover, select */
-a:hover, a:focus { 
-	color: #fef02e;
+a:hover { 
+	color: #ffffff;
 	text-decoration: none; 
 }
 /* on press */
-a:active {  
+a:active, a:focus {  
 	color: #fef02e;
 	text-decoration: none;  
-	opacity: 0.8; 
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'DIN Next LT Pro Condensed';
@@ -179,16 +179,19 @@ body > main.ng-enter 	{
 /***********************************************/
 
 #top-link {
-	position: absolute;
 	font-family: 'DIN Next LT Pro Condensed';
-	color: #ffffff;
 	font-size: 40px;
 	font-weight: normal;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 25px;
 	line-height: 50px;
-	z-index: 103;;
+	z-index: 103;
+	position: absolute;;
+}
+section#ciudad-map > aside .categories a:active {
+	color: #fef02e;
+	opacity: 1;
 }
 #top-link::after {
 	content: "";
@@ -224,7 +227,6 @@ body > header nav span,
 body > header nav a:hover, 
 body > header nav a:focus, 
 body > header nav a:active {
-	color: #ffffff;
 	vertical-align: middle;
 	margin-left: 32px;
 }
@@ -320,12 +322,17 @@ body > nav.stories {
 }
 body > nav.stories.expanded {
 }
-body > nav.stories h1.toggle {
+body > nav.stories .toggle {
 	margin: 15px 0;
 	text-align: center;
 	cursor: pointer;
+	font-family: 'DIN Next LT Pro Condensed';
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 40px;
+    display: block;
 }
-body > nav.stories h1.toggle::after {
+body > nav.stories .toggle::after {
 	content: "";
 	width: 50px;
 	height: 50px;
@@ -337,7 +344,7 @@ body > nav.stories h1.toggle::after {
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	transform: rotate(180deg);
 }
-body > nav.stories.expanded h1.toggle::after {
+body > nav.stories.expanded .toggle::after {
 	transform: rotate(0deg);
 }
 body > nav.stories .faces {
@@ -370,12 +377,11 @@ body > nav.stories .faces a::before {
 	opacity: 0;
 	transition: opacity 0.2s ease-out;
 }
-body > nav.stories .faces a:hover::before,
-body > nav.stories .faces a:focus::before {
-	opacity: 0.85;
+body > nav.stories .faces a:hover::before {
 }
-body > nav.stories .faces a:active::before {
-	opacity: 1;
+body > nav.stories .faces a:active::before,
+body > nav.stories .faces a:focus::before {
+	opacity: 0.75;
 }
 
 

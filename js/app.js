@@ -71,7 +71,7 @@ app.run(function($rootScope, $sce, $http, $location) {
 
 
     // expand stories
-    $("nav.stories h1.toggle").click(function(){
+    $("nav.stories .toggle").click(function(){
         $(this).parent().toggleClass("expanded");
     });
 

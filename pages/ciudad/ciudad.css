@@ -22,7 +22,7 @@ section#ciudad-map {
 }
 section#ciudad-map > aside {
 	position: absolute;
-	transform: translateX(calc(-100% + 13px));
+	transform: translateX(calc(-100% + 0px));
 	background-color: #2c333c;
 	height: 100%;
 	width: 286px;
@@ -61,10 +61,108 @@ section#ciudad-map > aside .handle::before {
 section#ciudad-map > aside.expanded .handle::before {
 	transform: rotateY(180deg);
 }
+
+
+
+section#ciudad-map > aside .column {
+	margin: 100px 0 0 0;
+	max-height: calc(100% - 100px);
+	display: flex;
+	flex-direction: column;;;
+}
+
+
+section#ciudad-map > aside .categories {
+	position: relative;
+	overflow-y: auto;
+	padding-left: 79px;;;
+}
+section#ciudad-map > aside .categories a {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 25px;
+	position: relative;
+	display: block;
+	color: #c7c7c7;
+	cursor: pointer;
+	font-family: 'DIN Next LT Pro Condensed';
+}
+section#ciudad-map > aside .categories a:last-child {
+	margin-bottom: 0;
+}
+section#ciudad-map > aside .categories a:hover,
+section#ciudad-map > aside .categories a.checked {
+	color: #ffffff;
+}
+section#ciudad-map > aside .categories a:active, 
+section#ciudad-map > aside .categories a:focus {  
+	color: #fef02e;
+}
+section#ciudad-map > aside .categories a::before {
+	content: '';
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	border: 6px solid #ffffff;
+	margin: 0px 0 0 -39px;
+	border-radius: 50%;
+	background-color: #b7b7b7;
+	z-index: 2;
+}
+section#ciudad-map > aside .categories a.checked::before {
+	background-color: #000000;
+}
+section#ciudad-map > aside .categories a:not(:last-child):after {
+	content: '';
+	position: absolute;
+	height: calc(100% + 30px);
+	border-left: 5px solid #ffffff;
+	left: -30px;
+	top:9px;
+	z-index: 1;;
+}
+
+section#ciudad-map > aside .markers {
+	padding-left: 79px;
+	padding: 40px 0 15px 79px;;;
+}
+section#ciudad-map > aside .markers a {
+	display: block;
+	background-repeat: no-repeat;
+	background-size: auto 35px;
+	padding: 5px 10px 5px 39px;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-left: -40px;
+	min-height: 36px;
+	margin-bottom: 4px;
+	color: #c7c7c7;
+	cursor: pointer;
+}
+section#ciudad-map > aside .markers a.yellow {
+	background-image: url(../../images/marker-yellow.png);
+}
+section#ciudad-map > aside .markers a.green {
+	background-image: url(../../images/marker-green.png);
+}
+section#ciudad-map > aside .markers a.blue {
+	background-image: url(../../images/marker-blue.png);
+}
+section#ciudad-map > aside .markers a:hover,
+section#ciudad-map > aside .markers a.checked {
+	color: #ffffff;
+}
+section#ciudad-map > aside .markers a:active, 
+section#ciudad-map > aside .markers a:focus {  
+	color: #fef02e;
+}
+
+
+
+
 section#ciudad-map > main {
 	height: 100%;
 	background-color: #2c333c;
-	padding-left: 13px;
 
 }
 #map {
