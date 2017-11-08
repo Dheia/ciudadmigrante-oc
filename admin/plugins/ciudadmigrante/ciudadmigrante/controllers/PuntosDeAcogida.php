@@ -2,15 +2,22 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida;
 
 class PuntosDeAcogida extends Controller
 {
     public $implement = [
-        'Backend\Behaviors\ListController','Backend\Behaviors\FormController', 'Backend\Behaviors\RelationController'    ];
+        'Backend\Behaviors\ListController',
+        'Backend\Behaviors\FormController', 
+        'Backend\Behaviors\RelationController',
+        'Backend\Behaviors\ImportExportController',
+    ];
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relations.yaml';
+    public $importExportConfig = 'config_import_export.yaml';
+
 
     public function __construct()
     {
@@ -22,11 +29,11 @@ class PuntosDeAcogida extends Controller
 
     public function formExtendFields($form)
     {
-        
         if ($form->getField('latlng')->value) {
             list($lat, $lng) = explode(',', $form->getField('latlng')->value);
             $form->getField('latlng')->value = '{"lat":'.$lat.',"lng":'.$lng.'}';
         }
     }
+
 
 }

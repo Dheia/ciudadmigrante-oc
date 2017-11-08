@@ -1,0 +1,9 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Importar puntos
+    modelClass: CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogidaImport
+    list: $/ciudadmigrante/ciudadmigrante/models/puntodeacogidaimport/columns.yaml
+    redirect: ciudadmigrante/ciudadmigrante/puntosdeacogida/import

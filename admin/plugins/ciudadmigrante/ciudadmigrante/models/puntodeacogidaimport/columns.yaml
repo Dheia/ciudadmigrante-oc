@@ -1,0 +1,28 @@
+columns:
+    name:
+        label: 'Nombre de entidad'
+    telefono:
+        label: Teléfono
+    email:
+        label: E-mail
+    direccion:
+        label: Dirección
+    codigo_postal:
+        label: 'Código postal'
+    ciudad:
+        label: Ciudad
+    web:
+        label: Web
+    ayuda_legal:
+    empleo:
+    acogida:
+    lengua:
+    vivienda:
+    atencion_social:
+    mujeres:
+    salud:
+    educacion:
+    otros:
+
+
+
