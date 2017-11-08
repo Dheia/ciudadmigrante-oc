@@ -10,12 +10,8 @@ columns:
         type: text
         searchable: true
         sortable: true
-    telefono:
-        label: Teléfono
-        type: text
-        searchable: true
-    email:
-        label: E-mail
+    direccion:
+        label: Dirección
         type: text
         searchable: true
     ciudad:
