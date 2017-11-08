@@ -1,0 +1,12 @@
+fields:
+    id:
+        label: ID
+        oc.commentPosition: ''
+        span: auto
+        disabled: 0
+        type: text
+    name:
+        label: 'Nombre de categoría'
+        oc.commentPosition: ''
+        span: left
+        type: text

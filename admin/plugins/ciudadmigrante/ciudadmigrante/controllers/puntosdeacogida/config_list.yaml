@@ -1,0 +1,16 @@
+title: PuntosDeAcogida
+modelClass: CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida
+list: $/ciudadmigrante/ciudadmigrante/models/puntodeacogida/columns.yaml
+recordUrl: 'ciudadmigrante/ciudadmigrante/puntosdeacogida/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+showSorting: 1
+defaultSort:
+    column: name
+    direction: ''
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

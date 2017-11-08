@@ -1,0 +1,10 @@
+name: Categories
+modelClass: CiudadMigrante\CiudadMigrante\Models\Category
+form: $/ciudadmigrante/ciudadmigrante/models/category/fields.yaml
+defaultRedirect: ciudadmigrante/ciudadmigrante/categories
+create:
+    redirect: 'ciudadmigrante/ciudadmigrante/categories/update/:id'
+    redirectClose: ciudadmigrante/ciudadmigrante/categories
+update:
+    redirect: ciudadmigrante/ciudadmigrante/categories
+    redirectClose: ciudadmigrante/ciudadmigrante/categories

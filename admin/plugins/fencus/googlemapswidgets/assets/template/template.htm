@@ -1,0 +1,32 @@
+<div style="width: ::width; height: ::height;">
+<div id="map::alias" style="height: 100%;"></div>
+</div>
+<script>
+var markers::alias = [];
+mapsList.push(function initialize::alias() {
+	  var options = ::options;
+	  var jsonLocations = ::jsonLocations;
+	  
+	  var map::alias = new google.maps.Map(document.getElementById("map::alias"), options);
+      
+      for (i = 0; i < jsonLocations.length; i++) {
+    	  var latLng = JSON.parse(jsonLocations[i].latlng);
+		  var name = "("+latLng.lat+", "+latLng.lng+")";
+    	  markers::alias[name] = new google.maps.Marker({
+    		  position: latLng,
+    		  map: map::alias,
+    		  title: jsonLocations[i].name
+    	  });
+    	  if(jsonLocations[i].info_window)
+    	  {
+    		  markers::alias[name].infowindow =  new google.maps.InfoWindow({content: jsonLocations[i].info_window});
+        	  markers::alias[name].addListener('click', function(pos) {
+        		  for(marker in markers::alias) {
+  	       			markers::alias[marker].infowindow.close();
+  	       		  }
+        		  markers::alias[pos.latLng].infowindow.open(map::alias, markers::alias[pos.latLng]);
+        	  }); 
+    	  }
+	  }
+});
+</script>

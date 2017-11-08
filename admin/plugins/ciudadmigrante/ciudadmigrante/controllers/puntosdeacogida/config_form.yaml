@@ -1,0 +1,11 @@
+name: PuntosDeAcogida
+modelClass: CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida
+form: $/ciudadmigrante/ciudadmigrante/models/puntodeacogida/fields.yaml
+defaultRedirect: ciudadmigrante/ciudadmigrante/puntosdeacogida
+create:
+    redirect: 'ciudadmigrante/ciudadmigrante/puntosdeacogida/update/:id'
+    redirectClose: ciudadmigrante/ciudadmigrante/puntosdeacogida
+update:
+    redirect: ciudadmigrante/ciudadmigrante/puntosdeacogida
+    redirectClose: ciudadmigrante/ciudadmigrante/puntosdeacogida
+preview: {  }

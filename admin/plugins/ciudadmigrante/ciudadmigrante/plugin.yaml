@@ -1,0 +1,21 @@
+plugin:
+    name: 'ciudadmigrante.ciudadmigrante::lang.plugin.name'
+    description: 'ciudadmigrante.ciudadmigrante::lang.plugin.description'
+    author: 'Ciudad Migrante'
+    icon: oc-icon-building-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Ciudad migrante'
+        url: ciudadmigrante/ciudadmigrante/puntosdeacogida
+        icon: icon-building-o
+        order: '1'
+        sideMenu:
+            side-menu-item:
+                label: 'Red de acogida'
+                url: ciudadmigrante/ciudadmigrante/puntosdeacogida
+                icon: icon-building-o
+            side-menu-item2:
+                label: Categorías
+                url: ciudadmigrante/ciudadmigrante/categories
+                icon: icon-tags

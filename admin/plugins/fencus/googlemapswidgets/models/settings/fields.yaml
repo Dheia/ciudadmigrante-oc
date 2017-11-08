@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+
+fields:
+        header:
+            type: partial
+            path: $/fencus/googlemapswidgets/models/settings/_template_header.htm
+            
+tabs:
+    fields:
+        api_key_warning:
+            type: hint
+            path: $/fencus/googlemapswidgets/models/settings/_api_key_warning.htm
+            tab: fencus.googlemapswidgets::lang.settings.settings
+            trigger:
+                action: show
+                field: api_key
+                condition: value[]
+
+        api_key:
+            span: left
+            label: fencus.googlemapswidgets::lang.settings.api_key
+            comment: fencus.googlemapswidgets::lang.settings.api_key_comment
+            required: true
+            tab: fencus.googlemapswidgets::lang.settings.settings
+            
+        location:
+            label: Select Default Map Center
+            required: true
+            height: 450px
+            type: location-selector
+            tab: fencus.googlemapswidgets::lang.settings.settings

@@ -1,0 +1,33 @@
+columns:
+    name:
+        label: 'Nombre de entidad'
+        type: text
+        searchable: true
+        sortable: true
+    telefono:
+        label: Teléfono
+        type: text
+        searchable: true
+    email:
+        label: E-mail
+        type: text
+        searchable: true
+    ciudad:
+        label: Ciudad
+        type: text
+        searchable: true
+    publicado:
+        label: Publicado
+        type: switch
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Fecha de creación'
+        type: date
+        searchable: true
+        sortable: true
+    latlng:
+        label: 'Latitud longitud'
+        type: text
+        searchable: false
+        sortable: true

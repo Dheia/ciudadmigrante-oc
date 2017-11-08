@@ -1,0 +1,271 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?= $api_key ?>&callback=initialize" async defer></script>
+<input type="hidden" name="<?= $name ?>" id="options" value='<?= $value ?>'>
+<input id="locationDefault" type="hidden" value='<?= $locationDefault ?>'/>
+<input id="isFunction" type="hidden" value='<?= $function ?>'/>
+<input id="markers" type="hidden" value='<?= $markers ?>'/>
+<?php if ($markers): ?>
+<div class="text-right"><a onclick="refreshLocations();" class="btn btn-success btn-xs"><?= Lang::get('fencus.googlemapswidgets::lang.maps.refresh_locations') ?></a></div>
+<br>
+<?php endif ?>
+<div style="height: <?= $height ?>; width: <?= $width ?>;">
+    <div id="map" style="height: 100%;"></div>
+</div>
+  
+<hr>
+        <?php if ($this->previewMode): ?>
+         <div id="latitude-group" class="form-group  number-field span-left">
+            <label for="latitude">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.latitude') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="latitude" disabled>
+         </div>
+         <div id="longitude-group" class="form-group  number-field span-right">
+            <label for="longitude">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.longitude') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="longitude" disabled>
+         </div>
+         <div id="zoom-group" class="form-group  number-field span-left">
+            <label for="zoom">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="zoom" disabled>
+         </div>
+         
+         <div id="map_type-group" class="form-group dropdown-field span-left">
+            <label for="map_type">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type" disabled>
+               
+            </select>
+         </div>
+         
+         
+         <div id="map_type_position-group" class="form-group dropdown-field span-right">
+            <label for="map_type_position">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_control_position') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type_position" disabled>
+               
+            </select>
+         </div>
+         
+         <div id="map_type_style-group" class="form-group dropdown-field span-left">
+            <label for="map_type_style">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_style') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type_style" disabled>
+
+            </select>
+         </div>
+         
+         <div id="zoom_position-group" class="form-group  dropdown-field span-right">
+            <label for="zoom_position">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom_control_position') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="zoom_position" disabled>
+               
+            </select>
+         </div>
+
+         <div id="map_type_control-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_control') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="map_type_control" disabled>
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         
+         <div id="map_types-group" class="form-group checkboxlist-field span-right">
+            <label for="map_types">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_types') ?></label>
+            <!-- Checkbox List -->
+            <div class="field-checkboxlist" id="map-types-div">
+
+            </div>
+         </div>
+
+         <div id="zoom_control-group" class="form-group  switch-field span-left   ">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom_control') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="zoom_control" disabled>
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <div id="scrollwheel-group" class="form-group  switch-field span-left   ">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.scrollwheel') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="scrollwheel" disabled>
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+
+         <div id="fullscreen-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.fullscreen') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox" value="1" id="fullscreen" disabled>
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <div id="streetview-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.streetview') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="streetview" disabled>
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <?php else: ?>
+                  <div id="latitude-group" class="form-group  number-field span-left">
+            <label for="latitude">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.latitude') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="latitude">
+         </div>
+         <div id="longitude-group" class="form-group  number-field span-right">
+            <label for="longitude">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.longitude') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="longitude">
+         </div>
+         <div id="zoom-group" class="form-group  number-field span-left">
+            <label for="zoom">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom') ?></label>
+            <!-- Number -->
+            <input type="text" maxlength="255" pattern="-?\d+(\.\d+)?" autocomplete="off" class="form-control" id="zoom">
+         </div>
+         
+         <div id="map_type-group" class="form-group dropdown-field span-left">
+            <label for="map_type">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type">
+               
+            </select>
+         </div>
+         
+         
+         <div id="map_type_position-group" class="form-group dropdown-field span-right">
+            <label for="map_type_position">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_control_position') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type_position">
+               
+            </select>
+         </div>
+         
+         <div id="map_type_style-group" class="form-group dropdown-field span-left">
+            <label for="map_type_style">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_style') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="map_type_style">
+
+            </select>
+         </div>
+         
+         <div id="zoom_position-group" class="form-group  dropdown-field span-right">
+            <label for="zoom_position">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom_control_position') ?></label>
+            <!-- Dropdown -->
+            <select class="form-control" id="zoom_position">
+               
+            </select>
+         </div>
+
+         <div id="map_type_control-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.map_type_control') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="map_type_control">
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         
+         <div id="map_types-group" class="form-group checkboxlist-field span-right">
+            <label for="map_types">
+            <?= Lang::get('fencus.googlemapswidgets::lang.maps.map_types') ?></label>
+            <!-- Checkbox List -->
+            <div class="field-checkboxlist" id="map-types-div">
+
+            </div>
+         </div>
+
+         <div id="zoom_control-group" class="form-group  switch-field span-left   ">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.zoom_control') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="zoom_control">
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <div id="scrollwheel-group" class="form-group  switch-field span-left   ">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.scrollwheel') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="scrollwheel">
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+
+         <div id="fullscreen-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.fullscreen') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox" value="1" id="fullscreen">
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <div id="streetview-group" class="form-group switch-field span-left">
+            <!-- Switch -->
+            <div class="field-switch">
+               <label><?= Lang::get('fencus.googlemapswidgets::lang.maps.streetview') ?></label>
+            </div>
+            <input type="hidden" value="0">
+            <label class="custom-switch">
+            <input type="checkbox"  value="1" id="streetview">
+            <span><span>On</span><span>Off</span></span>
+            <a class="slide-button"></a>
+            </label>
+         </div>
+         <?php endif ?>

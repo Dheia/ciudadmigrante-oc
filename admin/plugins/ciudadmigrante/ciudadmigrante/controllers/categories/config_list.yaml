@@ -1,0 +1,15 @@
+title: Categories
+modelClass: CiudadMigrante\CiudadMigrante\Models\Category
+list: $/ciudadmigrante/ciudadmigrante/models/category/columns.yaml
+recordUrl: 'ciudadmigrante/ciudadmigrante/categories/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

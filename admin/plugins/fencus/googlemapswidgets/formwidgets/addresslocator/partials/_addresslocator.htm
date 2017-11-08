@@ -1,0 +1,7 @@
+<div>
+	<?php if ($this->previewMode): ?>
+	<span class="form-control"><?= $value ?></span>
+	<?php else: ?>
+	<input name="<?= $name ?>" id="addressSelector" type="text" class="form-control" value="<?= $value ?>"/>
+	<?php endif ?>
+</div>

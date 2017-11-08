@@ -1,0 +1,8 @@
+<div>
+	<input name="<?= $name ?>" id="locationSelector" type="hidden" class="form-control" value='<?= $value ?>'/>
+	<input id="locationDefault" type="hidden" value='<?= $locationDefault ?>'/>
+<div style="height: <?= $height ?>; width: <?= $width ?>;">
+    <div id="map" style="height: 100%;"></div>
+</div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?= $api_key ?>&libraries=places&callback=initialize" async defer></script>
+</div>

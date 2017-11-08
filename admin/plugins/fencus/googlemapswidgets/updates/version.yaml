@@ -1,0 +1,7 @@
+1.0.1: First version of GoogleMapsWidgets
+1.0.2: Geolocalization Support
+1.0.3: API Loader implementation
+1.0.4: API Loader - Library selection
+1.0.5: Tabs Bugfix
+1.0.6: Fixed "Preview" mode on all the FormWidgets
+1.0.7: Changed HTTP to HTTPS in the API URLs

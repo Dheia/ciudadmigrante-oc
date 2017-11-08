@@ -1,0 +1,26 @@
+{% if __SELF__.api_key %}
+<script>
+var mapsList = [];
+var tag;
+
+function initMaps()
+{
+	for (j = 0; j < mapsList.length; j++)
+	{
+		mapsList[j]();
+	}
+}
+
+$( document ).ready(function(){
+			tag = document.createElement( 'script' );
+			tag.type = "text/javascript";
+			tag.src = "https://maps.googleapis.com/maps/api/js?key={{ __SELF__.api_key }}{{ __SELF__.libraries|raw }}&callback=initMaps";
+			document.getElementsByTagName("body")[0].appendChild( tag );
+		});
+</script>
+{% else %}
+<div class="alert alert-danger">
+	{{ __SELF__.message }}
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+</div>
+{% endif %}

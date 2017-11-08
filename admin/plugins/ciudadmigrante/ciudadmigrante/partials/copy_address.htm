@@ -1,0 +1,7 @@
+<a href="javascript:copyAddress()">» Copiar la dirección</a>
+<script>
+	function copyAddress()
+	{
+		$('#addressSelector').val($('#Form-field-PuntoDeAcogida-direccion').val() + ', ' + $('#Form-field-PuntoDeAcogida-ciudad').val());
+	}
+</script>

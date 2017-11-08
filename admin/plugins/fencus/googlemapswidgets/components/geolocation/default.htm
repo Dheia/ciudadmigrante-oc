@@ -1,0 +1,41 @@
+{% if not __SELF__.hasGeolocation %}
+	{% if __SELF__.api_key %}
+		<script>
+			var geolocation;
+			var geolocationType;
+			var geolocationAccuracy;
+			
+			$.post('https://www.googleapis.com/geolocation/v1/geolocate?key={{ __SELF__.api_key }}', 
+					function( data )
+					{
+						geolocation = data.location;
+						geolocationType = 'IP';
+						geolocationAccuracy = data.accuracy;
+						$.request('onGetGeolocation', {
+							data: {geolocation: JSON.stringify(geolocation), geolocationType: geolocationType, geolocationAccuracy: geolocationAccuracy}
+						    });
+					});
+			
+			
+			{% if __SELF__.useHTML5 %}
+				if (navigator.geolocation) 
+				{
+				    navigator.geolocation.getCurrentPosition(function(position) 
+				    {
+				    	geolocation =
+				    	{
+				    		lat: position.coords.latitude,
+						    lng: position.coords.longitude
+						};
+				    	geolocationType = 'HTML5';
+				    	geolocationAccuracy = 1;
+				    	$.request('onGetGeolocation', {
+							data: {geolocation: JSON.stringify(geolocation), geolocationType: geolocationType, geolocationAccuracy: geolocationAccuracy}
+						    });
+				    });
+				}
+			{% endif %}
+			
+		</script>
+	{% endif %}
+{% endif %}

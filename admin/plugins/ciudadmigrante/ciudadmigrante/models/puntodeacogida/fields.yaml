@@ -1,0 +1,74 @@
+tabs:
+    fields:
+        name:
+            label: 'Nombre de entidad'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        publicado:
+            label: Publicado
+            span: auto
+            type: switch
+            tab: Datos
+        telefono:
+            label: Teléfono
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        partial1:
+            span: right
+            path: $/ciudadmigrante/ciudadmigrante/partials/copy_address.htm
+            type: partial
+            tab: Datos
+        email:
+            label: E-mail
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        geolocalization:
+            label: Geolocalizar
+            type: address-locator
+            height: 450px
+            width: 100%
+            span: right
+            tab: Datos
+        direccion:
+            label: Dirección
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        latlng:
+            label: Latitud longitud
+            type: location-selector
+            span: right
+            tab: Datos
+        codigo_postal:
+            label: 'Código postal'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        ciudad:
+            label: Ciudad
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        web:
+            label: Web
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos
+        categories:
+            label: Categorías
+            oc.commentPosition: ''
+            nameFrom: name
+            descriptionFrom: description
+            span: left
+            type: relation
+            tab: Categorías
