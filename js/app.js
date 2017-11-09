@@ -25,6 +25,10 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/ciudad', { 
             controller: 'CiudadController', 
             templateUrl: 'pages/ciudad/index.html' 
+        })      
+        .when('/relatos', { 
+            controller: 'RelatosController', 
+            templateUrl: 'pages/relatos/index.html' 
         })     
         .otherwise({ 
             redirectTo: '/espacios' 
