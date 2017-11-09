@@ -128,6 +128,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     };
     var map = new google.maps.Map(document.getElementById("map"), myOptions); 
 
+/*    
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(41.3900844,2.1763873),
         map: map,
@@ -166,31 +167,103 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
         infowindow.setContent(content[2]);
         infowindow.open(map, marker3);
     });
+    */
 
-    /*
-     * The google.maps.event.addListener() event waits for
-     * the creation of the infowindow HTML structure 'domready'
-     * and before the opening of the infowindow defined styles
-     * are applied.
-     */
-    google.maps.event.addListener(infowindow, 'domready', function() {
+    $scope.markers = [];
 
-        // Reference to the DIV which receives the contents of the infowindow using jQuery
-        var iwOuter = $('.gm-style-iw');
+    $scope.infowindow = new google.maps.InfoWindow({});
 
-        /* The DIV we want to change is above the .gm-style-iw DIV.
-        * So, we use jQuery and create a iwBackground variable,
-        * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
-        */
-        var iwBackground = iwOuter.prev();
+    var marker;
 
-        // Remove the background shadow DIV
-        // iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+    $scope.openedInfoWindowId;
 
-        // // Remove the white background DIV
-        // iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+    $scope.createMarkers = function() 
+    {
+        $scope.deleteMarkers();
 
-    });
+        for (i in $scope.puntosDeAcogidaData) {
+            var itemData = $scope.puntosDeAcogidaData[i];
 
+            if (!itemData.latlng) {
+                continue;
+            }
+
+            var latlng = itemData.latlng.split(",");
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(latlng[0],latlng[1]),
+                map: map,
+                icon: 'images/marker-blue.png',
+                title: itemData.name
+            });
+            $scope.markers.push(marker);
+
+            $scope.createInfoWindow(marker, itemData);
+        }
+    }
+
+    $scope.createInfoWindow = function(m, itemData) 
+    {
+        google.maps.event.addListener(m, 'click', function() {
+            if ($scope.openedInfoWindowId == ('ayuda' + itemData.id)) {
+                $scope.infowindow.close();
+                $scope.openedInfoWindowId = null;
+            }
+            else {
+                $scope.infowindow.setContent($scope.generateInfowindowContent(itemData));
+                $scope.infowindow.open(map, m);
+                $scope.openedInfoWindowId = 'ayuda' + itemData.id;
+            }
+        });
+    }
+
+
+    $scope.generateInfowindowContent = function(itemData)
+    {
+        var html = '<h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
+        if (itemData.telefono) {
+            html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
+        }
+        if (itemData.email) {
+            html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
+        }      
+        if (itemData.web) {
+            html += '<p class="web"><a href="' + itemData.web + '" target="_blank"></a></p>';
+        }        
+
+        // '<a href="javascript:" class="espacio"><img src="dummy-data/infowindow/espacio.jpg" alt=""><h2>Dialogos sin fronteras</h2></a>',
+        // '<a href="javascript:" class="relato"><img src="dummy-data/infowindow/relato.jpg" alt=""></a>' 
+
+        return html;
+    }
+
+
+    $scope.deleteMarkers = function() 
+    {
+        for (i in $scope.markers) {
+            $scope.markers[i].setMap(null);
+        }
+        $scope.markers = [];
+    }
+
+
+
+    $scope.puntosDeAcogidaData = null;
+    
+    $scope.loadPuntosDeAcogidaData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_puntosdeacogida,
+            params  : {
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $scope.puntosDeAcogidaData = response.data;
+            $scope.createMarkers();
+        });
+    }
+    $scope.loadPuntosDeAcogidaData();
 
 });

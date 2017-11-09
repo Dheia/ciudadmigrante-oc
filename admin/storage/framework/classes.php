@@ -88,4 +88,5 @@
   'Fencus\\GoogleMapsWidgets\\FormWidgets\\LocationSelector' => 'plugins/fencus/googlemapswidgets/formwidgets/LocationSelector.php',
   'Fencus\\GoogleMapsWidgets\\FormWidgets\\AddressLocator' => 'plugins/fencus/googlemapswidgets/formwidgets/AddressLocator.php',
   'CiudadMigrante\\CiudadMigrante\\Models\\PuntoDeAcogidaImport' => 'plugins/ciudadmigrante/ciudadmigrante/models/PuntoDeAcogidaImport.php',
+  'CiudadMigrante\\CiudadMigrante\\Api\\PuntosDeAcogida' => 'plugins/ciudadmigrante/ciudadmigrante/api/PuntosDeAcogida.php',
 );
