@@ -47,6 +47,8 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.run(function($rootScope, $sce, $http, $location) {
 
+    $('body').removeClass('loading');
+
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
         // get page slug
@@ -83,7 +85,14 @@ app.run(function($rootScope, $sce, $http, $location) {
 
     $rootScope.goBack = function() 
     {
-        window.history.back();
+        console.log(document.referrer);
+        // window.history.back();
+        if (document.referrer.indexOf('markiewicz.click') >= 0) {
+            history.go(-1);
+        }
+        else {
+            window.location.href = 'espacios'; 
+        }
     }
 
 });

@@ -23,4 +23,10 @@ app.controller('RelatosController', function($scope, $rootScope, $http, config) 
         });
     }
 
+
+
+    $("section#relatos-video aside .handle").click(function(){
+        $(this).parent().toggleClass('expanded');
+    });
+
 });

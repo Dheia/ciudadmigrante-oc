@@ -1,9 +1,6 @@
 app.controller('CiudadController', function($scope, $rootScope, $http, config) {  
 
-	$("body > header nav").removeClass("short");
 
-
-	// filters
 
 	$("section#ciudad-map aside .handle").click(function(){
 		$(this).parent().toggleClass('expanded');
@@ -128,46 +125,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     };
     var map = new google.maps.Map(document.getElementById("map"), myOptions); 
 
-/*    
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(41.3900844,2.1763873),
-        map: map,
-        icon: 'images/marker-blue.png'
-    });
-    var marker2 = new google.maps.Marker({
-        position: new google.maps.LatLng(41.3831942,2.1864975),
-        map: map,
-        icon: 'images/marker-green.png'
-    });
-    var marker3 = new google.maps.Marker({
-        position: new google.maps.LatLng(41.3800844,2.1663873),
-        map: map,
-        icon: 'images/marker-yellow.png'
-    });
 
-
-    var content = [
-        '<h2>hola</h2><p>Dirección completa con calle número xxx puerta. 08000 - ciudad</p><p class="lead">T. <a href="tel:+34 600 000 000">+34 600 000 000</a></p><p class="lead"><a href="mailto:direccion@demail.com">direccion@demail.com</a></p><p class="lead"><a href="http://www.bcn.cat/novaciutadania/index.html" target="_blank">www.bcn.cat/novaciutadania/index.html</a></p>',
-        '<a href="javascript:" class="espacio"><img src="dummy-data/infowindow/espacio.jpg" alt=""><h2>Dialogos sin fronteras</h2></a>',
-        '<a href="javascript:" class="relato"><img src="dummy-data/infowindow/relato.jpg" alt=""></a>'        
-    ];
-
-    var infowindow = new google.maps.InfoWindow({
-    });
-
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(content[0]);
-        infowindow.open(map, marker);
-    });
-    google.maps.event.addListener(marker2, 'click', function() {
-        infowindow.setContent(content[1]);
-        infowindow.open(map, marker2);
-    });
-    google.maps.event.addListener(marker3, 'click', function() {
-        infowindow.setContent(content[2]);
-        infowindow.open(map, marker3);
-    });
-    */
 
     $scope.markers = [];
 
