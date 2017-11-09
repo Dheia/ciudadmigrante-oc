@@ -16,19 +16,19 @@ app.config(function ($routeProvider, $locationProvider) {
 
         .when('/espacios', { 
             controller: 'EspaciosController', 
-            templateUrl: 'pages/espacios/index.html' 
+            templateUrl: 'js/pages/espacios/index.html' 
         })     
         .when('/participa', { 
             controller: 'ParticpaController', 
-            templateUrl: 'pages/participa/index.html' 
+            templateUrl: 'js/pages/participa/index.html' 
         })     
         .when('/ciudad', { 
             controller: 'CiudadController', 
-            templateUrl: 'pages/ciudad/index.html' 
+            templateUrl: 'js/pages/ciudad/index.html' 
         })      
         .when('/relatos', { 
             controller: 'RelatosController', 
-            templateUrl: 'pages/relatos/index.html' 
+            templateUrl: 'js/pages/relatos/index.html' 
         })     
         .otherwise({ 
             redirectTo: '/espacios' 
@@ -75,9 +75,16 @@ app.run(function($rootScope, $sce, $http, $location) {
 
 
     // expand stories
-    $("nav.stories .toggle").click(function(){
+    $("#menu-relatos .toggle").click(function(){
         $(this).parent().toggleClass("expanded");
     });
+
+
+
+    $rootScope.goBack = function() 
+    {
+        window.history.back();
+    }
 
 });
 

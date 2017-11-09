@@ -1,33 +1,49 @@
 
-body.page-espacios > header {
-	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
-	position: relative;
-	background-image: url(../../images/header-map.gif);
+
+/* show header elements */
+
+body.page-espacios #logo {
+	display: block;
 }
-body.page-espacios > main {
-	padding: 0 0 80px 0;
-	background-image: url(../../images/background-spaces.jpg);
-	display: flex;
-	flex-direction: column;
+body.page-espacios #menu-1 .share {
+	display: inline-block;
+}
+body.page-espacios #menu-2 {
+	display: block;
+}
+body.page-espacios #menu-relatos {
+	display: block;
 }
 
-h1.page-title.espacios {	
-	color: #2c333c;	
-	position: relative;	
-}
+
+
+
 
 section#espacios-index {
+	background-image: url(../../../images/background-spaces.jpg);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 0 0 80px 0;;
+}
+section#espacios-index .list {
 	display: flex;
   	align-items: center;
 	flex-grow: 1;
 	overflow: hidden;;
 }
+section#espacios-index h1.page-title {	
+	color: #2c333c;	
+	position: relative;	
+	margin-bottom: 41px;
+} 
+
+
 section#espacios-index .wrap {
 	width: 100%;
 	display: flex;
 	padding: 0 2vw;
-	height: calc(34vw);
-	max-height: calc(100vh - 350px);
+	height: calc(100vh - 443px);
 }
 section#espacios-index a {
  	margin: 0 -1vw;
@@ -79,17 +95,19 @@ section#espacios-index a:nth-child(even) {
 }
 
 
-body.page-espacios > nav.stories {
-	display: block;
-}
-
-
 
 
 
 /* mobile */
 
 @media screen and (max-width: 1200px) {
+
+	section#espacios-index .wrap {
+		width: 100%;
+		display: flex;
+		padding: 0 2vw;
+		height: calc(100vh - 431px);
+	}
 
 }
 

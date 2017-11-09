@@ -12,9 +12,10 @@
     <!-- Le styles -->
     <link href="js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link href="pages/espacios/espacios.css" rel="stylesheet">
-    <link href="pages/participa/participa.css" rel="stylesheet">
-    <link href="pages/ciudad/ciudad.css" rel="stylesheet">
+    <link href="js/pages/espacios/espacios.css" rel="stylesheet">
+    <link href="js/pages/participa/participa.css" rel="stylesheet">
+    <link href="js/pages/ciudad/ciudad.css" rel="stylesheet">
+    <link href="js/pages/relatos/relatos.css" rel="stylesheet">
 
 	<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
 </head>
@@ -24,16 +25,12 @@
         
         <a href="espacios" id="logo" title="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"><img src="images/logo.png" alt="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"></a>
 
-        <nav class="">
-            <span class="languages">
+        <nav id="menu-1">
+            <span class="language">
                 <a href="#">ES</a> 
                 <span class="separator">|</span> 
                 <a href="#">CAT</a>
             </span>
-            <main>
-                <a href="participa">PARTICIPA</a> 
-                <span class="separator">|</span>
-            </main>
             <span class="share" title="COMPARTIR">
                 <span class="links">
                     <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
@@ -44,7 +41,11 @@
                     <a href="#"><img src="images/mail.png" alt="E-mail"></a>
                 </span>
             </span>
-            <a href="javascript:window.history.back()" class="back" title="VOLVER"></a>
+            <a href="javascript:" ng-click="goBack()" class="back"></a>
+        </nav>
+
+        <nav id="menu-2">
+             <a href="participa">PARTICIPA</a>
         </nav>
 
     </header>
@@ -53,15 +54,15 @@
     <main ng-view></main>
 
 
-    <nav class="stories">
+    <nav id="menu-relatos">
         <a class="toggle">RELATOS</a>
         <div class="faces">
-            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
-            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
-            <a href="javascript:"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="javascript:"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
+            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
         </div>
     </nav>
 		
@@ -86,10 +87,10 @@
     <script src="js/app.js"></script>
 
     <!-- Pages Controllers -->
-    <script src="pages/espacios/espacios-controller.js"></script>
-    <script src="pages/participa/participa-controller.js"></script>
-    <script src="pages/ciudad/ciudad-controller.js"></script>
-    <script src="pages/relatos/relatos-controller.js"></script>
+    <script src="js/pages/espacios/espacios-controller.js"></script>
+    <script src="js/pages/participa/participa-controller.js"></script>
+    <script src="js/pages/ciudad/ciudad-controller.js"></script>
+    <script src="js/pages/relatos/relatos-controller.js"></script>
     
     <!-- Services -->
     <!-- more libraries -->

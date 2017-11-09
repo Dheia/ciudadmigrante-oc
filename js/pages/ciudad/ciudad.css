@@ -1,28 +1,40 @@
 
-body.page-ciudad > main {
-	padding: 0 0 80px 0;
+/* show header elements */
+
+body.page-ciudad #logo {
+	display: block;
 }
-body.page-ciudad > nav.stories {
+body.page-ciudad #menu-1 .share {
+	display: inline-block;
+}
+body.page-ciudad #menu-2 {
+	display: block;
+}
+body.page-ciudad #menu-relatos {
 	display: block;
 }
 
-h1.page-title.ciudad {
-	position: absolute;
-}
+
+
 
 section#ciudad-map {
 	position: relative;
-	height: 100%;
-
+	height: calc(100vh - 248px);
 }
+section#ciudad-map h1.page-title {
+	position: absolute;
+}
+
+
 section#ciudad-map > aside {
 	position: absolute;
-	transform: translateX(calc(-100% + 0px));
 	background-color: #2c333c;
 	height: 100%;
 	width: 286px;
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	z-index: 100;
+	padding-right: 15px;
+	transform: translateX(calc(-100% + 15px));
 }
 section#ciudad-map > aside.expanded {
 	transform: translateX(0);
@@ -48,7 +60,7 @@ section#ciudad-map > aside .handle::before {
 	height: 68px;
 	display: inline-block;
 	position: relative;
-	background-image: url(../../images/ciudad/filters-handle.png);
+	background-image: url(../../../images/ciudad/filters-handle.png);
 	background-repeat: no-repeat;
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	/*perspective: 5px;*/
@@ -92,6 +104,7 @@ section#ciudad-map > aside .categories a.checked {
 section#ciudad-map > aside .categories a:active, 
 section#ciudad-map > aside .categories a:focus {  
 	color: #fef02e;
+	opacity: 1;
 }
 section#ciudad-map > aside .categories a::before {
 	content: '';
@@ -135,13 +148,13 @@ section#ciudad-map > aside .markers a {
 	cursor: pointer;
 }
 section#ciudad-map > aside .markers a.yellow {
-	background-image: url(../../images/marker-yellow.png);
+	background-image: url(../../../images/marker-yellow.png);
 }
 section#ciudad-map > aside .markers a.green {
-	background-image: url(../../images/marker-green.png);
+	background-image: url(../../../images/marker-green.png);
 }
 section#ciudad-map > aside .markers a.blue {
-	background-image: url(../../images/marker-blue.png);
+	background-image: url(../../../images/marker-blue.png);
 }
 section#ciudad-map > aside .markers a:hover,
 section#ciudad-map > aside .markers a.checked {
@@ -162,6 +175,7 @@ section#ciudad-map > main {
 }
 #map {
 	height: 100%;
+	margin-left: 15px;;
 }
 #map > div {
 	background: transparent !important;
@@ -207,7 +221,7 @@ section#ciudad-map > main {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
-	background-image: url('../../images/icon_link.png');
+	background-image: url('../../../images/icon_link.png');
 	background-repeat: no-repeat;
 }
 .gm-style .gm-style-iw a.relato {
@@ -223,7 +237,7 @@ section#ciudad-map > main {
 	transform: translate(-50%, -50%);
 	width: 50px;
 	height: 50px;
-	background-image:url(../../images/icon-play.png);
+	background-image:url(../../../images/icon-play.png);
 }
 .gm-style .gm-style-iw a.espacio h2 {
 	position: absolute;
@@ -277,7 +291,7 @@ section#ciudad-map > main {
 body.page-ciudad > header {
 	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.25);
 	position: relative;
-	background-image: url(../../images/header-map.gif);
+	background-image: url(../../../images/header-map.gif);
 	z-index: 102;
 
 }
