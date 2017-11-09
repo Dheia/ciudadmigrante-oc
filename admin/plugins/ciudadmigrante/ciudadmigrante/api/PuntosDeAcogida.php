@@ -28,7 +28,7 @@ class PuntosDeAcogida extends Controller
                 elseif (strpos($web, 'http://') !== false) {    // contains http
                 }
                 else {                                          // does not contains https nor http
-                    $web = 'https://'.$web;
+                    $web = 'http://'.$web;
                 }
                 $item->web = $web;
             }
