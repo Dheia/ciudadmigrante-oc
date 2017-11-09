@@ -142,16 +142,10 @@ h4 {
 /***********************************************/
 
 body > header {
-	height: 166px;
-	background-size: cover;
-	background-position: center center;
+	z-index: 50;
+	position: relative;;
 }
 body > main {
-	overflow: auto;
-	padding: 70px 0;
-	height: calc(100vh - 166px);
-	background-size: cover;
-	background-position: center center;
 }
 
 .container {
@@ -178,7 +172,102 @@ body > main.ng-enter 	{
 /* Components	               		           */
 /***********************************************/
 
-#top-link {
+#logo {
+	display: none;
+	position: absolute;
+	left: 79px;
+	top: 57px;
+}
+#logo img {
+}
+
+#menu-1 {
+	font-size: 20px;
+	font-weight: 500;
+	position: absolute;
+	top: 53px;
+	right: 22px;
+	text-align: right;;
+}
+#menu-1 a, 
+#menu-1 span,
+#menu-1 a:hover, 
+#menu-1 a:focus, 
+#menu-1 a:active {
+	vertical-align: middle;
+	margin-left: 32px;
+}
+#menu-1 .languages {
+}
+#menu-1 .languages a,
+#menu-1 .languages span {
+	margin-left: 6px;
+}
+#menu-1 .languages a {
+}
+
+#menu-1 .share {
+	display: none;
+	background-image: url(../images/share.png);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	text-indent: -200px;
+	overflow: hidden;
+	cursor: pointer;
+	background-size: contain;
+}
+#menu-1 .share .links {
+	display: none;
+}
+#menu-1 .share .links a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	margin: 10px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+#menu-1 .share .links a img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: .15s cubic-bezier(.46,1,1,1);
+}
+#menu-1 .share .links a:hover img {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+#menu-1 .back {
+	display: none;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	text-indent: -200px;
+	overflow: hidden;
+	background-size: contain;
+}
+
+#menu-2 {
+	display: none;
+	font-size: 24px;
+	position: absolute;
+	right: 30px;
+	top: 125px;;;;
+}
+
+
+section.header-with-background {
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+	position: relative;
+	background-image: url(../images/header-map.gif);	
+	height: 166px;
+	background-size: cover;
+	background-position: center center;
+	z-index: 49;;
+}
+section.header-with-background a.link-up {
 	font-family: 'DIN Next LT Pro Condensed';
 	font-size: 40px;
 	font-weight: normal;
@@ -189,11 +278,7 @@ body > main.ng-enter 	{
 	z-index: 103;
 	position: absolute;;
 }
-section#ciudad-map > aside .categories a:active {
-	color: #fef02e;
-	opacity: 1;
-}
-#top-link::after {
+section.header-with-background a.link-up::after {
 	content: "";
 	width: 50px;
 	height: 50px;
@@ -205,102 +290,8 @@ section#ciudad-map > aside .categories a:active {
 	transform: rotate(180deg);
 	vertical-align: text-bottom;
 }
-body > header #logo {
-	display: block;
-	position: absolute;
-	left: 79px;
-	top: 57px;
-}
-body > header #logo img {
-}
-
-body > header nav {
-	font-size: 24px;
-	font-weight: 500;
-	position: absolute;
-	top: 53px;
-	right: 22px;
-	text-align: right;;
-}
-body > header nav a, 
-body > header nav span,
-body > header nav a:hover, 
-body > header nav a:focus, 
-body > header nav a:active {
-	vertical-align: middle;
-	margin-left: 32px;
-}
-body > header nav .languages {
-	font-size: 20px;
-	display: block;
-	margin-bottom: 25px;
-}
-body > header nav .languages a,
-body > header nav .languages span {
-	margin-left: 3px;
-}
-body > header nav .languages a {
-}
-body > header nav main {
-	display: inline;
-}
-body > header nav .share {
-	display: inline-block;
-	background-image: url(../images/share.png);
-	background-repeat: no-repeat;
-	width: 50px;
-	height: 50px;
-	text-indent: -200px;
-	overflow: hidden;
-	cursor: pointer;
-	background-size: contain;
-}
-body > header nav .share .links {
-	display: none;
-}
-body > header nav .share .links a {
-	display: block;
-	width: 50px;
-	height: 50px;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-	margin: 10px;
-	border-radius: 50%;
-	overflow: hidden;
-}
-body > header nav .share .links a img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-    transition: .15s cubic-bezier(.46,1,1,1);
-}
-body > header nav .share .links a:hover img {
-    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(0%);
-}
-body > header nav .back {
-	display: none;
-	background-image: url(../images/close.png);
-	background-repeat: no-repeat;
-	width: 50px;
-	height: 50px;
-	text-indent: -200px;
-	overflow: hidden;
-	background-size: contain;
-}
 
 
-body > header nav.short {
-	right: 64px;
-}
-body > header nav.short .back {
-	display: inline-block;
-}
-body > header nav.short .languages {
-	display: inline;
-	margin-bottom: 0;
-}
-body > header nav.short > main {
-	display: none;
-}
 h1.page-title {
 	margin-left: 79px;
 	margin-top: 30px;
@@ -311,7 +302,7 @@ h1.page-title {
 
 
 
-body > nav.stories {
+#menu-relatos {
 	display: none;
 	position: absolute;
 	background-color: #2c333c;
@@ -320,9 +311,9 @@ body > nav.stories {
 	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
 	z-index: 102;;
 }
-body > nav.stories.expanded {
+#menu-relatos.expanded {
 }
-body > nav.stories .toggle {
+#menu-relatos .toggle {
 	margin: 15px 0;
 	text-align: center;
 	cursor: pointer;
@@ -332,7 +323,7 @@ body > nav.stories .toggle {
     font-size: 40px;
     display: block;
 }
-body > nav.stories .toggle::after {
+#menu-relatos .toggle::after {
 	content: "";
 	width: 50px;
 	height: 50px;
@@ -344,27 +335,27 @@ body > nav.stories .toggle::after {
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	transform: rotate(180deg);
 }
-body > nav.stories.expanded .toggle::after {
+#menu-relatos.expanded .toggle::after {
 	transform: rotate(0deg);
 }
-body > nav.stories .faces {
+#menu-relatos .faces {
 	height: 0;
 	overflow: hidden;
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 }
-body > nav.stories.expanded .faces {
+#menu-relatos.expanded .faces {
 	padding-bottom: 20px;
 	height: 200px;
 }
 
-body > nav.stories .faces a {
+#menu-relatos .faces a {
 	position: relative;
 	display: inline-block;
 }
-body > nav.stories .faces a img {
+#menu-relatos .faces a img {
 	height: 180px;
 }
-body > nav.stories .faces a::before {
+#menu-relatos .faces a::before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -377,10 +368,10 @@ body > nav.stories .faces a::before {
 	opacity: 0;
 	transition: opacity 0.2s ease-out;
 }
-body > nav.stories .faces a:hover::before {
+#menu-relatos .faces a:hover::before {
 }
-body > nav.stories .faces a:active::before,
-body > nav.stories .faces a:focus::before {
+#menu-relatos .faces a:active::before,
+#menu-relatos .faces a:focus::before {
 	opacity: 0.75;
 }
 
@@ -408,42 +399,7 @@ body > nav.stories .faces a:focus::before {
 
 @media screen and (max-width: 1200px) {
 
-	body > header {
-		height: 125px;
-	}
-	body > main {
-		height: calc(100vh - 125px);
-	}
-	body > header #logo {
-		left: 59px;
-		top: 43px;
-	}
-	body > header #logo img {
-		height: 75px;
-		width: 337px;
-		max-width: calc(100% - 15px);
-	}
-	body > header nav {
-		top: 40px;
-		right: 18px;
-		font-size: 18px;
-	}
-	body > header nav.short {
-		right: 48px;
-	}
-	body > header nav .languages {
-		font-size: 15px;
-		margin-bottom: 18px;
-	}
-	body > header nav .share,
-	body > header nav .back {
-		width: 38px;
-		height: 38px;
-	}
-	body > header nav a, 
-	body > header nav span {
-		margin-left: 24px;
-	}
+	
 	h1.page-title {
 		margin-left: 59px;
 		margin-top: 20px;
@@ -454,30 +410,6 @@ body > nav.stories .faces a:focus::before {
 
 @media screen and (max-width: 992px) {
 
-	body > header {
-		height: 105px;
-	}
-	body > main {
-		height: calc(100vh - 105px);
-		padding: 25px 0;
-	}
-	body > header #logo {
-		left: 15px;
-		top: 25px;
-	}
-	body > header nav {
-		top: 25px;
-		right: 15px;
-	}
-	body > header nav.short {
-		right: 15px;
-	}
-	body > header nav a, body > header nav span {
-	    margin-left: 15px;
-	}
-	body > header nav .languages {
-		margin-bottom: 12px;
-	}
 	h1.page-title {
 		margin-left: 15px;
 		margin-top: 15px;
@@ -487,19 +419,5 @@ body > nav.stories .faces a:focus::before {
 
 @media screen and (max-width: 768px) {
 
-	body > header nav {
-		top: 104px;
-	}
-	body > header {
-		height: 150px;
-	}
-	body > main {
-		height: calc(100vh - 150px);
-		padding: 25px 0;
-	}
-	body > header nav .languages {
-		margin-bottom: 0;
-		display: inline;
-	}
 
 }
