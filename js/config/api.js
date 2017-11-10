@@ -6,7 +6,8 @@ window.config = window.config || {};
 window.config.api = {
 
     "urls" : {
-        "get_puntosdeacogida" 		: "admin/api/puntosdeacogida"
+        "get_puntosdeacogida" 		: "admin/api/puntosdeacogida",
+        "get_relatos" 				: "admin/api/relatos"
     }
 
 }

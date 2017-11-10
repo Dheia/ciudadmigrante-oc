@@ -26,7 +26,7 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'CiudadController', 
             templateUrl: 'js/pages/ciudad/index.html' 
         })      
-        .when('/relatos', { 
+        .when('/relatos/:id', { 
             controller: 'RelatosController', 
             templateUrl: 'js/pages/relatos/index.html' 
         })     
@@ -88,6 +88,25 @@ app.run(function($rootScope, $sce, $http, $location) {
 
 
 
+    $rootScope.relatosData = null;
+    
+    $rootScope.loadRelatosData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_relatos,
+            params  : {
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $rootScope.relatosData = response.data;
+        });
+    }
+    $rootScope.loadRelatosData();
+
+
+
     $rootScope.goBack = function() 
     {
         console.log(document.referrer);
@@ -99,6 +118,9 @@ app.run(function($rootScope, $sce, $http, $location) {
             window.location.href = 'espacios'; 
         }
     }
+
+
+
 
 
 });

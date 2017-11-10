@@ -91,4 +91,5 @@
   'CiudadMigrante\\CiudadMigrante\\Api\\PuntosDeAcogida' => 'plugins/ciudadmigrante/ciudadmigrante/api/PuntosDeAcogida.php',
   'ciudadmigrante\\ciudadmigrante\\Controllers\\relatos' => 'plugins/ciudadmigrante/ciudadmigrante/controllers/relatos.php',
   'CiudadMigrante\\CiudadMigrante\\Models\\Relato' => 'plugins/ciudadmigrante/ciudadmigrante/models/Relato.php',
+  'CiudadMigrante\\CiudadMigrante\\Api\\Relatos' => 'plugins/ciudadmigrante/ciudadmigrante/api/Relatos.php',
 );

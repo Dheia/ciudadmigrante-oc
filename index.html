@@ -57,12 +57,7 @@
     <nav id="menu-relatos">
         <a class="toggle">RELATOS</a>
         <div class="faces">
-            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
-            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
-            <a href="relatos"><img src="dummy-data/stories/face-1.jpg" alt=""></a>
-            <a href="relatos"><img src="dummy-data/stories/face-2.jpg" alt=""></a>
+            <a ng-repeat="item in relatosData" href="relatos/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
         </div>
     </nav>
 		

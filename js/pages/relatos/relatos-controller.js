@@ -1,4 +1,4 @@
-app.controller('RelatosController', function($scope, $rootScope, $http, config) {  
+app.controller('RelatosController', function($scope, $rootScope, $http, $routeParams, config) {  
 
     // create youtube player
     if (!YT) {
@@ -28,5 +28,13 @@ app.controller('RelatosController', function($scope, $rootScope, $http, config) 
     $("section#relatos-video aside .handle").click(function(){
         $(this).parent().toggleClass('expanded');
     });
+
+
+    $rootScope.$watch('relatosData', function() {
+        if ($rootScope.relatosData) {
+            $scope.relatoData = $rootScope.relatosData[$routeParams.id];
+        }
+    });
+    
 
 });
