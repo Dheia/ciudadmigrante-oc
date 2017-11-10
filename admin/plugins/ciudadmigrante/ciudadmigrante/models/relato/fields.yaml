@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        name:
+            label: 'Nombre de relato'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Datos de relato'
+        publicado:
+            label: Publicado
+            span: auto
+            type: switch
+            tab: 'Datos de relato'
+        descripcion:
+            label: Descripción
+            size: huge
+            oc.commentPosition: ''
+            span: auto
+            type: richeditor
+            tab: 'Datos de relato'
+        video_url:
+            label: 'URL de video'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'Datos de relato'
+        direccion:
+            label: Dirección
+            type: address-locator
+            height: 450px
+            width: 100%
+            span: right
+            tab: 'Datos de relato'
+        latlng:
+            label: 'Latitud longitud'
+            type: location-selector
+            span: right
+            tab: 'Datos de relato'
+        image:
+            label: Imagen
+            oc.commentPosition: ''
+            mode: image
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: 'Datos de relato'
+        categories:
+            label: Categorías
+            oc.commentPosition: ''
+            select: 'concat(id, '' '', name)'
+            descriptionFrom: description
+            span: left
+            type: relation
+            tab: Categorías
+        puntos_de_acogida:
+            label: 'Ayuda relacionada'
+            oc.commentPosition: ''
+            nameFrom: name
+            descriptionFrom: description
+            span: left
+            type: relation
+            tab: 'Ayuda relacionada'

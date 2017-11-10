@@ -1,0 +1,10 @@
+name: Relatos
+form: $/ciudadmigrante/ciudadmigrante/models/relato/fields.yaml
+modelClass: CiudadMigrante\CiudadMigrante\Models\Relato
+defaultRedirect: ciudadmigrante/ciudadmigrante/relatos
+create:
+    redirect: 'ciudadmigrante/ciudadmigrante/relatos/update/:id'
+    redirectClose: ciudadmigrante/ciudadmigrante/relatos
+update:
+    redirect: ciudadmigrante/ciudadmigrante/relatos
+    redirectClose: ciudadmigrante/ciudadmigrante/relatos

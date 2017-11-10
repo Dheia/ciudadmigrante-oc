@@ -18,3 +18,15 @@
 1.0.7:
     - 'Updated table ciudadmigrante_ciudadmigrante_puntos_de_acogida'
     - builder_table_update_ciudadmigrante_ciudadmigrante_puntos_de_acogida_2.php
+1.0.8:
+    - 'Created table ciudadmigrante_ciudadmigrante_relatos'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_relatos.php
+1.0.9:
+    - 'Created table ciudadmigrante_ciudadmigrante_relato_has_category'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_relato_has_category.php
+1.0.10:
+    - 'Created table ciudadmigrante_ciudadmigrante_relato_has_relato'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_relato_has_relato.php
+1.0.11:
+    - 'Updated table ciudadmigrante_ciudadmigrante_relato_has_relato'
+    - builder_table_update_ciudadmigrante_ciudadmigrante_relato_has_punto_de_acogida.php

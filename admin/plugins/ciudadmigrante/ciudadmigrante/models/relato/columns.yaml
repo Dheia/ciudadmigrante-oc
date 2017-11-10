@@ -1,0 +1,15 @@
+columns:
+    id:
+        label: ID
+        type: number
+        sortable: false
+        width: 30px
+    name:
+        label: Nombre
+        type: text
+        searchable: true
+        sortable: false
+    publicado:
+        label: Publicado
+        type: switch
+        sortable: false

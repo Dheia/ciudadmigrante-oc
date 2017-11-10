@@ -76,9 +76,14 @@ app.run(function($rootScope, $sce, $http, $location) {
     };
 
 
-    // expand stories
+    // relatos
     $("#menu-relatos .toggle").click(function(){
         $(this).parent().toggleClass("expanded");
+        $(this).parent().find('.faces a').removeClass('selected');
+    });
+    $('menu-relatos .faces a').click(function(){
+        $('menu-relatos .faces a').removeClass('selected');
+        $(this).addClass("selected");
     });
 
 
@@ -94,6 +99,7 @@ app.run(function($rootScope, $sce, $http, $location) {
             window.location.href = 'espacios'; 
         }
     }
+
 
 });
 

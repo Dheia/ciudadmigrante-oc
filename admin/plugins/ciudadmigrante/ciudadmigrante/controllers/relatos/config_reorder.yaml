@@ -1,0 +1,5 @@
+title: Relatos
+modelClass: CiudadMigrante\CiudadMigrante\Models\Relato
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

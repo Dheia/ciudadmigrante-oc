@@ -15,6 +15,10 @@ navigation:
                 label: 'Red de acogida'
                 url: ciudadmigrante/ciudadmigrante/puntosdeacogida
                 icon: icon-building-o
+            side-menu-item3:
+                label: Relatos
+                url: ciudadmigrante/ciudadmigrante/relatos
+                icon: icon-user
             side-menu-item2:
                 label: Categorías
                 url: ciudadmigrante/ciudadmigrante/categories

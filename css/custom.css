@@ -399,7 +399,8 @@ h1.page-title {
 #menu-relatos .faces a:hover::before {
 }
 #menu-relatos .faces a:active::before,
-#menu-relatos .faces a:focus::before {
+#menu-relatos .faces a:focus::before,
+#menu-relatos .faces a.selected::before {
 	opacity: 0.75;
 }
 
