@@ -51,10 +51,14 @@ app.run(function($rootScope, $sce, $http, $location) {
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
-        // get page slug
+        // find page slug
         var prevSlug = $rootScope.pageSlug = 'home';
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
+            // substring until first slash
+            if ($rootScope.pageSlug.indexOf('/') != -1) {
+                $rootScope.pageSlug = $rootScope.pageSlug.substr(0, $rootScope.pageSlug.indexOf('/'));
+            }
         }
 
         // set body class as "page-slug"
