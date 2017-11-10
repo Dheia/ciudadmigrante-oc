@@ -25,6 +25,15 @@ class Relatos extends Controller
             if ($item->image) {
                 $item->image_url = $item->image->getThumb(null,360);
             }
+
+            // find youtube id
+            if ($item->video_url) {
+                preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $item->video_url, $matches);
+                if ($matches) {
+                    $item->youtube_id = $matches[0];
+                }
+            }
+            
             $return[$item->id] = $item;
         }
 
