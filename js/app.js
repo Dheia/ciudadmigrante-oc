@@ -45,7 +45,7 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location) {
+app.run(function($rootScope, $sce, $http, $location, $timeout) {
 
     $('body').removeClass('loading');
 
