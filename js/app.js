@@ -81,8 +81,8 @@ app.run(function($rootScope, $sce, $http, $location) {
         $(this).parent().toggleClass("expanded");
         $(this).parent().find('.faces a').removeClass('selected');
     });
-    $('menu-relatos .faces a').click(function(){
-        $('menu-relatos .faces a').removeClass('selected');
+    $('#menu-relatos .faces a').click(function(){
+        $('#menu-relatos .faces a').removeClass('selected');
         $(this).addClass("selected");
     });
 
