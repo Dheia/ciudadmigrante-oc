@@ -1006,4 +1006,3 @@ html.gecko .fancy-layout .control-tabs.secondary-tabs > div > ul.nav-tabs > li.a
 .flyout-toggle:hover i{color:#ffffff}
 body.flyout-visible{overflow:hidden}
 body.flyout-visible .flyout-overlay{background-color:rgba(0,0,0,0.3)}
-nav#layout-mainmenu ul.mainmenu-toolbar li.mainmenu-preview {display:none;}
