@@ -49,10 +49,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
 
     $('body').removeClass('loading');
 
+    $rootScope.homeSlug = 'espacios';
+    $rootScope.urlChangeCount = 0;
+
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
         // find page slug
-        var prevSlug = $rootScope.pageSlug = 'home';
+        var prevSlug = $rootScope.pageSlug = config.homepageSlug;
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
             // substring until first slash
@@ -71,7 +74,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
-
+        $rootScope.urlChangeCount++;
+        console.log($rootScope.urlChangeCount);
     });
 
     // fix for displaying html from model field
@@ -116,13 +120,11 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
 
     $rootScope.goBack = function() 
     {
-        console.log(document.referrer);
-        // window.history.back();
-        if (document.referrer.indexOf('markiewicz.click') >= 0) {
-            history.go(-1);
+        if ($rootScope.urlChangeCount > 1) {
+            window.history.back();
         }
         else {
-            window.location.href = 'espacios'; 
+            window.location.href = config.homepageSlug; 
         }
     }
 

@@ -5,4 +5,6 @@ window.config = window.config || {};
 
 window.config.config = {
 
+	'homepageSlug': 'espacios'
+
 }
