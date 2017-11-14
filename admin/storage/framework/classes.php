@@ -93,4 +93,5 @@
   'CiudadMigrante\\CiudadMigrante\\Models\\Relato' => 'plugins/ciudadmigrante/ciudadmigrante/models/Relato.php',
   'CiudadMigrante\\CiudadMigrante\\Api\\Relatos' => 'plugins/ciudadmigrante/ciudadmigrante/api/Relatos.php',
   'RainLab\\Translate\\FormWidgets\\MLRichEditor' => 'plugins/rainlab/translate/formwidgets/MLRichEditor.php',
+  'CiudadMigrante\\CiudadMigrante\\Api\\Categories' => 'plugins/ciudadmigrante/ciudadmigrante/api/Categories.php',
 );

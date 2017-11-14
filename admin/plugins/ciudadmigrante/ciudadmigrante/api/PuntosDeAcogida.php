@@ -12,7 +12,19 @@ class PuntosDeAcogida extends Controller
     {
         // Translator::instance()->setLocale(Input::get('lang'));
 
+        $categories = [];
+        if (Input::get('categories')) {
+            $categories = explode(',', Input::get('categories'));
+        }
+        
+
         $query = PuntoDeAcogida::where('publicado', '1');
+
+        if ($categories) {
+            $query->whereHas('categories', function($query) use ($categories) {
+                $query->whereIn('id', $categories);
+            });
+        }
 
         $result = $query->get(); 
 

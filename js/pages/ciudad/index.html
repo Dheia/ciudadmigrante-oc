@@ -15,17 +15,11 @@
 
 		<div class="column">
 			<div class="categories" data-simplebar data-simplebar-autohide="false">
-				<a class="checked">Servicio de acogida</a>
-				<a class="">Cursos de lengua</a>
-				<a class="">Jurídico</a>
-				<a class="">laboral</a>
-				<a class="">vivienda</a>
-				<a class="">atención social</a>
-				<a class="">Pisos de acogida</a>
-				<a class="">mujeres</a>
-				<a class="">Educación no formal</a>
-				<a class="">Salud</a>
-				<a class="">otros</a>
+				<a 	
+					ng-repeat="item in categoriesData" 
+					ng-class="selectedCategories[item.id] ? 'checked' : ''" 
+					ng-click="onCategoryClick(item.id)"
+					>{{ item.name }}</a>
 			</div>
 
 			<div class="markers">

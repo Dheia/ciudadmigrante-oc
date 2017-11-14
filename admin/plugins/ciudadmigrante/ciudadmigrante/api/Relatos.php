@@ -12,10 +12,22 @@ class Relatos extends Controller
     {
         Translator::instance()->setLocale(Input::get('lang'));
 
+        $categories = [];
+        if (Input::get('categories')) {
+            $categories = explode(',', Input::get('categories'));
+        }
+
         $query = Relato::where('publicado', '1')
                         ->with('image')
                         ->with('puntos_de_acogida')
                         ->orderBy('sort_order', 'asc');
+
+        if ($categories) {
+            $query->whereHas('categories', function($query) use ($categories) {
+                $query->whereIn('id', $categories);
+            });
+        }
+                        
 
         $result = $query->get(); 
 

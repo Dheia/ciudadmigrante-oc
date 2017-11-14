@@ -233,6 +233,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_relatos,
             params  : {
+                categories: selectedCategoriesToString()
                 // 'lang': $rootScope.language
             }
         })
@@ -253,6 +254,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_puntosdeacogida,
             params  : {
+                categories: selectedCategoriesToString()
                 // 'lang': $rootScope.language
             }
         })
@@ -263,25 +265,59 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     }
 
 
+    function selectedCategoriesToString()
+    {
+        var categories = [];
+        for (i in $scope.selectedCategories) {
+            if ($scope.selectedCategories[i]) {
+                categories.push(i);
+            }
+        }
+        return categories.join(',');
+    }
+
+
 
     // filters
-    $scope.selectedFilters = {
-        relatos:    true,
-        ayuda:      true,
-        espacios:   true
-    } 
+    $scope.selectedFilters = {}; 
 
+
+    // categories
+    $scope.categoriesData = [];
+    $scope.selectedCategories = {}; 
+
+    $scope.loadCategoriesData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_categories,
+            params  : {
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $scope.categoriesData = response.data;
+        });
+    }
+    $scope.loadCategoriesData();
 
 
 
     // load data
     $scope.loadData = function()
     {
+        var showAll = true;
+        for (i in $scope.selectedFilters) {
+            if ($scope.selectedFilters[i]) {
+                showAll = false;
+            }
+        }
+
         $scope.deleteAllMarkers();
-        if ($scope.selectedFilters.relatos) {
+        if ($scope.selectedFilters.relatos || showAll) {
             $scope.loadRelatosData();
         }
-        if ($scope.selectedFilters.ayuda) {
+        if ($scope.selectedFilters.ayuda || showAll) {
             $scope.loadAyudaData();
         }
     }
@@ -295,10 +331,11 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
         $scope.loadData();
     }
 
-
-
-    // categories
-    $scope.selectedCategories = {};
+    $scope.onCategoryClick = function(id)
+    {
+        $scope.selectedCategories[id] = !$scope.selectedCategories[id];
+        $scope.loadData();
+    }
 
 
 
