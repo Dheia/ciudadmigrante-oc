@@ -19,7 +19,7 @@ tabs:
             type: richeditor
             tab: 'Datos de relato'
         video_url:
-            label: 'URL de video'
+            label: 'URL de video en YouTube'
             oc.commentPosition: ''
             span: right
             type: text
