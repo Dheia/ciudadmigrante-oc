@@ -27,6 +27,9 @@ class Relato extends Model
      */
     public $table = 'ciudadmigrante_ciudadmigrante_relatos';
 
+    public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
+ 
+    public $translatable = ['descripcion'];
 
 
     /*
