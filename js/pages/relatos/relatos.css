@@ -62,8 +62,8 @@ section#relatos-video > aside h2 {
 }
 section#relatos-video > aside .scroll {
 	overflow-y: auto;
-	padding-right: 45px;
-	padding-bottom: 50px;
+	margin-right: 45px;
+	margin-bottom: 50px;
 }
 section#relatos-video > aside .description {
 }
