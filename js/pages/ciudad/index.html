@@ -29,9 +29,21 @@
 			</div>
 
 			<div class="markers">
-				<a class="yellow checked">Relatos migrantes</a>
-				<a class="blue">Ayuda solidaria</a>
-				<a class="green">Espacios</a>
+				<a 
+					class="yellow" 
+					ng-class="selectedFilters.relatos ? 'checked' : ''" 
+					ng-click="onFilterClick('relatos')" 
+					>Relatos migrantes</a>
+				<a 
+					class="blue" 
+					ng-class="selectedFilters.ayuda ? 'checked' : ''" 
+					ng-click="onFilterClick('ayuda')" 
+					>Ayuda solidaria</a>
+				<a 
+					class="green" 
+					ng-class="selectedFilters.espacios ? 'checked' : ''"
+					ng-click="onFilterClick('espacios')" 
+					>Espacios</a>
 			</div>
 		</div>
 

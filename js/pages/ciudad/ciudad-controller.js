@@ -126,8 +126,18 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     var map = new google.maps.Map(document.getElementById("map"), myOptions); 
 
 
+    var icons = {
+        'relatos':  'images/marker-yellow.png',
+        'ayuda':    'images/marker-blue.png',
+        'espacios': 'images/marker-green.png'
+    }
 
-    $scope.markers = [];
+
+    $scope.markers = {
+        'relatos':  [],
+        'ayuda':    [],
+        'espacios': []
+    };
 
     $scope.infowindow = new google.maps.InfoWindow({});
 
@@ -135,42 +145,42 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
 
     $scope.openedInfoWindowId;
 
-    $scope.createMarkers = function() 
+    $scope.createMarkers = function(type, data) 
     {
-        $scope.deleteMarkers();
+        $scope.deleteMarkers(type);
 
-        for (i in $scope.puntosDeAcogidaData) {
-            var itemData = $scope.puntosDeAcogidaData[i];
+        for (i in data) {
+            var item = data[i];
 
-            if (!itemData.latlng) {
+            if (!item.latlng) {
                 continue;
             }
 
-            var latlng = itemData.latlng.split(",");
+            var latlng = item.latlng.split(",");
 
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(latlng[0],latlng[1]),
                 map: map,
-                icon: 'images/marker-blue.png',
-                title: itemData.name
+                icon: icons[type],
+                title: item.name
             });
-            $scope.markers.push(marker);
+            $scope.markers[type].push(marker);
 
-            $scope.createInfoWindow(marker, itemData);
+            $scope.createInfoWindow(marker, item, type);
         }
     }
 
-    $scope.createInfoWindow = function(m, itemData) 
+    $scope.createInfoWindow = function(m, item, type) 
     {
         google.maps.event.addListener(m, 'click', function() {
-            if ($scope.openedInfoWindowId == ('ayuda' + itemData.id)) {
+            if ($scope.openedInfoWindowId == (type + item.id)) {
                 $scope.infowindow.close();
                 $scope.openedInfoWindowId = null;
             }
             else {
-                $scope.infowindow.setContent($scope.generateInfowindowContent(itemData));
+                $scope.infowindow.setContent($scope.generateInfowindowContent(item));
                 $scope.infowindow.open(map, m);
-                $scope.openedInfoWindowId = 'ayuda' + itemData.id;
+                $scope.openedInfoWindowId = type + item.id;
             }
         });
     }
@@ -196,19 +206,48 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     }
 
 
-    $scope.deleteMarkers = function() 
+    $scope.deleteMarkers = function(type) 
+    {
+        for (i in $scope.markers[type]) {
+            $scope.markers[type][i].setMap(null);
+        }
+        $scope.markers[type] = [];
+    }
+
+
+    $scope.deleteAllMarkers = function() 
     {
         for (i in $scope.markers) {
-            $scope.markers[i].setMap(null);
+            $scope.deleteMarkers(i);
         }
-        $scope.markers = [];
     }
 
 
 
-    $scope.puntosDeAcogidaData = null;
+    // load relatos
+    $scope.relatosData = null;
     
-    $scope.loadPuntosDeAcogidaData = function()
+    $scope.loadRelatosData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_relatos,
+            params  : {
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $scope.relatosData = response.data;
+            $scope.createMarkers('relatos', $scope.relatosData);
+        });
+    }
+
+
+
+    // load ayuda
+    $scope.ayudaData = null;
+    
+    $scope.loadAyudaData = function()
     {
         $http({
             method  : 'GET',
@@ -218,10 +257,50 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             }
         })
         .then(function(response) {
-            $scope.puntosDeAcogidaData = response.data;
-            $scope.createMarkers();
+            $scope.ayudaData = response.data;
+            $scope.createMarkers('ayuda', $scope.ayudaData);
         });
     }
-    $scope.loadPuntosDeAcogidaData();
+
+
+
+    // filters
+    $scope.selectedFilters = {
+        relatos:    true,
+        ayuda:      true,
+        espacios:   true
+    } 
+
+
+
+
+    // load data
+    $scope.loadData = function()
+    {
+        $scope.deleteAllMarkers();
+        if ($scope.selectedFilters.relatos) {
+            $scope.loadRelatosData();
+        }
+        if ($scope.selectedFilters.ayuda) {
+            $scope.loadAyudaData();
+        }
+    }
+    $scope.loadData();
+
+
+
+    $scope.onFilterClick = function(filter)
+    {
+        $scope.selectedFilters[filter] = !$scope.selectedFilters[filter];
+        $scope.loadData();
+    }
+
+
+
+    // categories
+    $scope.selectedCategories = {};
+
+
+
 
 });

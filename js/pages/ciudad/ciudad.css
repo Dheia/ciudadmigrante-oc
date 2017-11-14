@@ -157,7 +157,7 @@ section#ciudad-map > aside .markers a.green {
 section#ciudad-map > aside .markers a.blue {
 	background-image: url(../../../images/marker-blue.png);
 }
-section#ciudad-map > aside .markers a:hover,
+/*section#ciudad-map > aside .markers a:hover,*/
 section#ciudad-map > aside .markers a.checked {
 	color: #ffffff;
 }

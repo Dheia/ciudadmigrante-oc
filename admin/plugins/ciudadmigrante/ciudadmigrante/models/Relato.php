@@ -51,4 +51,13 @@ class Relato extends Model
             'order' => 'name'
         ],
     ];
+
+
+    public function beforeSave()
+    {
+        if ($this->latlng) {
+            $latlng = json_decode($this->latlng);
+            $this->latlng = $latlng->lat.','.$latlng->lng;
+        }           
+    }
 }

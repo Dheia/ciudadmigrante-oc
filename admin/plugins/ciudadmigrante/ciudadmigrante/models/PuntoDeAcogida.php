@@ -36,14 +36,7 @@ class PuntoDeAcogida extends Model
             $this->latlng = $latlng->lat.','.$latlng->lng;
         }           
     }
-/*
-    public function afterFetch()
-    {
-        if ($this->latlng) {
-            list($lat, $lng) = explode(',', $this->latlng);
-            $this->latlng = '{"lat":'.$lat.',"lng":'.$lng.'}';
-        }
-    }*/
+
 
 
     
