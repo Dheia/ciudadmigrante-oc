@@ -81,8 +81,8 @@ section#ciudad-map > aside .column {
 
 section#ciudad-map > aside .categories {
 	position: relative;
+	padding-left: 79px;
 	overflow-y: auto;
-	padding-left: 79px;;;
 }
 section#ciudad-map > aside .categories a {
 	text-transform: uppercase;

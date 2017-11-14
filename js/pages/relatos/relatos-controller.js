@@ -30,9 +30,9 @@ app.controller('RelatosController', function($scope, $rootScope, $http, $routePa
                         width: '800',
                         playerVars: { 
                             'autoplay': 1,
-                            'controls': 0, 
+                            'controls': 1, 
                             'rel' : 0,
-                            'showinfo' : 0
+                            'showinfo' : 1
                         }
                     });
                 }

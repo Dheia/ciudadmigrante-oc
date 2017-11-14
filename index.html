@@ -11,6 +11,7 @@
 
     <!-- Le styles -->
     <link href="js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/node_modules/simplebar/dist/simplebar.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="js/pages/espacios/espacios.css" rel="stylesheet">
     <link href="js/pages/participa/participa.css" rel="stylesheet">
@@ -56,7 +57,7 @@
 
     <nav id="menu-relatos">
         <a class="toggle">RELATOS</a>
-        <div class="faces">
+        <div class="faces" data-simplebar data-simplebar-autohide="false">
             <a ng-repeat="item in relatosData" href="relatos/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
         </div>
     </nav>
@@ -89,6 +90,7 @@
     
     <!-- Services -->
     <!-- more libraries -->
+    <script src="js/node_modules/simplebar/dist/simplebar.js"></script>
 
 </body>
 </html>
