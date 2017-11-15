@@ -32,7 +32,11 @@ app.controller('RelatosController', function($scope, $rootScope, $http, $routePa
                             'autoplay': 1,
                             'controls': 1, 
                             'rel' : 0,
-                            'showinfo' : 0
+                            'showinfo' : 0,
+                            'cc_load_policy': 1,
+                            'color': 'white',
+                            // 'modestbranding': 1,
+                            'fs': 0
                         }
                     });
                 }
