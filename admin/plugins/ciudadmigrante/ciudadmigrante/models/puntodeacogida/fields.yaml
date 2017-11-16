@@ -1,16 +1,15 @@
+fields:
+    name:
+        label: 'Nombre de la entidad'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    publicado:
+        label: Publicado
+        span: auto
+        type: switch
 tabs:
     fields:
-        name:
-            label: 'Nombre de entidad'
-            oc.commentPosition: ''
-            span: left
-            type: text
-            tab: Datos
-        publicado:
-            label: Publicado
-            span: auto
-            type: switch
-            tab: Datos
         telefono:
             label: Teléfono
             oc.commentPosition: ''

@@ -1,35 +1,34 @@
+fields:
+    name:
+        label: 'Nombre del espacio'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    publicado:
+        label: Publicado
+        span: auto
+        type: switch
 tabs:
     fields:
-        name:
-            label: 'Nombre de espacio'
-            oc.commentPosition: ''
-            span: auto
-            type: text
-            tab: 'Datos de espacio'
-        publicado:
-            label: Publicado
-            span: auto
-            type: switch
-            tab: 'Datos de espacio'
         descripcion:
             label: Descripción
             size: huge
             oc.commentPosition: ''
             span: auto
             type: richeditor
-            tab: 'Datos de espacio'
+            tab: 'Datos del espacio'
         direccion:
             label: Dirección
             type: address-locator
             height: 450px
             width: 100%
             span: right
-            tab: 'Datos de espacio'
+            tab: 'Datos del espacio'
         latlng:
             label: 'Latitud longitud'
             type: location-selector
             span: right
-            tab: 'Datos de espacio'
+            tab: 'Datos del espacio'
         image:
             label: Imagen
             oc.commentPosition: ''
@@ -40,7 +39,7 @@ tabs:
                 extension: auto
             span: left
             type: fileupload
-            tab: 'Datos de espacio'
+            tab: 'Datos del espacio'
         categories:
             label: Categorías
             oc.commentPosition: ''
