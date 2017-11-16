@@ -1,0 +1,4 @@
+title: Espacios
+modelClass: CiudadMigrante\CiudadMigrante\Models\Espacio
+toolbar:
+    buttons: reorder_toolbar

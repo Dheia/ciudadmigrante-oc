@@ -1,0 +1,10 @@
+name: Espacios
+form: $/ciudadmigrante/ciudadmigrante/models/espacio/fields.yaml
+modelClass: CiudadMigrante\CiudadMigrante\Models\Espacio
+defaultRedirect: ciudadmigrante/ciudadmigrante/espacios
+create:
+    redirect: 'ciudadmigrante/ciudadmigrante/espacios/update/:id'
+    redirectClose: ciudadmigrante/ciudadmigrante/espacios
+update:
+    redirect: ciudadmigrante/ciudadmigrante/espacios
+    redirectClose: ciudadmigrante/ciudadmigrante/espacios

@@ -13,13 +13,7 @@
     <div class="list">
 
         <div class="wrap">
-            <a href="javascript:" style="background-image: url(dummy-data/space-1.jpg)"><span>Escuchame</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-2.jpg)"><span>Dialogos sin fronteras</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-3.jpg)"><span>Escuchame</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-4.jpg)"><span>Escuchame</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-5.jpg)"><span>Escuchame</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-6.jpg)"><span>Escuchame</span></a>
-            <a href="javascript:" style="background-image: url(dummy-data/space-7.jpg)"><span>Escuchame</span></a>
+            <a ng-repeat="item in espaciosData" href="espacio/{{ item.id }}" style="background-image: url({{ item.image_url }})"><span>{{ item.name }}</span></a>
         </div>
 
     </div> 

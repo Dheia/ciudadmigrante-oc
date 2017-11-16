@@ -30,3 +30,12 @@
 1.0.11:
     - 'Updated table ciudadmigrante_ciudadmigrante_relato_has_relato'
     - builder_table_update_ciudadmigrante_ciudadmigrante_relato_has_punto_de_acogida.php
+1.0.12:
+    - 'Created table ciudadmigrante_ciudadmigrante_espacios'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_espacios.php
+1.0.13:
+    - 'Created table ciudadmigrante_ciudadmigrante_espacio_has_category'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_espacio_has_category.php
+1.0.14:
+    - 'Created table ciudadmigrante_ciudadmigrante_espacio_images'
+    - builder_table_create_ciudadmigrante_ciudadmigrante_espacio_images.php

@@ -79,7 +79,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
 
     $rootScope.$on('$routeChangeSuccess', function() {
         $rootScope.urlChangeCount++;
-        console.log($rootScope.urlChangeCount);
+        // console.log($rootScope.urlChangeCount);
     });
 
     // fix for displaying html from model field
@@ -93,8 +93,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
         $(this).parent().toggleClass("expanded");
         $(this).parent().find('.faces a').removeClass('selected');
     });
-
-
 
 
     $rootScope.relatosData = null;
@@ -136,11 +134,40 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
 
 
 
+    // espacios data
+
+    $rootScope.espaciosData = null;
+    
+    $rootScope.loadEspaciosData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_espacios,
+            params  : {
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $rootScope.espaciosData = response.data;
+        });
+    }
+
+
+
 });
 
 
 
     
+
+
+$.extend($.easing,
+{
+    easeOutQuart: function (x, t, b, c, d) {
+        return -c * ((t=t/d-1)*t*t*t - 1) + b;
+    }
+});
+
 
 
 

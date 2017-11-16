@@ -265,6 +265,27 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     }
 
 
+
+    // load espacios
+    $scope.espaciosData = null;
+    
+    $scope.loadEspaciosData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.api.urls.get_espacios,
+            params  : {
+                categories: selectedCategoriesToString()
+                // 'lang': $rootScope.language
+            }
+        })
+        .then(function(response) {
+            $scope.espaciosData = response.data;
+            $scope.createMarkers('espacios', $scope.espaciosData);
+        });
+    }
+
+
     function selectedCategoriesToString()
     {
         var categories = [];
@@ -319,6 +340,9 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
         }
         if ($scope.selectedFilters.ayuda || showAll) {
             $scope.loadAyudaData();
+        }
+        if ($scope.selectedFilters.espacios || showAll) {
+            $scope.loadEspaciosData();
         }
     }
     $scope.loadData();

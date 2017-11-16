@@ -94,4 +94,7 @@
   'CiudadMigrante\\CiudadMigrante\\Api\\Relatos' => 'plugins/ciudadmigrante/ciudadmigrante/api/Relatos.php',
   'RainLab\\Translate\\FormWidgets\\MLRichEditor' => 'plugins/rainlab/translate/formwidgets/MLRichEditor.php',
   'CiudadMigrante\\CiudadMigrante\\Api\\Categories' => 'plugins/ciudadmigrante/ciudadmigrante/api/Categories.php',
+  'ciudadmigrante\\ciudadmigrante\\Controllers\\espacios' => 'plugins/ciudadmigrante/ciudadmigrante/controllers/espacios.php',
+  'CiudadMigrante\\CiudadMigrante\\Models\\Espacio' => 'plugins/ciudadmigrante/ciudadmigrante/models/Espacio.php',
+  'CiudadMigrante\\CiudadMigrante\\Api\\Espacios' => 'plugins/ciudadmigrante/ciudadmigrante/api/Espacios.php',
 );
