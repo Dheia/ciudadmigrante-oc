@@ -39,6 +39,10 @@
 		height: <?=$model->marco_y2 - $model->marco_y1?>%;
 	}
 
+	#FileUpload-relationImagesManageFormImage-image .upload-remove-button {
+		display: none;
+	}
+
 
 </style>
 
@@ -60,7 +64,7 @@
 		    class="form-control"
 		    value="<?=$value?>"/>
 
-		<span id="place-for-y1"></span>
+		<span id="place-for-y1"></span> %
 
 	</p>
 
@@ -73,7 +77,7 @@
 		</label>
 	
 		<span id="place-for-x2"></span>
-		<span id="place-for-y2"></span>
+		<span id="place-for-y2"></span> %
 
 	</p>
 
@@ -103,8 +107,9 @@
 
 
 
-	$('#FileUpload-relationImagesManageFormImage-image .icon-container').click(function(event){
+	$('#FileUpload-relationImagesManageFormImage-image .upload-files-container').click(function(event){
 		event.stopPropagation();
+		event.preventDefault();
 		var image = $(this).find('img');
 		var imageLeft = image.offset().left;
 		var imageTop = image.offset().top;
@@ -122,13 +127,23 @@
 			$('input[name="EspacioImage[marco_x1]"]').val(x);
 			$('input[name="EspacioImage[marco_y1]"]').val(y);
 		}
+		addMarco();
 		updateMarco();
-	}).prepend('<div class="marco"></div>');	
-
-	$('#FileUpload-relationImagesManageFormImage-image .upload-object').click(function(event){
-		// event.stopPropagation();
-		// event.preventDefault();
 	});
+
+
+	function addMarco()
+	{
+		if ($('#FileUpload-relationImagesManageFormImage-image .marco')) {
+			$('#FileUpload-relationImagesManageFormImage-image .icon-container').prepend('<div class="marco"></div>');
+		}
+	}	
+	addMarco();
+
+/*	$('#FileUpload-relationImagesManageFormImage-image .upload-files-container').click(function(event){
+		event.stopPropagation();
+		event.preventDefault();
+	});*/
 
 	function updateMarco()
 	{

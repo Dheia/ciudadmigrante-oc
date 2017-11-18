@@ -47,7 +47,7 @@ tabs:
             span: left
             path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_relation_images.htm
             type: partial
-            tab: 'Images'
+            tab: 'Imagenes'
         categories:
             label: Categorías
             oc.commentPosition: ''
