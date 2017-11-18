@@ -97,4 +97,9 @@
   'ciudadmigrante\\ciudadmigrante\\Controllers\\espacios' => 'plugins/ciudadmigrante/ciudadmigrante/controllers/espacios.php',
   'CiudadMigrante\\CiudadMigrante\\Models\\Espacio' => 'plugins/ciudadmigrante/ciudadmigrante/models/Espacio.php',
   'CiudadMigrante\\CiudadMigrante\\Api\\Espacios' => 'plugins/ciudadmigrante/ciudadmigrante/api/Espacios.php',
+  'CiudadMigrante\\CiudadMigrante\\Models\\EspacioImage' => 'plugins/ciudadmigrante/ciudadmigrante/models/EspacioImage.php',
+  'scottbedard\\draganddrop\\Plugin' => 'plugins/scottbedard/draganddrop/Plugin.php',
+  'bedard\\dragdrop\\Plugin' => 'plugins/bedard/dragdrop/Plugin.php',
+  'bedard\\dragdrop\\Controllers\\examples' => 'plugins/bedard/dragdrop/controllers/examples.php',
+  'Bedard\\DragDrop\\Models\\Example' => 'plugins/bedard/dragdrop/models/Example.php',
 );

@@ -1,0 +1,155 @@
+<?php
+
+	//dump($this->formWidget);
+//	dump($model->rotate_y);
+
+?>
+
+<style>
+	.marco-fields {}
+	.marco-fields input {
+		width: 75px;
+		display: inline-block;
+	}
+
+	#FileUpload-relationImagesManageFormImage-image .upload-object {
+		margin: 0px 0;
+		overflow: visible;
+		position: relative;
+		perspective: 500px;
+	}
+
+	#FileUpload-relationImagesManageFormImage-image .icon-container {
+		transform: rotateY(<?=$model->rotate_y?>deg);
+	}
+	#FileUpload-relationImagesManageFormImage-image .icon-container img {
+	}
+
+	#Form-relationImagesManageForm label input[type=radio] {
+		width: auto;
+	}
+
+	#FileUpload-relationImagesManageFormImage-image .icon-container .marco {
+		position: absolute;
+		border: 4px solid #fff000;
+		z-index: 2; 
+		left: <?=$model->marco_x1?>%;
+		top: <?=$model->marco_y1?>%;
+		width: <?=$model->marco_x2 - $model->marco_x1?>%;
+		height: <?=$model->marco_y2 - $model->marco_y1?>%;
+	}
+
+
+</style>
+
+<p><small>Haz click en la imagen para indicar posicion del enlace</small></p>
+
+<div class="marco-fields">
+
+	<p>
+		
+		<label>
+			<input type="radio" name="marco-switch" id="radio-punto-1" checked="checked">
+			Esquina izquierda arriba:
+		</label>	
+
+		<input
+		    type="text"
+		    name="EspacioImage[marco_x1]"
+    		id="<?= $field->getId() ?>"
+		    class="form-control"
+		    value="<?=$value?>"/>
+
+		<span id="place-for-y1"></span>
+
+	</p>
+
+
+	<p>
+		
+		<label>
+			<input type="radio" name="marco-switch" id="radio-punto-2">
+			Esquina derecha abajo: 
+		</label>
+	
+		<span id="place-for-x2"></span>
+		<span id="place-for-y2"></span>
+
+	</p>
+
+</div>
+
+
+<script>
+
+
+	// image rotate
+
+	$('input[name="EspacioImage[rotate_y]"]').on("change click", function(){
+		$('#FileUpload-relationImagesManageFormImage-image .icon-container').css({'transform' : 'rotateY(' + $(this).val() + 'deg)'});
+	});
+
+
+
+	// marco position
+
+	$('#place-for-y1').replaceWith($('#Form-relationImagesManageForm-field-EspacioImage-marco_y1'));
+	$('#place-for-x2').replaceWith($('#Form-relationImagesManageForm-field-EspacioImage-marco_x2'));
+	$('#place-for-y2').replaceWith($('#Form-relationImagesManageForm-field-EspacioImage-marco_y2'));
+
+	$('#Form-relationImagesManageForm-field-EspacioImage-marco_y1-group').remove();
+	$('#Form-relationImagesManageForm-field-EspacioImage-marco_x2-group').remove();
+	$('#Form-relationImagesManageForm-field-EspacioImage-marco_y2-group').remove();
+
+
+
+	$('#FileUpload-relationImagesManageFormImage-image .icon-container').click(function(event){
+		event.stopPropagation();
+		var image = $(this).find('img');
+		var imageLeft = image.offset().left;
+		var imageTop = image.offset().top;
+		var imageWidth = image.width();
+		var imageHeight = image.height();
+
+		var x = parseFloat((event.pageX - imageLeft)/imageWidth*100).toFixed(1);
+		var y = parseFloat((event.pageY - imageTop)/imageHeight*100).toFixed(1);
+
+		if ($('#radio-punto-2').is(':checked')) {
+			$('input[name="EspacioImage[marco_x2]"]').val(x);
+			$('input[name="EspacioImage[marco_y2]"]').val(y);
+		}
+		else {
+			$('input[name="EspacioImage[marco_x1]"]').val(x);
+			$('input[name="EspacioImage[marco_y1]"]').val(y);
+		}
+		updateMarco();
+	}).prepend('<div class="marco"></div>');	
+
+	$('#FileUpload-relationImagesManageFormImage-image .upload-object').click(function(event){
+		// event.stopPropagation();
+		// event.preventDefault();
+	});
+
+	function updateMarco()
+	{
+		var x1 = $('input[name="EspacioImage[marco_x1]"]').val();
+		var y1 = $('input[name="EspacioImage[marco_y1]"]').val();
+		var x2 = $('input[name="EspacioImage[marco_x2]"]').val();
+		var y2 = $('input[name="EspacioImage[marco_y2]"]').val();
+
+		$('#FileUpload-relationImagesManageFormImage-image .icon-container .marco')
+			.css('left', x1 + '%')
+			.css('top', y1 + '%')
+			.css('width', (x2 - x1) + '%')
+			.css('height', (y2 - y1) + '%');
+	}
+
+	$('input[name="EspacioImage[marco_x1]"]').change(function(){
+		updateMarco();
+	});
+	// $('input[name="EspacioImage[marco_x1]"]').change(updateMarco);
+	// $('input[name="EspacioImage[marco_y2]"]').change(updateMarco);
+	// $('input[name="EspacioImage[marco_x2]"]').change(updateMarco);
+
+
+</script>

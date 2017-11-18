@@ -1,0 +1,22 @@
+columns:
+    sort_order:
+        label: Orden
+        type: number
+        sortable: false
+    image:
+        label: Imagen
+        sortable: false
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_image_column.htm
+    rotate_y:
+        label: Rotacion
+        type: number
+        sortable: false
+    translate_y:
+        label: 'Transladar'
+        type: number
+        sortable: false
+    z_index:
+        label: 'eje Z'
+        type: number
+        sortable: false

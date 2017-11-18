@@ -1,0 +1,53 @@
+fields:
+    sort_order:
+        label: Orden
+        oc.commentPosition: ''
+        span: left
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_sort_order_field.htm
+    rotate_y:
+        label: 'Rotacion [grados]'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+    image:
+        label: Imagen
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    translate_y:
+        label: 'Transladar abajo [%]'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+    z_index:
+        label: 'Orden en eje Z'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+    marco_url:
+        label: 'URL del enlace'
+        oc.commentPosition: ''
+        span: right
+        type: text
+        comment: 'URL sin nombre de dominio y sin barra, ejemplo: relatos/6'
+    marco_x1:
+        label: 'Posición del enlace'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_marco_field.htm
+    marco_y1:
+        type: text
+    marco_x2:
+        type: text
+    marco_y2:
+        type: text

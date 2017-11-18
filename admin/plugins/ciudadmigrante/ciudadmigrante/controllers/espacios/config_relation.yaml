@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+images:
+    label: Imagen
+    view:
+        list: $/ciudadmigrante/ciudadmigrante/models/espacioimage/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/ciudadmigrante/ciudadmigrante/models/espacioimage/fields.yaml
+        list: $/ciudadmigrante/ciudadmigrante/models/espacioimage/columns.yaml
+        recordsPerPage: 20

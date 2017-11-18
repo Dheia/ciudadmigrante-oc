@@ -47,6 +47,14 @@ class Espacio extends Model
         ],
     ];
 
+    public $hasMany = [
+        'images' => [
+            'CiudadMigrante\CiudadMigrante\Models\EspacioImage', 
+            'order' => 'sort_order asc',
+            'delete' => true
+        ]
+    ];
+
 
     public function beforeSave()
     {

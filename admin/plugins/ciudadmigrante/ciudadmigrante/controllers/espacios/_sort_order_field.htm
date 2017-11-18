@@ -1,0 +1,15 @@
+<?php
+
+    if (!$value) {
+        $value = $model->getNextSortOrder($this->params[0]);
+    }
+
+?>
+
+
+<input
+    type="number"
+    id="<?= $field->getId() ?>"
+    name="<?= $field->getName() ?>"
+    class="form-control"
+    value="<?=$value?>"/>

@@ -38,7 +38,7 @@
                 </button>
 
                 <span class="btn-text">
-                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('ciudadmigrante/ciudadmigrante/espacios') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('ciudadmigrante/ciudadmigrante/relatos') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
                 </span>
             </div>
         </div>
@@ -46,6 +46,7 @@
         <div class="layout-row">
             <?= $this->formRender() ?>
         </div>
+
     <?= Form::close() ?>
 
 <?php else: ?>

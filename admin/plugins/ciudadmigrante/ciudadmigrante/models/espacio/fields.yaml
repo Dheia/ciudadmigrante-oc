@@ -1,4 +1,7 @@
 fields:
+#    buttons:
+#        type: partial
+#        path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_page_toolbar.htm
     name:
         label: 'Nombre del espacio'
         oc.commentPosition: ''
@@ -40,6 +43,11 @@ tabs:
             span: left
             type: fileupload
             tab: 'Datos del espacio'
+        images:
+            span: left
+            path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_relation_images.htm
+            type: partial
+            tab: 'Images'
         categories:
             label: Categorías
             oc.commentPosition: ''
