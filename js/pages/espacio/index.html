@@ -2,7 +2,7 @@
 <section id="espacio-images">
     
     <span ng-repeat="item in espaciosData[id].images" id="image-{{ $index }}" class="item" style="transform: translateY({{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg); z-index: {{ item.z_index }};">
-        <a ng-show="item['marco_x1']" class="marker" href="{{ item['marco_url'] }}" style="
+        <a ng-show="item['marco_url']" class="marker" href="{{ item['marco_url'] }}" style="
             left: {{ item['marco_x1'] }}%;
             top: {{ item['marco_y1'] }}%;
             width: {{ item['marco_x2'] - item['marco_x1'] }}%;
