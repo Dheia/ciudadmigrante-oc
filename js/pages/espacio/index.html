@@ -1,13 +1,12 @@
 
 <section id="espacio-images">
     
-    <span ng-repeat="item in espaciosData[id].images" id="image-{{ $index }}" class="item" style="transform: translateY(10%) rotateY(20deg); z-index: 1;">
-        <a ng-show="item.image['marco_x1']" class="marker" href="{{ item.image['marco_url'] }}" style="
-            top: {{ item.image['marco_x1'] }}%;
-            left: {{ item.image['marco_y1'] }}%;
-            width: {{ item.image['marco_x2'] - item.image['marco_x1'] }}%;
-            height: {{ item.image['marco_y2'] - item.image['marco_y1'] }}%;
-            z-index: {{ item.image['z_index'] }};"></a>
+    <span ng-repeat="item in espaciosData[id].images" id="image-{{ $index }}" class="item" style="transform: translateY({{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg); z-index: {{ item.z_index }};">
+        <a ng-show="item['marco_x1']" class="marker" href="{{ item.image['marco_url'] }}" style="
+            left: {{ item['marco_x1'] }}%;
+            top: {{ item['marco_y1'] }}%;
+            width: {{ item['marco_x2'] - item['marco_x1'] }}%;
+            height: {{ item['marco_y2'] - item['marco_y1'] }}%;"></a>
         <img ng-click="scrollTo('image-' + $index)" src="{{ item.image.path }}" alt="">
     </span>
     
