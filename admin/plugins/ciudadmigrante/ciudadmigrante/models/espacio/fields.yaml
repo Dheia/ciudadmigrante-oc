@@ -1,7 +1,4 @@
 fields:
-#    buttons:
-#        type: partial
-#        path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_page_toolbar.htm
     name:
         label: 'Nombre del espacio'
         oc.commentPosition: ''
@@ -46,8 +43,17 @@ tabs:
         images:
             span: left
             path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_relation_images.htm
+            context:
+                - update
             type: partial
-            tab: 'Imagenes'
+            tab: Imagenes
+        images_readonly:
+            label: 'Guarda los cambios para añadir imagenes'
+            span: auto
+            type: section
+            tab: Imagenes
+            context:
+                - create
         categories:
             label: Categorías
             oc.commentPosition: ''
