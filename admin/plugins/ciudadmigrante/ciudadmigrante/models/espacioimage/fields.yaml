@@ -27,12 +27,14 @@ fields:
         span: right
         type: partial
         path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+        comment: 'pon valor negativo para transladar arriba'
     z_index:
         label: 'Orden en eje Z'
         oc.commentPosition: ''
         span: right
         type: partial
         path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+        comment: 'imagen con Z-index mayor tapa la con Z-index menor'
     marco_url:
         label: 'URL del enlace'
         oc.commentPosition: ''
