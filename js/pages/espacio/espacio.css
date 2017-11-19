@@ -20,9 +20,20 @@ body.page-espacio #menu-1 .back {
 	overflow-x: auto;;
 	overflow-y: hidden;;
 	white-space: nowrap;;
-	perspective: 500px;
-	padding: 0 20vw 0 15vw;
+	perspective: 500px;;
 	position: relative;
+}
+#espacio-images:before {
+	content: '';
+	display: inline-block;
+	width: 15vw;
+	height: 1px;
+}
+#espacio-images:after {
+	content: '';
+	display: inline-block;
+	width: 20vw;
+	height: 1px;
 }
 #espacio-images .item {
 	display: inline-block;
