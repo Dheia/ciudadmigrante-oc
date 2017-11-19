@@ -150,7 +150,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
         .then(function(response) {
             $rootScope.espaciosData = response.data;
         });
-    }
+    };
+    $rootScope.loadEspaciosData();
 
 
 

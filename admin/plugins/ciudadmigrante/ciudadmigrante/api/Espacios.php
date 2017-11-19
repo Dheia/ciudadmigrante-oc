@@ -19,6 +19,7 @@ class Espacios extends Controller
 
         $query = Espacio::where('publicado', '1')
                         ->with('image')
+                        ->with('images.image')
                         ->orderBy('sort_order', 'asc');
 
         if ($categories) {
@@ -35,7 +36,7 @@ class Espacios extends Controller
         if ($result) foreach ($result as $item) {           
             if ($item->image) {
                 $item->image_url = $item->image->getThumb(null,null);
-            }
+            }       
             
             $return[$item->id] = $item;
         }
