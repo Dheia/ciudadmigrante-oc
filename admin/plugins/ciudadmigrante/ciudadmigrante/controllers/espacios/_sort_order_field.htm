@@ -1,7 +1,12 @@
 <?php
 
     if (!$value) {
-        $value = $model->getNextSortOrder($this->params[0]);
+    	if ($this->params) {
+    		$value = $model->getNextSortOrder($this->params[0]);
+    	}
+        else {
+        	$value = 1;
+        }
     }
 
 ?>
