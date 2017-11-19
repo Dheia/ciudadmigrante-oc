@@ -6,7 +6,7 @@ fields:
         type: partial
         path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_sort_order_field.htm
     rotate_y:
-        label: 'Rotacion [grados]'
+        label: 'Rotacion Y [grados]'
         oc.commentPosition: ''
         span: right
         type: partial
@@ -22,12 +22,11 @@ fields:
         span: left
         type: fileupload
     translate_y:
-        label: 'Transladar abajo [%]'
+        label: 'Transladar Y [%] (abajo)'
         oc.commentPosition: ''
         span: right
         type: partial
         path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
-        comment: 'usa valor negativo para transladar arriba'
     z_index:
         label: 'Orden en eje Z'
         oc.commentPosition: ''
