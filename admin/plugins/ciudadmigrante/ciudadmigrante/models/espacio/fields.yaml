@@ -40,6 +40,18 @@ tabs:
             span: left
             type: fileupload
             tab: 'Datos del espacio'
+        button_title:
+            label: 'Titulo del botón'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'Datos del espacio'
+        button_url:
+            label: 'URL del botón'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'Datos del espacio'
         images:
             span: left
             path: $/ciudadmigrante/ciudadmigrante/controllers/espacios/_relation_images.htm
