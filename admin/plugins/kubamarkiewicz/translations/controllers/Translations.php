@@ -23,6 +23,7 @@ class Translations extends Controller
         parent::__construct();
 
         $this->addCss('/plugins/kubamarkiewicz/translations/assets/css/styles.css');
+        BackendMenu::setContext('KubaMarkiewicz.Translations', 'main-menu-translations');
     }
 
 
