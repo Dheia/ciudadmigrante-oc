@@ -1,0 +1,115 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>">Translations</a></li>
+        <li><?=$section?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+
+<section id="section-translations">
+	
+
+	<aside>
+		
+		<h4>Sections</h4>
+
+		<?php if($sections) foreach($sections as $key => $children) : ?>
+
+			<?php $path = $key; ?>
+
+			<p><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>/<?=$path?>" class="<?=$path==$section ? 'selected' : ''?>"><i class="icon-file-text-o"></i> <?=$key?></a></p>
+
+			<?php if($children) foreach($children as $key_2 => $children_2) : ?>
+
+				<?php $path = $key.'.'.$key_2; ?>
+
+				<p class="depth-1"><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>/<?=$path?>" class="<?=$path==$section ? 'selected' : ''?>"><i class="icon-file-text-o"></i> <?=$key_2?></a></p>
+
+				<?php if($children_2) foreach($children_2 as $key_3 => $children_3) : ?>
+
+					<?php $path = $key.'.'.$key_2.'.'.$key_3; ?>
+
+					<p class="depth-2"><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>/<?=$path?>" class="<?=$path==$section ? 'selected' : ''?>"><i class="icon-file-text-o"></i> <?=$key_3?></a></p>
+
+					<?php if($children_3) foreach($children_3 as $key_4 => $children_4) :  ?>
+
+						<?php $path = $key.'.'.$key_2.'.'.$key_3.'.'.$key_4; ?>
+
+						<p class="depth-3"><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>/<?=$path?>" class="<?=$path==$section ? 'selected' : ''?>"><i class="icon-file-text-o"></i> <?=$key_4?></a></p>
+
+					<?php endforeach ?>	
+
+				<?php endforeach ?>	
+
+			<?php endforeach ?>	
+
+		<?php endforeach ?>
+
+	</aside>	
+
+
+	<main>
+
+		<div id="language-switch">
+			<small>LANGUAGE</small>
+			<select>
+				<?php if ($languages) foreach($languages as $locale => $label) : ?>
+					<option value="<?=$locale?>" <?=$locale==$language ? 'selected' : ''?>><?=$label?></option>
+				<?php endforeach ?>
+			</select>
+		</div>
+
+
+
+		<h3>Translate section</h3>
+		<h2><?=$section?></h2>
+
+		<?php if($items) : ?>
+
+		    <?= Form::open(['class' => 'layout']) ?>
+
+		        <div class="form-buttons">
+		            <div class="loading-indicator-container">
+		                <button
+		                    type="submit"
+		                    data-request="onSave"
+		                    data-request-data="redirect:0"
+		                    data-hotkey="ctrl+s, cmd+s"
+		                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+		                    class="btn btn-primary">
+		                    <?= e(trans('backend::lang.form.save')) ?>
+		                </button>
+		            </div>
+		        </div>
+
+		        <div class="layout-row">
+
+		        	<?= $form->render() ?>
+
+		        </div>
+	        
+	    	<?= Form::close() ?>
+
+	    <?php else: ?>
+
+	    	<p><small>No translations in this section.</small></p>
+
+	    <?php endif ?>
+
+	</main>	
+
+
+</section>
+
+
+<script>
+	
+	$(function(){
+
+		$("#language-switch select").change(function(){
+			window.location = '<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>/<?=$section?>/' + $(this).val();
+		});
+
+	});
+</script>
+

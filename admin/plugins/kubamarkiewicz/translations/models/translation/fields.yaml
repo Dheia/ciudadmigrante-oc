@@ -1,0 +1,12 @@
+fields:
+    code:
+        label: Code
+        oc.commentPosition: ''
+        span: left
+        type: text
+    translation:
+        label: Translation
+        size: ''
+        oc.commentPosition: ''
+        span: left
+        type: textarea

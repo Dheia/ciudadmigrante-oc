@@ -2,11 +2,78 @@
 var app = angular.module("myApp", [
     "ngRoute",
     "ngSanitize",
-    "ngAnimate"
+    "ngAnimate",
+    'pascalprecht.translate'
 ]);
 
 // load configuration from files
 app.constant('config', window.config);
+
+
+
+
+// TRANSLATIONS ===============================================
+
+app.config(['$translateProvider', function ($translateProvider) {
+
+    // try to find out preferred language by yourself
+    // $translateProvider.determinePreferredLanguage();
+
+    // choose language form local storage or default
+
+    if (!window.localStorage.locale) {
+        window.localStorage.locale = config.defaultLanguage;
+    }
+    $translateProvider.preferredLanguage(window.localStorage.locale);
+
+    // load default language Synchronously
+    $.get({
+        url: config.api.getTranslations,
+        data: ['lang', window.localStorage.locale],
+        async: false,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function (json) {
+            $translateProvider.translations(window.localStorage.locale, json);
+        }
+    });
+    
+    $translateProvider.useUrlLoader(config.api.urls.getTranslations);
+    $translateProvider.useSanitizeValueStrategy(null);
+    // tell angular-translate to use your custom handler
+    $translateProvider.useMissingTranslationHandler('missingTranslationHandlerFactory');
+}]);
+
+// define missing Translation Handler
+app.factory('missingTranslationHandlerFactory', function () {
+    var called = [];
+    return function (translationID) {
+        // use last element from code as default translation
+        var translation = translationID.substr(translationID.lastIndexOf(".") + 1);
+
+        var element = $("[translate='" + translationID + "']");
+        if (element && element.html()) {
+            translation = element.html();
+        }
+        
+        if (!called[translationID]) {
+            // call API
+            $.post({
+                url     : config.api.urls.missingTranslation,
+                data    : {
+                    code : translationID,
+                    type : element.attr('translate-type'),
+                    translation : translation
+                }
+            });
+        }
+        
+        called[translationID] = true;
+
+        return translation;
+    };
+});
+
 
 
 // ROUTING ===============================================
@@ -49,7 +116,7 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location, $timeout) {
+app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route) {
 
     $('body').removeClass('loading');
 
@@ -74,7 +141,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
             return (className.match (/(^|\s)page-\S+/g) || []).join(' ');
         })
         .addClass("page-"+$rootScope.pageSlug);
-        
+
+        $rootScope.setMetadata();
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
@@ -86,6 +154,30 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
     $rootScope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);
     };
+
+
+    // choose language
+    $rootScope.setLanguage = function(language)
+    {
+        // save laguange chioce in local storage
+        $rootScope.language = $window.localStorage.language = language;
+        $translate.use(language);
+        $('html').attr('lang', language);
+        $('#menu-1 .languages a').removeClass('selected');
+        $('#menu-1 .languages a[data-language=' + language + ']').addClass('selected');
+    }
+    $rootScope.setLanguage($window.localStorage.language);
+
+
+
+    // language menu
+    $('#menu-1 .languages a').click(function(){
+        $rootScope.setLanguage($(this).data('language'));
+        // $route.reload();
+        $rootScope.loadRelatosData();
+        $rootScope.loadEspaciosData();
+        $rootScope.setMetadata();
+    });
 
 
     // relatos
@@ -152,6 +244,25 @@ app.run(function($rootScope, $sce, $http, $location, $timeout) {
         });
     };
     $rootScope.loadEspaciosData();
+
+
+
+
+
+    // set meta data
+    $rootScope.setMetadata = function()
+    {
+/*        var pageSlug = $rootScope.pageSlug;
+        if (pageSlug == 'home') {
+            pageSlug = '';
+        }
+        var page = $rootScope.pagesData[pageSlug];
+
+        if (page) {
+            document.title = page.meta_title;
+            document.querySelector('meta[name=description]').setAttribute('content', page.meta_description);
+        }*/
+    }
 
 
 

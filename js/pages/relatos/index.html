@@ -5,9 +5,9 @@
 	<aside>
 		<div class="handle"></div>
 
-		<a href="index.html" class="logo" title="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"><img src="images/logo_smaller_es.png" alt="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"></a>
+		<a href="index.html" class="logo" title="{{ 'textos comunes.logo' | translate }}"><img src="images/logo_smaller_es.png" alt="{{ 'textos comunes.logo' | translate }}"></a>
 			
-		<h2>RELATOS</h2>
+		<h2>{{ 'relatos.RELATOS' | translate }}</h2>
 		<h1>{{ relatoData.name }}</h1>
 
 		<div class="scroll" data-simplebar data-simplebar-autohide="false">
@@ -23,13 +23,13 @@
 			<br>
 			<br>
  -->
-			<h2>Localizar en ciudad</h2>
-			<a href="javascript:">Ver en el mapa</a>
+			<h2 translate="relatos.Localizar en ciudad"></h2>
+			<a href="javascript:" translate="relatos.Ver en el mapa"></a>
 
 			<br>
 			<br>
 
-			<h2>Ayuda relacionada</h2>
+			<h2 translate="relatos.Ayuda relacionada"></h2>
 			<div ng-repeat="punto in relatoData.puntos_de_acogida">
 				<a href="javascript:">{{ punto.name }}</a>
 			</div>

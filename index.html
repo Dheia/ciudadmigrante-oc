@@ -25,14 +25,15 @@
 
     <header>
         
-        <a href="espacios" id="logo" title="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"><img src="images/logo.png" alt="Ciudad Migrante. el webdocumentary de la Barcelona solidaria"></a>
+        <a href="espacios" id="logo" title="{{ 'textos comunes.logo' | translate }}"><img src="images/logo.png" alt="{{ 'textos comunes.logo' | translate }}"></a>
 
         <nav id="menu-1">
             <span class="languages">
-                <a href="#">ES</a> 
+                <a href="javascript:" data-language="es">ES</a> 
                 <span class="separator">|</span> 
-                <a href="#">CAT</a>
+                <a href="javascript:" data-language="ca">CAT</a>
             </span>
+
             <span class="share" title="COMPARTIR">
                 <span class="links">
                     <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
@@ -43,11 +44,11 @@
                     <a href="#"><img src="images/mail.png" alt="E-mail"></a>
                 </span>
             </span>
-            <a href="javascript:" ng-click="goBack()" class="back"></a>
+            <a href="javascript:" ng-click="goBack()" class="back" title="{{ 'menu.volver' | translate }}"></a>
         </nav>
 
         <nav id="menu-2">
-             <a href="participa">PARTICIPA</a>
+             <a href="participa">{{ 'menu.PARTICIPA' | translate }}</a>
         </nav>
 
     </header>
@@ -57,7 +58,7 @@
 
 
     <nav id="menu-relatos">
-        <a class="toggle">RELATOS</a>
+        <a class="toggle">{{ 'menu.RELATOS' | translate }}</a>
         <div class="faces" data-simplebar data-simplebar-autohide="false">
             <a ng-repeat="item in relatosData" href="relatos/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
         </div>
@@ -72,6 +73,8 @@
     <script src="js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/node_modules/angular/angular.min.js"></script>
     <script src="js/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="js/node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="js/node_modules/angular-translate/dist/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
     <script src="js/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="js/node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ9dDH5IkSmHc4VbRYXUKhX6p9BlXeWZk"></script>

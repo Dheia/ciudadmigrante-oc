@@ -102,4 +102,8 @@
   'bedard\\dragdrop\\Plugin' => 'plugins/bedard/dragdrop/Plugin.php',
   'bedard\\dragdrop\\Controllers\\examples' => 'plugins/bedard/dragdrop/controllers/examples.php',
   'Bedard\\DragDrop\\Models\\Example' => 'plugins/bedard/dragdrop/models/Example.php',
+  'kubamarkiewicz\\translations\\Plugin' => 'plugins/kubamarkiewicz/translations/Plugin.php',
+  'kubamarkiewicz\\translations\\Controllers\\translations' => 'plugins/kubamarkiewicz/translations/controllers/translations.php',
+  'KubaMarkiewicz\\Translations\\Models\\Translation' => 'plugins/kubamarkiewicz/translations/models/Translation.php',
+  'KubaMarkiewicz\\Translations\\Api\\Translations' => 'plugins/kubamarkiewicz/translations/api/Translations.php',
 );

@@ -213,17 +213,21 @@ body.loading #menu-1 {
 	margin-left: 32px;
 }
 #menu-1 a {
-	color: #ffffff;
+	color: #c7c7c7;
 }
 #menu-1 a:focus, 
 #menu-1 a:active {
 	color: #fef02e;
 }
 #menu-1 .languages {
+	color: #c7c7c7;;
 }
 #menu-1 .languages a,
 #menu-1 .languages span {
 	margin-left: 6px;
+}
+#menu-1 .languages a.selected {
+	color: #ffffff;
 }
 
 #menu-1 .share {

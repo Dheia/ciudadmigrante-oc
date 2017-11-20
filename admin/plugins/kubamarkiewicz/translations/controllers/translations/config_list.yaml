@@ -1,0 +1,14 @@
+title: Translations
+modelClass: KubaMarkiewicz\Translations\Models\Translation
+list: $/kubamarkiewicz/translations/models/translation/columns.yaml
+recordUrl: 'kubamarkiewicz/translations/translations/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: sort_order
+    direction: asc

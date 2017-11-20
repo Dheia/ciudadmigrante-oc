@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table kubamarkiewicz_translations_translations'
+    - builder_table_create_kubamarkiewicz_translations_translations.php
+1.0.3:
+    - 'Updated table kubamarkiewicz_translations_translations'
+    - builder_table_update_kubamarkiewicz_translations_translations.php
+1.0.4:
+    - 'Updated table kubamarkiewicz_translations_translations'
+    - builder_table_update_kubamarkiewicz_translations_translations_2.php
+1.0.5:
+    - 'Updated table kubamarkiewicz_translations_translations'
+    - builder_table_update_kubamarkiewicz_translations_translations_3.php
+1.0.6:
+    - 'Updated table kubamarkiewicz_translations_translations'
+    - builder_table_update_kubamarkiewicz_translations_translations_4.php

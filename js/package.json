@@ -6,6 +6,7 @@
     "angular-animate": "^1.6.6",
     "angular-route": "^1.6.6",
     "angular-sanitize": "^1.6.6",
+    "angular-translate": "^2.16.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "simplebar": "^2.5.0"

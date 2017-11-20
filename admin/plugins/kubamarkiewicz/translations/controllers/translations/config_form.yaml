@@ -1,0 +1,10 @@
+name: Translations
+form: $/kubamarkiewicz/translations/models/translation/fields.yaml
+modelClass: KubaMarkiewicz\Translations\Models\Translation
+defaultRedirect: kubamarkiewicz/translations/translations
+create:
+    redirect: 'kubamarkiewicz/translations/translations/update/:id'
+    redirectClose: kubamarkiewicz/translations/translations
+update:
+    redirect: kubamarkiewicz/translations/translations
+    redirectClose: kubamarkiewicz/translations/translations

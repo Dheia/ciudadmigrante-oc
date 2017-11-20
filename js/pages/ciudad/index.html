@@ -1,14 +1,14 @@
 
 <section id="ciudad-header" class="header-with-background">
     
-    <a href="espacios" class="link-up">ESPACIOS</a>  
+    <a href="espacios" class="link-up">{{ 'menu.ESPACIOS' | translate }}</a>  
 
 </section>
 
 
 <section id="ciudad-map">
 
-	<h1 class="page-title">CIUDAD</h1>
+	<h1 class="page-title">{{ 'ciudad.CIUDAD' | translate }}</h1>
     
 	<aside>
 		<div class="handle"></div>
@@ -27,17 +27,17 @@
 					class="yellow" 
 					ng-class="selectedFilters.relatos ? 'checked' : ''" 
 					ng-click="onFilterClick('relatos')" 
-					>Relatos migrantes</a>
+					translate="ciudad.filtros.Relatos-migrantes">Relatos migrantes</a>
 				<a 
 					class="blue" 
 					ng-class="selectedFilters.ayuda ? 'checked' : ''" 
 					ng-click="onFilterClick('ayuda')" 
-					>Ayuda solidaria</a>
+					translate="ciudad.filtros.Ayuda-solidaria">Ayuda solidaria</a>
 				<a 
 					class="green" 
 					ng-class="selectedFilters.espacios ? 'checked' : ''"
 					ng-click="onFilterClick('espacios')" 
-					>Espacios</a>
+					translate="ciudad.filtros.Espacios">Espacios</a>
 			</div>
 		</div>
 

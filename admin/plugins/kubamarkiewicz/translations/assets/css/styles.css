@@ -1,0 +1,80 @@
+
+#section-translations {
+	display: flex;
+	margin: -20px;
+}
+#section-translations > aside {
+	background-color: #ecf0f1;
+	width: 350px;
+	flex-shrink: 0;
+}
+#section-translations > aside p {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#section-translations > aside a {
+	display: block;
+	padding: 10px 20px;
+	color: inherit;
+}
+#section-translations > aside p.depth-1 a {
+	padding-left: 40px;
+}
+#section-translations > aside p.depth-2 a {
+	padding-left: 60px;
+}
+#section-translations > aside p.depth-3 a {
+	padding-left: 80px;
+}
+#section-translations > aside p.depth-4 a {
+	padding-left: 100px;
+}
+#section-translations > aside p.depth-5 a {
+	padding-left: 120px;
+}
+#section-translations > aside a:hover,
+#section-translations > aside a.selected {
+	background-color: #dddddd;
+	text-decoration: none;
+}
+#section-translations > aside a.selected:after {
+	position: absolute;
+    height: 100%;
+    width: 4px;
+    left: 0;
+    top: 0;
+    background: <?=$secondary_color?>;
+    display: block;
+    content: '';
+}
+#section-translations > aside h4 {
+	padding: 15px 20px;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 12px;
+	margin: 0;
+	color: #666666;
+}
+#section-translations > main {
+	padding: 20px;
+	flex: 1;
+}
+#section-translations > main > h2 {
+	margin:5px 0 30px 0;
+	padding: 0;
+	color: #666666;
+}
+#section-translations > main > h3 {
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	color: #666666;
+}
+
+#language-switch {
+	float: right;
+}
+
