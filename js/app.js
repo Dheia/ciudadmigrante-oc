@@ -287,9 +287,10 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
         function onYoutubeReady() {
 
-            $translate('intro.YoutubeVideoID').then(function (videoId) {
+            $translate('intro.URL de video en YouTube').then(function (videoURL) {
+                console.log(videoURL);
                 var player = new YT.Player('intro-player', {
-                    videoId: videoId,
+                    videoId: youtube_parser(videoURL),
                     height: '600',
                     width: '800',
                     playerVars: { 
@@ -333,5 +334,9 @@ $.extend($.easing,
 });
 
 
-
+function youtube_parser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[7].length==11)? match[7] : false;
+}
 

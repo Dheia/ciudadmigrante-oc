@@ -117,6 +117,7 @@ class Translations extends Controller
 
         foreach ($data as $key => $value) if (!in_array($key, ['_session_key', '_token', 'redirect'])) {
             $key = str_replace('\_', '.', $key);
+            $key = str_replace('_', ' ', $key);
 
             $row = Translation::where('code', $key)->first();
             if ($row) {
