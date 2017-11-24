@@ -201,7 +201,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
                 html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
             }      
             if (itemData.web) {
-                html += '<p class="web"><a href="' + itemData.web + '" target="_blank"></a></p>';
+                html += '<p class="web"><a href="' + itemData.web + '" target="_blank" title="' + itemData.web + '"></a></p>';
             }  
             html += '</div>';
             return html;
