@@ -134,12 +134,14 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
 
 
     $scope.markers = {
-        'relatos':  [],
         'ayuda':    [],
+        'relatos':  [],
         'espacios': []
     };
 
-    $scope.infowindow = new google.maps.InfoWindow({});
+    $scope.infowindow = new google.maps.InfoWindow({
+        maxWidth: 286
+    });
 
     var marker;
 
@@ -178,7 +180,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
                 $scope.openedInfoWindowId = null;
             }
             else {
-                $scope.infowindow.setContent($scope.generateInfowindowContent(item));
+                $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
                 $scope.infowindow.open(map, m);
                 $scope.openedInfoWindowId = type + item.id;
             }
@@ -186,24 +188,49 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     }
 
 
-    $scope.generateInfowindowContent = function(itemData)
+    $scope.generateInfowindowContent = function(itemData, type)
     {
-        var html = '<h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
-        if (itemData.telefono) {
-            html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
+
+        function getContentAyuda(itemData)
+        {
+            var html = '<h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
+            if (itemData.telefono) {
+                html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
+            }
+            if (itemData.email) {
+                html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
+            }      
+            if (itemData.web) {
+                html += '<p class="web"><a href="' + itemData.web + '" target="_blank"></a></p>';
+            }  
+            return html;
         }
-        if (itemData.email) {
-            html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
-        }      
-        if (itemData.web) {
-            html += '<p class="web"><a href="' + itemData.web + '" target="_blank"></a></p>';
-        }        
 
-        // '<a href="javascript:" class="espacio"><img src="dummy-data/infowindow/espacio.jpg" alt=""><h2>Dialogos sin fronteras</h2></a>',
-        // '<a href="javascript:" class="relato"><img src="dummy-data/infowindow/relato.jpg" alt=""></a>' 
 
-        return html;
+        function getContentEspacios(itemData)
+        {
+            return '<a href="espacio/' + itemData.id + '" class="espacio" title="' + itemData.name + '" style="background-image:url(' + itemData.image_url + ')"><h2>' + itemData.name + '</h2></a>';
+        }
+
+
+        function getContentRelatos(itemData)
+        {
+            return '<a href="relatos/' + itemData.id + '" class="relato" title="' + itemData.name + '" style="background-image:url(' + itemData.image_url + ')"></a>';
+        }
+
+
+        switch (type) {
+            case 'ayuda' :      return getContentAyuda(itemData);
+            case 'espacios' :   return getContentEspacios(itemData);
+            case 'relatos' :    return getContentRelatos(itemData);
+        }
+      
     }
+
+
+
+
+
 
 
     $scope.deleteMarkers = function(type) 

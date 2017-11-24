@@ -208,10 +208,12 @@ section#ciudad-map > main {
 }
 .gm-style .gm-style-iw h2 {
 	font-size: 24px;
+	min-width: 262px;;
 }
 .gm-style .gm-style-iw .lead {
 	font-size: 16px;
-	margin-bottom: 4px;
+	margin-bottom: 0;
+	line-height: 130%;
 }
 .gm-style .gm-style-iw .web {
 	text-align: center;
@@ -227,7 +229,11 @@ section#ciudad-map > main {
 }
 .gm-style .gm-style-iw a.relato {
 	display: block;
-	width: 100%;
+	height: 150px;
+	width: 262px;
+	position: relative;;
+	background-size: cover;
+	background-position: center center;
 }
 .gm-style .gm-style-iw a.relato::before {
 	content:"";
@@ -240,13 +246,45 @@ section#ciudad-map > main {
 	height: 50px;
 	background-image:url(../../../images/icon-play.png);
 }
+.gm-style .gm-style-iw a.relato img {
+	max-height: 171px;
+}
+.gm-style .gm-style-iw a.relato h2 {
+	position: absolute;
+	z-index: 1;
+	bottom: 0px;
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+	right: 30px;
+	min-width: 0;;
+}
+.gm-style .gm-style-iw a.espacio {
+	display: block;
+	height: 150px;
+	width: 262px;
+	background-size: cover;
+	background-position: center center;
+}
+.gm-style .gm-style-iw a.espacio::before {
+	content:"";
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50px;
+	height: 50px;
+	background-image:url(../../../images/icon_more_white.png);
+}
 .gm-style .gm-style-iw a.espacio h2 {
 	position: absolute;
 	z-index: 1;
 	bottom: 0px;
 	color: #ffffff;
-	right: 30px;
-	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);;;;;
+	right: 22px;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+	min-width: 0;
+	margin-bottom: 6px;;
 }
 
 /* remove close button */
