@@ -36,7 +36,8 @@ class Espacio extends Model
      * Relations
      */
     public $attachOne = [
-        'image' => 'System\Models\File'
+        'image' => 'System\Models\File',
+        'image_map' => 'System\Models\File'
     ];
     
     public $belongsToMany = [

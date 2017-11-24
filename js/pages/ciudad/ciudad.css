@@ -191,14 +191,16 @@ section#ciudad-map > main {
 
 /* google maps InfoWindow */
 .gm-style .gm-style-iw {
-	width: 294px;
-	top: 14px !important;
-	left: 15px !important;;
+	width: 286px !important;
+	left: 19px !important;;
 	background-color: #fff;
 	color: #2d343d;
 	font-size: 14px;
-	padding: 12px 12px 4px 12px;
 	z-index: 1;
+	padding: 8px 8px 2px 8px;
+	top: 14px !important;
+	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: 500;;;
 }
 .gm-style .gm-style-iw > div:first-child {
 	max-width: 100% !important;
@@ -208,17 +210,21 @@ section#ciudad-map > main {
 }
 .gm-style .gm-style-iw h2 {
 	font-size: 24px;
-	min-width: 262px;;
+	font-weight: bold;;;
+}
+.gm-style .gm-style-iw p {
+	margin-bottom: 6px;
 }
 .gm-style .gm-style-iw .lead {
 	font-size: 16px;
 	margin-bottom: 0;
 	line-height: 130%;
+	font-weight: bold;
 }
 .gm-style .gm-style-iw .web {
 	text-align: center;
-	margin-bottom: 2px;
 	margin-top: 6px;
+	margin-bottom: 0px;
 }
 .gm-style .gm-style-iw .web a {
 	display: inline-block;
@@ -227,10 +233,16 @@ section#ciudad-map > main {
 	background-image: url('../../../images/icon_link.png');
 	background-repeat: no-repeat;
 }
+.gm-style .gm-style-iw .ayuda-content {
+	padding: 4px 4px 0 4px;
+}
+.gm-style .gm-style-iw .ayuda-content h2 {
+	min-width: 262px;
+}
 .gm-style .gm-style-iw a.relato {
 	display: block;
 	height: 150px;
-	width: 262px;
+	width: 270px;
 	position: relative;;
 	background-size: cover;
 	background-position: center center;
@@ -261,7 +273,7 @@ section#ciudad-map > main {
 .gm-style .gm-style-iw a.espacio {
 	display: block;
 	height: 150px;
-	width: 262px;
+	width: 270px;
 	background-size: cover;
 	background-position: center center;
 }

@@ -1,15 +1,15 @@
 
 /* show header elements */
 
-body.page-relatos #menu-1 .share {
+body.page-relato #menu-1 .share {
 	display: inline-block; 
 }
-body.page-relatos #menu-1 .back {
+body.page-relato #menu-1 .back {
 	display: inline-block; 
 }
 
 
-section#relatos-video > aside {
+section#relato-video > aside {
 	position: absolute;
 	background-color: rgba(44,51,60,0.87);
 	height: 100%;
@@ -23,10 +23,10 @@ section#relatos-video > aside {
 	flex-direction: column;
 	max-width: calc(100% - 50px);;;;
 }
-section#relatos-video > aside.expanded {
+section#relato-video > aside.expanded {
 	transform: translateX(0);
 }
-section#relatos-video > aside .handle {
+section#relato-video > aside .handle {
 	background-color: rgba(44,51,60,0.87);
 	width: 50px;
 	height: 100px;
@@ -40,7 +40,7 @@ section#relatos-video > aside .handle {
 	justify-content: flex-start;;
 	align-items: center;
 }
-section#relatos-video > aside .handle::before {
+section#relato-video > aside .handle::before {
 	content: "";
 	width: 34px;
 	height: 34px;
@@ -49,28 +49,28 @@ section#relatos-video > aside .handle::before {
 	background-image: url(../../../images/ico_mas_lateral.png);
 	background-repeat: no-repeat;
 }
-section#relatos-video > aside.expanded .handle::before {
+section#relato-video > aside.expanded .handle::before {
 	background-image: url(../../../images/ico_menos_lateral.png);
 }
 
-section#relatos-video > aside .logo {
+section#relato-video > aside .logo {
 	display: block;
 	margin-bottom: 40px;
 }
-section#relatos-video > aside h1 {
+section#relato-video > aside h1 {
 	padding-right: 45px;
 }
-section#relatos-video > aside h2 {
+section#relato-video > aside h2 {
 }
-section#relatos-video > aside .scroll {
+section#relato-video > aside .scroll {
 	overflow-y: auto;
 	margin-right: 45px;
 	margin-bottom: 50px;
 }
-section#relatos-video > aside .description {
+section#relato-video > aside .description {
 }
 
-section#relatos-video > main {
+section#relato-video > main {
 	background-color: #000000;
 }
 

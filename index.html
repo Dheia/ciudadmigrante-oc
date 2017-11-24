@@ -17,7 +17,7 @@
     <link href="js/pages/ciudad/ciudad.css" rel="stylesheet">
     <link href="js/pages/espacio/espacio.css" rel="stylesheet">
     <link href="js/pages/participa/participa.css" rel="stylesheet">
-    <link href="js/pages/relatos/relatos.css" rel="stylesheet">
+    <link href="js/pages/relato/relato.css" rel="stylesheet">
 
 	<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -80,7 +80,7 @@
     <nav id="menu-relatos">
         <a class="toggle">{{ 'menu.RELATOS' | translate }}</a>
         <div class="faces" data-simplebar data-simplebar-autohide="false">
-            <a ng-repeat="item in relatosData" href="relatos/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
+            <a ng-repeat="item in relatosData" href="relato/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
         </div>
     </nav>
 		
@@ -110,7 +110,7 @@
     <script src="js/pages/espacios/espacios-controller.js"></script>
     <script src="js/pages/participa/participa-controller.js"></script>
     <script src="js/pages/ciudad/ciudad-controller.js"></script>
-    <script src="js/pages/relatos/relatos-controller.js"></script>
+    <script src="js/pages/relato/relato-controller.js"></script>
     <script src="js/pages/espacio/espacio-controller.js"></script>
     
     <!-- Services -->

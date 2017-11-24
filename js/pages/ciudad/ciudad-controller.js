@@ -193,7 +193,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
 
         function getContentAyuda(itemData)
         {
-            var html = '<h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
+            var html = '<div class="ayuda-content"><h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
             if (itemData.telefono) {
                 html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
             }
@@ -203,19 +203,20 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             if (itemData.web) {
                 html += '<p class="web"><a href="' + itemData.web + '" target="_blank"></a></p>';
             }  
+            html += '</div>';
             return html;
         }
 
 
         function getContentEspacios(itemData)
         {
-            return '<a href="espacio/' + itemData.id + '" class="espacio" title="' + itemData.name + '" style="background-image:url(' + itemData.image_url + ')"><h2>' + itemData.name + '</h2></a>';
+            return '<a href="espacio/' + itemData.id + '" class="espacio" title="' + itemData.name + '" style="background-image:url(' + itemData.image_map_url + ')"><h2>' + itemData.name + '</h2></a>';
         }
 
 
         function getContentRelatos(itemData)
         {
-            return '<a href="relatos/' + itemData.id + '" class="relato" title="' + itemData.name + '" style="background-image:url(' + itemData.image_url + ')"></a>';
+            return '<a href="relato/' + itemData.id + '" class="relato" title="' + itemData.name + '" style="background-image:url(' + itemData.image_map_url + ')"></a>';
         }
 
 

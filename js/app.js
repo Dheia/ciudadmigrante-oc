@@ -93,9 +93,9 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'CiudadController', 
             templateUrl: 'js/pages/ciudad/index.html' 
         })      
-        .when('/relatos/:id', { 
-            controller: 'RelatosController', 
-            templateUrl: 'js/pages/relatos/index.html' 
+        .when('/relato/:id', { 
+            controller: 'RelatoController', 
+            templateUrl: 'js/pages/relato/index.html' 
         })       
         .when('/espacio/:id', { 
             controller: 'EspacioController', 

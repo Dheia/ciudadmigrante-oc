@@ -1,9 +1,9 @@
-app.controller('RelatosController', function($scope, $rootScope, $http, $routeParams, config) {  
+app.controller('RelatoController', function($scope, $rootScope, $http, $routeParams, config) {  
 
 
 
 
-    $("section#relatos-video aside .handle").click(function(){
+    $("section#relato-video aside .handle").click(function(){
         $(this).parent().toggleClass('expanded');
     });
 

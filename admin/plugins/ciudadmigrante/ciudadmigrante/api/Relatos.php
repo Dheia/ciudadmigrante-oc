@@ -19,6 +19,7 @@ class Relatos extends Controller
 
         $query = Relato::where('publicado', '1')
                         ->with('image')
+                        ->with('image_map')
                         ->with('puntos_de_acogida')
                         ->orderBy('sort_order', 'asc');
 
@@ -36,6 +37,9 @@ class Relatos extends Controller
         if ($result) foreach ($result as $item) {           
             if ($item->image) {
                 $item->image_url = $item->image->getThumb(null,360);
+            }         
+            if ($item->image_map) {
+                $item->image_map_url = $item->image_map->getThumb(540,null);
             }
 
             // find youtube id

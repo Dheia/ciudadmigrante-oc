@@ -46,6 +46,17 @@ tabs:
             span: left
             type: fileupload
             tab: 'Datos del relato'
+        image_map:
+            label: Imagen del globo
+            oc.commentPosition: ''
+            mode: image
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: right
+            type: fileupload
+            tab: 'Datos del relato'
         categories:
             label: Categorías
             oc.commentPosition: ''
