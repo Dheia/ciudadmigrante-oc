@@ -6,7 +6,7 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: 'Ciudad migrante'
+        label: 'CIUDAD MIGRANTE'
         url: ciudadmigrante/ciudadmigrante/puntosdeacogida
         icon: icon-building-o
         order: '1'
