@@ -293,10 +293,11 @@ section#ciudad-map > main {
 	z-index: 1;
 	bottom: 0px;
 	color: #ffffff;
-	right: 22px;
-	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+	right: 19px;
 	min-width: 0;
-	margin-bottom: 6px;;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+	margin-bottom: 5px;
+	font-weight: 500;;
 }
 
 /* remove close button */
