@@ -163,20 +163,21 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $rootScope.language = $window.localStorage.language = language;
         $translate.use(language);
         $('html').attr('lang', language);
-        $('#menu-1 .languages a').removeClass('selected');
-        $('#menu-1 .languages a[data-language=' + language + ']').addClass('selected');
+        $('.languages a').removeClass('selected');
+        $('.languages a[data-language=' + language + ']').addClass('selected');
     }
     $rootScope.setLanguage($window.localStorage.language);
 
 
 
     // language menu
-    $('#menu-1 .languages a').click(function(){
+    $('.languages a').click(function(){
         $rootScope.setLanguage($(this).data('language'));
         // $route.reload();
         $rootScope.loadRelatosData();
         $rootScope.loadEspaciosData();
         $rootScope.setMetadata();
+        console.log('lang');
     });
 
 
@@ -224,8 +225,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
 
 
-
-
     // espacios data
 
     $rootScope.espaciosData = null;
@@ -265,6 +264,59 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
 
 
+
+    // intro
+
+    $rootScope.closeIntro = function() 
+    {
+        $('#intro').addClass('closed');
+        $timeout(function(){
+            $('#intro').remove();
+        }, 1000);
+    }
+    if ($window.sessionStorage.intro !== 'hide') { // show intro
+        $('#intro').addClass('show');
+        // create youtube player
+        if (!YT) {
+            $window.onYouTubePlayerAPIReady = onYoutubeReady;
+        } else if (YT.loaded) {
+            onYoutubeReady();
+        } else {
+            YT.ready(onYoutubeReady);
+        }
+
+        function onYoutubeReady() {
+
+            $translate('intro.YoutubeVideoID').then(function (videoId) {
+                var player = new YT.Player('intro-player', {
+                    videoId: videoId,
+                    height: '600',
+                    width: '800',
+                    playerVars: { 
+                        'autoplay': 1,
+                        'controls': 0, 
+                        'rel' : 0,
+                        'showinfo' : 0,
+                        'cc_load_policy': 0,
+                        'color': 'white',
+                        // 'modestbranding': 1,
+                        'fs': 0
+                    },
+                    events: {
+                        'onStateChange': onStateChange
+                    }
+                });
+            });
+            
+        }
+
+        function onStateChange(state) {
+            if (state.data === YT.PlayerState.ENDED) {
+                $rootScope.closeIntro(); 
+            }
+        }
+    }
+    $window.sessionStorage.intro = 'hide';
 
 });
 

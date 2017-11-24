@@ -110,7 +110,8 @@ img {
 }
 
 
-/* mobile */
+/* responsive */
+
 @media screen and (max-width: 1200px) {
 
 	body {
@@ -184,6 +185,31 @@ body > main.ng-enter 	{
 /* Components	               		           */
 /***********************************************/
 
+
+body.loading .preload,
+.translate-cloak {
+	visibility: hidden;
+}
+
+
+.videoWrapper {
+	width: 100%;
+	position: relative;
+	height: 100vh;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+}
+
+
 #logo {
 	display: none;
 	position: absolute;
@@ -201,9 +227,6 @@ body > main.ng-enter 	{
 	right: 22px;
 	text-align: right;;
 }
-body.loading #menu-1 {
-	display: none;
-}
 #menu-1 a, 
 #menu-1 span,
 #menu-1 a:hover, 
@@ -217,17 +240,18 @@ body.loading #menu-1 {
 }
 #menu-1 a:focus, 
 #menu-1 a:active {
-	color: #fef02e;
-}
-#menu-1 .languages {
-	color: #c7c7c7;;
-}
-#menu-1 .languages a,
-#menu-1 .languages span {
-	margin-left: 6px;
-}
-#menu-1 .languages a.selected {
 	color: #ffffff;
+}
+
+
+.languages {
+}
+.languages a, .languages span {
+	margin-left: 6px !important;
+	color: #c7c7c7 !important;;
+}
+.languages a.selected {
+	color: #ffffff !important;
 }
 
 #menu-1 .share {
@@ -285,7 +309,7 @@ body.loading #menu-1 {
 }
 #menu-2 a:focus, 
 #menu-2 a:active {
-	color: #fef02e;
+	color: #ffffff;
 }
 
 
@@ -312,7 +336,7 @@ section.header-with-background a.link-up {
 }
 section.header-with-background a.link-up:focus, 
 section.header-with-background a.link-up:active {
-	color: #fef02e;
+	color: #ffffff;
 }
 section.header-with-background a.link-up::after {
 	content: "";
@@ -362,7 +386,7 @@ h1.page-title {
 }
 #menu-relatos .toggle:focus, 
 #menu-relatos .toggle:active {
-	color: #fef02e;
+	color: #ffffff;
 }
 #menu-relatos .toggle::after {
 	content: "";
@@ -421,30 +445,85 @@ h1.page-title {
 }
 
 
-.videoWrapper {
+section#intro {
 	width: 100%;
-	position: relative;
-	height: 100vh;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
 	height: 100%;
+	background-color: #000000;
+	z-index: 200;
+	position: absolute;
+	display: none;
+    visibility: visible;
+	transition: visibility 0s linear, transform 1s cubic-bezier(.26,1,1,1);
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+}
+section#intro.show {
+	display: block;
+}
+section#intro.closed {
+	/*visibility: hidden;*/
+	transform: translateY(-100%);
+	transition: visibility 0s linear 1s, transform 1s cubic-bezier(.26,1,1,1);
+}
+section#intro .description {
+	background-color: rgba(0,0,0,0.4);
+	padding: 55px 75px;
+	font-size: 20px;
+	max-width: 595px;
+	position: absolute;
+	z-index: 3;
+	left: 0;
+	bottom: 89px;;;;;;;;
+}
+section#intro .description .logo {
+	margin-bottom: 45px;
+}
+section#intro .description .text {
+}
+section#intro .languages {
+	position: absolute;
+	z-index: 3;
+    top: 65px;
+    right: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+section#intro a.next {
+	position: absolute;;
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/expand-arrow.png);
+	background-repeat: no-repeat;
+	z-index: 4;
+	bottom: 64px;
+	left: 50%;
+	transform: translateX(-50%);;;;;
+}
+section#intro .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+section#intro .videoWrapper {;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+section#intro #intro-player {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);;
+	min-height: 56vw;;
+	min-width: 178vh;
 }
 
 
 
-/* mobile */
+
+/* responsive */
 
 @media screen and (max-width: 1200px) {
 
-	
 	h1.page-title {
 		margin-left: 59px;
 		margin-top: 20px;
@@ -463,6 +542,31 @@ h1.page-title {
 }
 
 @media screen and (max-width: 768px) {
+	
+	section#intro .description {
+		bottom: 0;
+		max-width: 100%;
+		padding-bottom: 150px;
+		padding: 30px 20px 60px 20px;
+		font-size: inherit;
+	}
+	section#intro .description .logo {
+		margin-bottom: 5px;
+	}
+	section#intro .languages {
+	    top: 34px;
+	    right: 17px;
+	    font-size: 14px;;
+	}
+	section#intro a.next {;;;
+		bottom: 20px;;;;
+		background-size: 25px;;;;
+		height: 25px;;;;
+		width: 25px;;
+	}
+	section#intro .overlay {
+		display: none;
+	}
 
 
 }

@@ -27,7 +27,7 @@
         
         <a href="espacios" id="logo" title="{{ 'textos comunes.logo' | translate }}"><img src="images/logo.png" alt="{{ 'textos comunes.logo' | translate }}"></a>
 
-        <nav id="menu-1">
+        <nav id="menu-1" class="preload">
             <span class="languages">
                 <a href="javascript:" data-language="es">ES</a> 
                 <span class="separator">|</span> 
@@ -52,6 +52,26 @@
         </nav>
 
     </header>
+
+
+    <section id="intro">
+        <div class="description">
+            <img src="images/logo.png" alt="{{ 'textos comunes.logo' | translate }}" class="logo">
+            <div class="text" translate="intro.descripcion" translate-type="richeditor" translate-cloak>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <a href="javascript:" ng-click="closeIntro()" class="next"></a>
+        <span class="languages">
+            <a href="javascript:" data-language="es">ES</a> 
+            <span class="separator">|</span> 
+            <a href="javascript:" data-language="ca">CAT</a>
+        </span>
+        <div class="overlay"></div>
+        <div class="videoWrapper">
+            <div id="intro-player"></div>
+        </div>
+    </section>
 
 
     <main ng-view></main>
