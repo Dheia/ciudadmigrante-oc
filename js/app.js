@@ -20,21 +20,21 @@ app.config(['$translateProvider', function ($translateProvider) {
     // $translateProvider.determinePreferredLanguage();
 
     // choose language form local storage or default
-
-    if (!window.localStorage.locale) {
-        window.localStorage.locale = config.defaultLanguage;
+    var lang = localStorage.lang;
+    if (!lang) {
+        lang = localStorage.lang = config.lang;
     }
-    $translateProvider.preferredLanguage(window.localStorage.locale);
+    $translateProvider.preferredLanguage(lang);
 
     // load default language Synchronously
     $.get({
         url: config.api.getTranslations,
-        data: ['lang', window.localStorage.locale],
+        data: ['lang', lang],
         async: false,
         contentType: "application/json",
         dataType: 'json',
         success: function (json) {
-            $translateProvider.translations(window.localStorage.locale, json);
+            $translateProvider.translations(lang, json);
         }
     });
     
@@ -156,17 +156,20 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     };
 
 
-    // choose language
-    $rootScope.setLanguage = function(language)
+    // set language
+    $rootScope.setLanguage = function(lang)
     {
-        // save laguange chioce in local storage
-        $rootScope.language = $window.localStorage.language = language;
-        $translate.use(language);
-        $('html').attr('lang', language);
+        // save language in local storage
+        $rootScope.lang = localStorage.lang = lang;
+        // change translations language
+        $translate.use(lang);
+        // set HTML lang
+        $('html').attr('lang', lang);
+        // highlight option in menu
         $('.languages a').removeClass('selected');
-        $('.languages a[data-language=' + language + ']').addClass('selected');
+        $('.languages a[data-language=' + lang + ']').addClass('selected');
     }
-    $rootScope.setLanguage($window.localStorage.language);
+    $rootScope.setLanguage(localStorage.lang);
 
 
 
@@ -177,7 +180,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $rootScope.loadRelatosData();
         $rootScope.loadEspaciosData();
         $rootScope.setMetadata();
-        console.log('lang');
     });
 
 
@@ -196,7 +198,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             method  : 'GET',
             url     : config.api.urls.get_relatos,
             params  : {
-                // 'lang': $rootScope.language
+                // 'lang': $rootScope.lang
             }
         })
         .then(function(response) {
@@ -235,7 +237,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             method  : 'GET',
             url     : config.api.urls.get_espacios,
             params  : {
-                // 'lang': $rootScope.language
+                // 'lang': $rootScope.lang
             }
         })
         .then(function(response) {

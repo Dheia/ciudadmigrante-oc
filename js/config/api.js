@@ -3,8 +3,6 @@
 
 window.config = window.config || {};
 
-window.config.defaultLanguage = 'es';
-
 window.config.api = {
 
     "urls" : {

@@ -6,7 +6,7 @@ fields:
         type: partial
         path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_sort_order_field.htm
     rotate_y:
-        label: 'Rotacion [grados]'
+        label: 'Rotación [grados]'
         oc.commentPosition: ''
         span: right
         type: partial
@@ -41,7 +41,7 @@ fields:
         type: text
         comment: 'debe ser sin nombre de dominio y sin barra, ejemplo: relatos/6'
     marco_x1:
-        label: 'Posición del enlace'
+        label: 'Marco del enlace'
         oc.commentPosition: ''
         span: right
         type: partial

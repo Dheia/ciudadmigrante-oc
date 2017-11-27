@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
         <li><a href="<?= Backend::url('kubamarkiewicz/translations/translations/section') ?>">Translations</a></li>
-        <li><?=$section?></li>
+        <li>Section: <?=$section?></li>
     </ul>
 <?php Block::endPut() ?>
 
@@ -61,7 +61,7 @@
 
 
 
-		<h3>Translate section</h3>
+		<h3>Translate text in section</h3>
 		<h2><?=$section?></h2>
 
 		<?php if($items) : ?>
