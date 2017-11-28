@@ -125,12 +125,12 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
-        // set body class as "previous-page-slug"
+        // set body class as "prev-page-slug"
         $("body")
         .removeClass(function (index, className) {
-            return (className.match (/(^|\s)previous-page-\S+/g) || []).join(' ');
+            return (className.match (/(^|\s)prev-page-\S+/g) || []).join(' ');
         })
-        .addClass("previous-page-"+$rootScope.pageSlug);
+        .addClass("prev-page-"+$rootScope.pageSlug);
 
         // find page slug
         if (next.originalPath && next.originalPath.substring(1)) {
