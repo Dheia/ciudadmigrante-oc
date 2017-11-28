@@ -125,8 +125,14 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
+        // set body class as "previous-page-slug"
+        $("body")
+        .removeClass(function (index, className) {
+            return (className.match (/(^|\s)previous-page-\S+/g) || []).join(' ');
+        })
+        .addClass("previous-page-"+$rootScope.pageSlug);
+
         // find page slug
-        var prevSlug = $rootScope.pageSlug = config.homepageSlug;
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
             // substring until first slash
@@ -134,6 +140,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
                 $rootScope.pageSlug = $rootScope.pageSlug.substr(0, $rootScope.pageSlug.indexOf('/'));
             }
         }
+
+
 
         // set body class as "page-slug"
         $("body")

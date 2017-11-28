@@ -16,38 +16,23 @@ body.page-ciudad #menu-relatos {
 
 
 
-/* page transition */
+/* page transition espacios > ciudad */
 
 /* The starting CSS styles for the enter animation */
-body > main.ciudad.ng-enter {
+body.previous-page-espacios.page-ciudad > main.ciudad.ng-enter {
     opacity:1;
     transform: translateY(-100%);
     transition-delay: 0;
     transition-duration: 1s;
 }
-
 /* The finishing CSS styles for the enter animation */
-body > main.ciudad.ng-enter.ng-enter-active {
+body.previous-page-espacios.page-ciudad > main.ciudad.ng-enter.ng-enter-active {
     transform: translateY(0);
 }
-
 /* now the element will fade out before it is removed from the DOM */
-body.page-ciudad .ng-leave {
+body.previous-page-espacios.page-ciudad .ng-leave {
     transition-delay: 1s;
     transition-duration: 0;
-}
-
-/* now the element will fade out before it is removed from the DOM */
-main.ciudad.ng-leave {
-    transition-delay: 0s;
-  	opacity:1;
-    transform: translateY(0);
-    transition-duration: 0.5s;
-}
-main.ciudad.ng-leave.ng-leave-active {
-    z-index: 10;
-    opacity: 1;
-    transform: translateY(-100%);;
 }
 
 

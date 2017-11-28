@@ -1,5 +1,7 @@
 app.controller('CiudadController', function($scope, $rootScope, $http, config) {  
 
+ 
+    $scope.mainClass = 'ciudad';
 
 
 	$("section#ciudad-map aside .handle").click(function(){
