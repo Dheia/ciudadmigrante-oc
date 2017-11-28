@@ -118,10 +118,10 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route) {
 
-    $('body').removeClass('loading');
-
     $rootScope.homeSlug = 'espacios';
     $rootScope.urlChangeCount = 0;
+
+    $('body').removeClass('loading');
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {

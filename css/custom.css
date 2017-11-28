@@ -195,7 +195,12 @@ body > main {
 /***********************************************/
 
 
-body.loading .preload,
+body .preload {
+	visibility: visible;
+}
+body.loading .preload {
+	visibility: hidden;
+}
 .translate-cloak {
 	visibility: hidden;
 }
