@@ -20,13 +20,13 @@ body.page-espacios #menu-relatos {
 
 /* page transition ciudad > espacios */
 
-body.prev-page-ciudad.page-espacios > main.ciudad.ng-leave {
-    transition-delay: 0s;
+body.prev-page-ciudad.page-espacios > .ng-leave {
+    transition-delay: 0.01s;
   	opacity:1;
     transform: translateY(0);
     transition-duration: 0.5s;
 }
-body.prev-page-ciudad.page-espacios > main.ciudad.ng-leave.ng-leave-active {
+body.prev-page-ciudad.page-espacios > .ng-leave.ng-leave-active {
     z-index: 10;
     opacity: 1;
     transform: translateY(-100%);;
