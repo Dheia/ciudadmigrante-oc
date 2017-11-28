@@ -7,8 +7,24 @@ body.page-relato #menu-1 .share {
 body.page-relato #menu-1 .back {
 	display: inline-block; 
 }
+body.page-relato #menu-relatos {
+	display: block;
+	z-index: 0;
+}
 
 
+/* page transition espacios > ciudad */
+
+/* The starting CSS styles for the enter animation */
+body.page-relato > main.relato.ng-enter {
+	z-index: 1;
+}
+
+
+section#relato-video {
+	z-index: 1;
+	position: relative;
+}
 section#relato-video > aside {
 	position: absolute;
 	background-color: rgba(44,51,60,0.87);
