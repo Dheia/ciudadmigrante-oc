@@ -16,6 +16,43 @@ body.page-ciudad #menu-relatos {
 
 
 
+/* page transition */
+
+/* The starting CSS styles for the enter animation */
+body > main.ciudad.ng-enter {
+    opacity:1;
+    transform: translateY(-100%);
+    transition-delay: 0;
+    transition-duration: 1s;
+}
+
+/* The finishing CSS styles for the enter animation */
+body > main.ciudad.ng-enter.ng-enter-active {
+    transform: translateY(0);
+}
+
+/* now the element will fade out before it is removed from the DOM */
+body.page-ciudad .ng-leave {
+    transition-delay: 1s;
+    transition-duration: 0;
+}
+
+/* now the element will fade out before it is removed from the DOM */
+main.ciudad.ng-leave {
+    transition-delay: 0s;
+  	opacity:1;
+    transform: translateY(0);
+    transition-duration: 0.5s;
+}
+main.ciudad.ng-leave.ng-leave-active {
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(-100%);;
+}
+
+
+
+
 
 section#ciudad-map {
 	position: relative;
@@ -75,7 +112,8 @@ section#ciudad-map > aside .column {
 	margin: 100px 0 0 0;
 	max-height: calc(100% - 100px);
 	display: flex;
-	flex-direction: column;;;
+	flex-direction: column;
+	overflow-x: hidden;;;
 }
 
 
@@ -83,6 +121,10 @@ section#ciudad-map > aside .categories {
 	position: relative;
 	margin-left: 40px;
 	overflow-y: auto;
+	overflow-x: hidden;;
+}
+body > main.ciudad.ng-enter section#ciudad-map > aside .categories {
+	visibility: hidden;
 }
 section#ciudad-map > aside .categories a {
 	text-transform: uppercase;
