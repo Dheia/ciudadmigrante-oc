@@ -387,9 +387,9 @@ h1.page-title {
 #menu-relatos a.creditos {
 	position: absolute;
 	right: 34px;
-	top: 35px;
 	color: #ffffff;
-	font-size: 14px;;;;;
+	font-size: 14px;
+	top: 34px;;;;;
 }
 #menu-relatos .toggle {
 	margin: 15px 0;

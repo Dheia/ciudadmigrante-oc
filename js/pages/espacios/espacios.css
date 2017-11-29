@@ -59,7 +59,7 @@ section#espacios-index .wrap {
 	width: 100%;
 	display: flex;
 	padding: 0 2vw;
-	height: calc(100vh - 443px);
+	height: calc(100vh - 420px);
 }
 section#espacios-index a {
  	margin: 0 -1vw;
