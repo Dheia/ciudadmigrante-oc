@@ -260,8 +260,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_relatos,
             params  : {
-                categories: selectedCategoriesToString()
-                // 'lang': $rootScope.lang
+                categories: selectedCategoriesToString(),
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {
@@ -281,8 +281,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_puntosdeacogida,
             params  : {
-                categories: selectedCategoriesToString()
-                // 'lang': $rootScope.lang
+                categories: selectedCategoriesToString(),
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {
@@ -302,8 +302,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_espacios,
             params  : {
-                categories: selectedCategoriesToString()
-                // 'lang': $rootScope.lang
+                categories: selectedCategoriesToString(),
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {
@@ -340,7 +340,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
             method  : 'GET',
             url     : config.api.urls.get_categories,
             params  : {
-                // 'lang': $rootScope.lang
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {

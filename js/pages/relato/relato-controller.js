@@ -1,8 +1,5 @@
 app.controller('RelatoController', function($scope, $rootScope, $http, $routeParams, config) {  
 
-    $scope.mainClass = 'relato';
-
-
     $("section#relato-video aside .handle").click(function(){
         $(this).parent().toggleClass('expanded');
     });

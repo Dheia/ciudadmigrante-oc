@@ -1,0 +1,40 @@
+
+/* header elements */
+
+body.page-creditos #logo {
+	display: block;
+}
+body.page-creditos #menu-1 .back {
+	display: inline-block;
+}
+
+
+
+section#creditos {
+	margin-top: 260px;
+}
+section#creditos h1 {
+	font-size: 30px;
+	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+	margin-bottom: 0;;;;
+}
+section#creditos h2 {
+	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 22px;
+	text-transform: none;;;;
+}
+section#creditos h4 {
+	margin-bottom: 0;
+	text-transform: none;;;
+}
+section#creditos .container {
+}
+section#creditos .logos {
+	margin-top: 30px;
+	margin-bottom: 60px;;;
+}
+section#creditos .license {
+	margin-bottom: 30px;;
+}
+
+

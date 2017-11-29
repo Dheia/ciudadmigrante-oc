@@ -92,7 +92,7 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/ciudad', { 
             controller: 'CiudadController', 
             templateUrl: 'js/pages/ciudad/index.html' 
-        })      
+        })       
         .when('/relato/:id', { 
             controller: 'RelatoController', 
             templateUrl: 'js/pages/relato/index.html' 
@@ -101,6 +101,10 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'EspacioController', 
             templateUrl: 'js/pages/espacio/index.html' 
         })     
+        .when('/creditos', { 
+            controller: 'CreditosController', 
+            templateUrl: 'js/pages/creditos/index.html' 
+        })   
         .otherwise({ 
             redirectTo: '/espacios' 
         }); 
@@ -184,9 +188,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     // language menu
     $('.languages a').click(function(){
         $rootScope.setLanguage($(this).data('language'));
-        // $route.reload();
+        $route.reload();
         $rootScope.loadRelatosData();
-        $rootScope.loadEspaciosData();
         $rootScope.setMetadata();
     });
 
@@ -206,7 +209,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             method  : 'GET',
             url     : config.api.urls.get_relatos,
             params  : {
-                // 'lang': $rootScope.lang
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {

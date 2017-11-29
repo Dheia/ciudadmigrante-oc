@@ -8,7 +8,7 @@ app.controller('EspaciosController', function($scope, $rootScope, $http, config)
             method  : 'GET',
             url     : config.api.urls.get_espacios,
             params  : {
-                // 'lang': $rootScope.lang
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {

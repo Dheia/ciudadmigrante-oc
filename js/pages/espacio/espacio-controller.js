@@ -10,7 +10,7 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
             method  : 'GET',
             url     : config.api.urls.get_espacio.replace(':id', $scope.id),
             params  : {
-                // 'lang': $rootScope.lang
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {

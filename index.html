@@ -18,6 +18,7 @@
     <link href="js/pages/espacio/espacio.css" rel="stylesheet">
     <link href="js/pages/participa/participa.css" rel="stylesheet">
     <link href="js/pages/relato/relato.css" rel="stylesheet">
+    <link href="js/pages/creditos/creditos.css" rel="stylesheet">
 
 	<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -78,6 +79,7 @@
 
 
     <nav id="menu-relatos">
+        <a href="creditos" class="creditos">{{ 'menu.CREDITOS' | translate }}</a>
         <a class="toggle">{{ 'menu.RELATOS' | translate }}</a>
         <div class="faces" data-simplebar data-simplebar-autohide="false">
             <a ng-repeat="item in relatosData" href="relato/{{ item.id }}" title="{{ item.name }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"></a>
@@ -112,6 +114,7 @@
     <script src="js/pages/ciudad/ciudad-controller.js"></script>
     <script src="js/pages/relato/relato-controller.js"></script>
     <script src="js/pages/espacio/espacio-controller.js"></script>
+    <script src="js/pages/creditos/creditos-controller.js"></script>
     
     <!-- Services -->
     <!-- more libraries -->
