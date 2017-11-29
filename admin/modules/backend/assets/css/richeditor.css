@@ -1,0 +1,103 @@
+
+
+
+
+
+/***********************************************/
+/* Fonts                                       */
+/***********************************************/
+
+
+
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-Regular.woff') format('woff');
+	font-weight: normal; 
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DIN Next LT Pro Condensed';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-LightCondensed.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DIN Next LT Pro Condensed';
+	src: url('../../../../../css/fonts/subset-DINNextLTPro-Condensed.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/***********************************************/
+/* General styles                              */
+/***********************************************/
+
+.fr-box.fr-basic .fr-element {
+	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: #ffffff; 
+	line-height: 1.2; 
+	font-size: 18px;
+	background-color: #2c333c;
+}
+a { 
+	color: #fef02e;
+	text-decoration: none; 
+	transition: color 0.1s ease-out;
+}
+ /* on hover, select */
+a:hover { 
+	color: #fef02e;
+	text-decoration: none; 
+}
+/* on press */
+a:active, a:focus {  
+	color: #fef02e;
+	text-decoration: none;  
+}
+p {
+	margin-bottom: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'DIN Next LT Pro Condensed';
+	color: inherit;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 24px;
+}
+h3{
+	font-size: 20px;
+}
+h4 {
+	font-size: 18px;
+}
+img {
+	max-width: 100%;
+}

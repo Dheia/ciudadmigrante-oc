@@ -28,3 +28,5 @@
 <?= $this->makeAssets() ?>
 <?= Block::placeholder('head') ?>
 <?= $this->makeLayoutPartial('custom_styles') ?>
+
+<link href="<?= Backend::skinAsset('assets/css/richeditor.css') ?>?v<?= $coreBuild ?>" rel="stylesheet">
