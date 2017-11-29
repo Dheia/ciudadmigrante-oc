@@ -109,6 +109,10 @@ img {
 	max-width: 100%;
     vertical-align: middle;
 }
+em {
+	font-family: 'DIN Next LT Pro Condensed';
+	font-style: normal;
+}
 
 
 /* responsive */
