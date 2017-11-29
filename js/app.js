@@ -235,26 +235,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
 
 
-    // espacios data
-
-    $rootScope.espaciosData = null;
-    
-    $rootScope.loadEspaciosData = function()
-    {
-        $http({
-            method  : 'GET',
-            url     : config.api.urls.get_espacios,
-            params  : {
-                // 'lang': $rootScope.lang
-            }
-        })
-        .then(function(response) {
-            $rootScope.espaciosData = response.data;
-        });
-    };
-    $rootScope.loadEspaciosData();
-
-
 
 
 

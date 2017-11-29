@@ -1,7 +1,7 @@
 
 <section id="espacio-images">
     
-    <span ng-repeat="item in espaciosData[id].images" id="image-{{ $index }}" class="item" style="transform: translateY({{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg); z-index: {{ item.z_index }};">
+    <span ng-repeat="item in espacioData.images" id="image-{{ $index }}" class="item" style="transform: translateY({{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg); z-index: {{ item.z_index }};">
         <a ng-show="item['marco_url']" class="marker" href="{{ item['marco_url'] }}" style="
             left: {{ item['marco_x1'] }}%;
             top: {{ item['marco_y1'] }}%;
@@ -16,16 +16,16 @@
 
 <section id="espacio-description">
     
-    <h1>{{ espaciosData[id].name }}</h1>
+    <h1>{{ espacioData.name }}</h1>
 
-    <div class="description" ng-bind-html="trustAsHtml(espaciosData[id].descripcion)"></div>
+    <div class="description" ng-bind-html="trustAsHtml(espacioData.descripcion)"></div>
 
 </section>
 
 
 
 <section id="espacio-links">
-    <a href="{{ espaciosData[id].button_url }}" target="_blank" ng-show="espaciosData[id].button_title">{{ espaciosData[id].button_title }}</a>
+    <a href="{{ espacioData.button_url }}" target="_blank" ng-show="espacioData.button_title">{{ espacioData.button_title }}</a>
     <a href="javascript:" translate="espacios.localizar">localizar en la ciudad</a>
 </section>
 

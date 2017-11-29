@@ -42,10 +42,23 @@ class Espacios extends Controller
                 $item->image_map_url = $item->image_map->getThumb(540,null);
             }
             
-            $return[$item->id] = $item;
+            $return[] = $item;
         }
 
         return response()->json($return, 200, array(), JSON_PRETTY_PRINT);
+    }
+
+
+    public function find($id)
+    {
+        Translator::instance()->setLocale(Input::get('lang'));
+
+        $query = Espacio::where('id', $id)
+                        ->with('images.image');
+
+        $result = $query->first();   
+
+        return response()->json($result, 200, array(), JSON_PRETTY_PRINT);
     }
 
 }
