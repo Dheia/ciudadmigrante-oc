@@ -379,8 +379,8 @@ h1.page-title {
 	background-color: #2c333c;
 	bottom: 0;
 	width: 100%;
-	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
-	z-index: 102;;
+	z-index: 102;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);;
 }
 #menu-relatos.expanded {
 }
