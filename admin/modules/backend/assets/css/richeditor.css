@@ -53,6 +53,10 @@
 /* General styles                              */
 /***********************************************/
 
+body {
+	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
 .fr-box.fr-basic .fr-element {
 	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -61,22 +65,22 @@
 	font-size: 18px;
 	background-color: #2c333c;
 }
-a { 
+.fr-box.fr-basic .fr-element a { 
 	color: #fef02e;
 	text-decoration: none; 
 	transition: color 0.1s ease-out;
 }
  /* on hover, select */
-a:hover { 
+.fr-box.fr-basic .fr-element a:hover { 
 	color: #fef02e;
 	text-decoration: none; 
 }
 /* on press */
-a:active, a:focus {  
+.fr-box.fr-basic .fr-element a:active, .fr-box.fr-basic .fr-element a:focus {  
 	color: #fef02e;
 	text-decoration: none;  
 }
-p {
+.fr-box.fr-basic .fr-element p {
 	margin-bottom: 18px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -98,6 +102,7 @@ h3{
 h4 {
 	font-size: 18px;
 }
-img {
+.fr-box.fr-basic .fr-element img {
 	max-width: 100%;
+    vertical-align: middle;
 }
