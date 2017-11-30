@@ -17,7 +17,7 @@ body.page-relato.prev-page-ciudad #menu-relatos {
 /* page transition espacios > ciudad */
 
 /* The starting CSS styles for the enter animation */
-body.page-relato > main.relato.ng-enter {
+body.page-relato .ng-enter {
 	z-index: 1;
 }
 
