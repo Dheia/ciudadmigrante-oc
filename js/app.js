@@ -196,9 +196,12 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
     // relatos
     $("#menu-relatos .toggle").click(function(){
-        $(this).parent().toggleClass("expanded");
-        $(this).parent().find('.faces a').removeClass('selected');
+        $(this).parent().toggleClass("expanded").find('.faces a').removeClass('selected');
     });
+    $rootScope.closeRelatos = function()
+    {
+        $("#menu-relatos").removeClass("expanded").find('.faces a').removeClass('selected');
+    }
 
 
     $rootScope.relatosData = null;
