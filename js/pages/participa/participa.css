@@ -1,4 +1,72 @@
 
-body.page-participa {
+/* header elements */
+
+body.page-participa #logo {
+	display: block;
+}
+body.page-participa #menu-1 .share {
+	display: inline-block;
+}
+body.page-participa #menu-1 .back {
+	display: inline-block; 
+}
+
+
+section#participa {
 	background-image: url(../../../images/background-participa.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	padding-bottom: 94px;
+	padding-top: 235px;;;;;;;;
+}
+
+
+section#participa > header {;
+}
+section#participa > header .container {
+}
+section#participa > header .container > h1 {
+}
+section#participa > header .description {
+}
+
+
+section#participa > main {;;
+}
+section#participa > main .container {
+}
+section#participa > main .row {
+	background-color: #2c333c;;
+    margin: 0;
+}
+section#participa > main .col-md-6 {
+}
+section#participa > main .form {
+	text-align: center;;
+}
+section#participa > main form {
+	margin: 0 auto;
+	max-width: 490px;
+	width: 100%;
+	padding-top: 25px;
+	text-align: left;;]
+}
+section#participa > main form button {
+	margin: 10px 0 5px 0;
+}
+section#participa > main .map {
+	padding: 0;
+	background-color: #121212;
+}
+section#participa label {
+	font-size: 14px;
+	font-weight: 300;
+	color: #b8b7b7;
+	padding-left: 20px;;;;;
+}
+section#participa .form-control {
+	background: transparent;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 25px;;;;
 }

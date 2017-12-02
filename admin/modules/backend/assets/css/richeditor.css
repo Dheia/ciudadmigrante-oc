@@ -106,7 +106,7 @@ h4 {
 	max-width: 100%;
     vertical-align: middle;
 }
-.fr-box.fr-basic .fr-element em {
+.fr-box.fr-basic .fr-element p em {
 	font-family: 'DIN Next LT Pro Condensed';
 	font-style: normal;
 }
