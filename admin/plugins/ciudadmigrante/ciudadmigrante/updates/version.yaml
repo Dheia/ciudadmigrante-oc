@@ -48,3 +48,6 @@
 1.0.17:
     - 'Updated table ciudadmigrante_ciudadmigrante_espacios'
     - builder_table_update_ciudadmigrante_ciudadmigrante_espacios.php
+1.0.18:
+    - 'Updated table ciudadmigrante_ciudadmigrante_puntos_de_acogida'
+    - builder_table_update_ciudadmigrante_ciudadmigrante_puntos_de_acogida_3.php

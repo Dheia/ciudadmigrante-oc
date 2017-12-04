@@ -187,6 +187,25 @@ p em {
 	border-color: #d5d6d8;
 	box-shadow: none;
 }
+.dropdown-menu {
+	background-color: #3d434b;
+	border-radius: 0;
+	border: none;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+	background-color: #26292c;;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+	background-color: #3d434b;
+}
+.multiselect-container>li>a>label>input[type=checkbox] {
+	visibility: hidden;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+	color: #ffffff;
+	box-shadow: none;;;
+	
+}
 
 /***********************************************/
 /* Layout Divs                                 */
@@ -571,6 +590,18 @@ section#intro #intro-player {
 	min-width: 178vh;
 }
 
+
+
+/* Google Map colors */
+.google-map > div {
+	background: transparent !important;
+}
+.google-map .gm-style > div > div > div > div > div:not(.gm-style-iw) {
+	background-color: #203041;
+}
+.google-map .gm-style > div > div > div > div > div > img {
+	mix-blend-mode: luminosity;
+}
 
 
 

@@ -23,6 +23,7 @@ class PuntosDeAcogida extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('CiudadMigrante.CiudadMigrante', 'main-menu-item', 'side-menu-item');
+        $this->addCss('/plugins/ciudadmigrante/ciudadmigrante/assets/css/styles.css');
     }
 
 
@@ -35,5 +36,12 @@ class PuntosDeAcogida extends Controller
         }
     }
 
+
+    public function listInjectRowClass($record, $definition = null)
+    {
+        if (!$record->publicado) {
+            return 'draft';
+        }
+    }
 
 }

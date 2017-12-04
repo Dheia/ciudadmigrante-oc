@@ -14,19 +14,24 @@ columns:
         label: Dirección
         type: text
         searchable: true
-    ciudad:
-        label: Ciudad
-        type: text
-        searchable: true
-    # created_at:
-    #     label: 'Fecha de creación'
-    #     type: date
+    # ciudad:
+    #     label: Ciudad
+    #     type: text
     #     searchable: true
-    #     sortable: true
     latlng:
         label: 'Latitud longitud'
         type: text
         searchable: false
+        sortable: true
+    created_at:
+        label: 'Fecha de creación'
+        type: date
+        searchable: true
+        sortable: true
+    enviado_por_usuario:
+        label: Creado por usuario
+        type: switch
+        searchable: true
         sortable: true
     publicado:
         label: Publicado

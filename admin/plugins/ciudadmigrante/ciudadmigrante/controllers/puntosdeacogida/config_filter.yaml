@@ -1,0 +1,20 @@
+
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    enviado_por_usuario:
+        label: Creado por usuario
+        type: group
+        conditions: enviado_por_usuario in (:filtered)
+        modelClass: CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida
+        options: getEnviadoPorUsuarioOptions
+
+    published:
+        label: Publicado
+        type: group
+        conditions: publicado in (:filtered)
+        modelClass: CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida
+        options: getPublishedOptions

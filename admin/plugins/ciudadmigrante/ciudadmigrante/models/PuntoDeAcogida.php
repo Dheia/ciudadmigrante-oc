@@ -28,6 +28,8 @@ class PuntoDeAcogida extends Model
         ]
     ];
 
+    protected $guarded = [];
+
 
     public function beforeSave()
     {
@@ -38,6 +40,12 @@ class PuntoDeAcogida extends Model
     }
 
 
-
+    public function getBooleanOptions()
+    {
+        return [
+            0 => 'No',
+            1 => 'Si'
+        ];
+    }
     
 }

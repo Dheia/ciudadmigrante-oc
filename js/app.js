@@ -319,8 +319,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
 
 
-    
-
 
 $.extend($.easing,
 {

@@ -1,0 +1,7 @@
+table.table.data tr.draft {
+	background-color:#dbd800;
+}
+
+table.table.data tbody tr.draft:nth-child(even) td, table.table.data tbody tr.draft:nth-child(even) th {
+	background-color:rgba(236, 240, 241, 0.5);
+}

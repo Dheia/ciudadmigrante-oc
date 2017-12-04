@@ -206,15 +206,6 @@ section#ciudad-map > main {
 	height: 100%;
 	margin-left: 15px;;
 }
-#map > div {
-	background: transparent !important;
-}
-#map .gm-style > div > div > div > div > div:not(.gm-style-iw) {
-	background-color: #203041;
-}
-#map .gm-style > div > div > div > div > div > img {
-	mix-blend-mode: luminosity;
-}
 
 
 /* google maps InfoWindow */

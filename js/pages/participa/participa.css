@@ -44,6 +44,8 @@ section#participa > main .col-md-6 {
 section#participa > main .form {
 	text-align: center;;
 }
+section#participa > main .form-group {
+}
 section#participa > main form {
 	margin: 0 auto;
 	max-width: 490px;
@@ -54,9 +56,8 @@ section#participa > main form {
 section#participa > main form button {
 	margin: 10px 0 5px 0;
 }
-section#participa > main .map {
+section#participa > main #participa-map {
 	padding: 0;
-	background-color: #121212;
 }
 section#participa label {
 	font-size: 14px;
@@ -68,5 +69,35 @@ section#participa .form-control {
 	background: transparent;
 	padding-top: 0;
 	padding-bottom: 0;
-	height: 25px;;;;
+	height: 25px;
+	text-align: left;
+	font-weight: inherit;
+	font-family: inherit;;;;;;;;
 }
+section#participa  div.multiselect {;
+	min-height: 36px;;;;
+}
+section#participa  div.multiselect .btn {
+	text-transform: none;
+}
+section#participa  div.multiselect .btn-default:hover,
+section#participa  div.multiselect .btn-default:focus,
+section#participa  div.multiselect .btn-default:active {
+	color: inherit;
+	box-shadow: none;;
+}
+section#participa  .btn-group {
+	display: block;
+}
+
+section#participa .multiselect-container {
+
+}
+section#participa .multiselect-container>li>a>label.checkbox {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 400;
+	padding-top: 6px;
+	padding-bottom: 6px;;;;;;
+}
+

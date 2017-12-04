@@ -7,9 +7,10 @@ recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
 showSorting: 1
+# filter: config_filter.yaml
 defaultSort:
-    column: id
-    direction: 'asc'
+    column: date
+    direction: 'desc'
 toolbar:
     buttons: list_toolbar
     search:

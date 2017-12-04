@@ -1,13 +1,18 @@
 fields:
     name:
-        label: 'Nombre de la entidad'
+        label: 'Nombre de entidad'
         oc.commentPosition: ''
         span: left
         type: text
     publicado:
         label: Publicado
-        span: auto
+        span: right
         type: switch
+    enviado_por_usuario:
+        label: Creado por usuario
+        span: right
+        type: checkbox
+        disabled: true
 tabs:
     fields:
         telefono:
@@ -15,54 +20,54 @@ tabs:
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         partial1:
             span: right
             path: $/ciudadmigrante/ciudadmigrante/partials/copy_address.htm
             type: partial
-            tab: Datos
+            tab: Datos de entidad
         email:
             label: E-mail
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         geolocalization:
             label: Geolocalizar
             type: address-locator
             height: 450px
             width: 100%
             span: right
-            tab: Datos
+            tab: Datos de entidad
         direccion:
             label: Dirección
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         latlng:
             label: Latitud longitud
             type: location-selector
             span: right
-            tab: Datos
+            tab: Datos de entidad
         codigo_postal:
             label: 'Código postal'
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         ciudad:
             label: Ciudad
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         web:
             label: Web
             oc.commentPosition: ''
             span: left
             type: text
-            tab: Datos
+            tab: Datos de entidad
         categories:
             label: Categorías
             oc.commentPosition: ''
@@ -71,3 +76,21 @@ tabs:
             span: left
             type: relation
             tab: Categorías
+        created_at:
+            label: 'Fecha de creación'
+            type: text
+            span: left
+            disabled: true
+            tab: Datos de usuario
+        usuario_nombre:
+            label: Nombre de usuario
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos de usuario
+        usuario_email:
+            label: E-mail de usuario
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: Datos de usuario

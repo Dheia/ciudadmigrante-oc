@@ -23,46 +23,54 @@
 				
 				<div class="col-md-6 form">
 					
-					<form>
+					<form id="participa-form" ng-submit="submitForm()">
 						
 						<div class="form-group">
 							<label>Nombre de la entidad *</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" ng-model="name">
 						</div>
 						
 						<div class="form-group">
 							<label>Tipo de ayuda *</label>
-							<input type="text" class="form-control">
+							<div class="multiselect">
+								<select 
+									id="categories-multiselect" 
+									class="form-control" 
+									multiple="multiple"
+									ng-options="item.name for item in categoriesData track by item.id"
+									ng-model="selectedCategories">
+								</select>
+							</div>
 						</div>
 						
 						<div class="form-group">
 							<label>Dirección completa *</label>
-							<input type="text" class="form-control">
+							<input id="participa-direccion" type="text" class="form-control" ng-model="direccion">
 						</div>
 						
 						<div class="form-group">
 							<label>Web *</label>
-							<input type="url" class="form-control">
+							<input type="url" class="form-control" ng-model="web">
 						</div>
 						
 						<div class="form-group">
 							<label>E-mail </label>
-							<input type="email" class="form-control">
+							<input type="email" class="form-control" ng-model="email">
 						</div>
 						
 						<div class="form-group">
 							<label>Teléfono</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" ng-model="telefono">
 						</div>
 						
 						<div class="form-group">
 							<label>Tú nombre *</label>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" ng-model="usuario_nombre">
 						</div>
 						
 						<div class="form-group">
 							<label>Tú email *</label>
-							<input type="email" class="form-control">
+							<input type="email" class="form-control" ng-model="usuario_email">
 						</div>
 
 						<p class="text-right">
@@ -73,7 +81,7 @@
 				</div>
 				
 
-				<div class="col-md-6 map"></div>
+				<div id="participa-map" class="col-md-6 google-map"></div>
 
 			</div>
 		

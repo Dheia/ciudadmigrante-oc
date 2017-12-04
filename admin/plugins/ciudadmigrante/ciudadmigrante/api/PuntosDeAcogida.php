@@ -52,4 +52,24 @@ class PuntosDeAcogida extends Controller
         return response()->json($return, 200, array(), JSON_PRETTY_PRINT);
     }
 
+
+    public function add()
+    {
+        // print_r(Input::all()); exit;
+
+        $data = Input::all();
+
+        // extract categories IDs
+        $categories = [];
+        if ($data['categories']) foreach ($data['categories'] as $category) {
+            $categories[] = ['category_id' => $category['id']];
+        }
+        $data['categories'] = $categories;
+
+        $item = new PuntoDeAcogida($data);
+        $item->enviado_por_usuario = true;
+        $item->publicado = false;
+        $item->save();
+    }
+
 }
