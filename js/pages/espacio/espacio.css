@@ -32,7 +32,7 @@ body.page-espacio #menu-1 .back {
 #espacio-images:after {
 	content: '';
 	display: inline-block;
-	width: 20vw;
+	width: 10vw;
 	height: 1px;
 }
 #espacio-images .item {
