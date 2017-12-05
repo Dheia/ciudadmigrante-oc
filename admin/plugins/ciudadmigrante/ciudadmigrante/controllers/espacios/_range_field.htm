@@ -1,0 +1,14 @@
+<div class="range-input">
+	<span class="value" id="<?= $field->getId() ?>-value"><?=$value?></span>
+	<input 
+		type ="range" 
+		min="<?=$field->attributes['field']['min']?>"
+		max="<?=$field->attributes['field']['max']?>"
+	    oninput="document.getElementById('<?= $field->getId() ?>-value').innerHTML = this.value;"
+	    step="1" 
+	    id="<?= $field->getId() ?>"
+	    name="<?= $field->getName() ?>"
+	    class="form-control"
+	    value="<?=$value?>"
+	>
+</div>

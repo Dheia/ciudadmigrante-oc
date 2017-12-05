@@ -10,7 +10,10 @@ fields:
         oc.commentPosition: ''
         span: right
         type: partial
-        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_range_field.htm
+        attributes:
+            min: -90
+            max: 90
     image:
         label: Imagen
         oc.commentPosition: ''
@@ -21,12 +24,42 @@ fields:
             extension: auto
         span: left
         type: fileupload
-    translate_y:
-        label: 'Transladar Y (abajo) [%]'
+    translate_x:
+        label: 'Desplazamiento X [%]'
         oc.commentPosition: ''
         span: right
         type: partial
-        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_number_field.htm
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_range_field.htm
+        attributes:
+            min: -100
+            max: 100
+    translate_y:
+        label: 'Desplazamiento Y [%]'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_range_field.htm
+        attributes:
+            min: -100
+            max: 100
+    scale_x:
+        label: 'Escala X [%]'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_range_field.htm
+        attributes:
+            min: 0
+            max: 200
+    scale_y:
+        label: 'Escala Y [%]'
+        oc.commentPosition: ''
+        span: right
+        type: partial
+        path: ~/plugins/ciudadmigrante/ciudadmigrante/controllers/espacios/_range_field.htm
+        attributes:
+            min: 0
+            max: 200
     z_index:
         label: 'Orden en eje Z'
         oc.commentPosition: ''

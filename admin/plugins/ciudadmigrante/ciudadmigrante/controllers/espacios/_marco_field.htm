@@ -87,11 +87,20 @@
 <script>
 
 
-	// image rotate
+	// image transform
 
-	$('input[name="EspacioImage[rotate_y]"], input[name="EspacioImage[translate_y]"]').on("change click", function(){
-		$('#FileUpload-relationImagesManageFormImage-image .icon-container').css({'transform' : 'rotateY(' + $('input[name="EspacioImage[rotate_y]"]').val() + 'deg) translateY(' + $('input[name="EspacioImage[translate_y]"]').val() + '%)'});
+	$('input[name="EspacioImage[rotate_y]"], input[name="EspacioImage[translate_y]"], input[name="EspacioImage[translate_x]"], input[name="EspacioImage[scale_x]"], input[name="EspacioImage[scale_y]"]').on("input click", function(){
+		$('#FileUpload-relationImagesManageFormImage-image .icon-container').css({
+			'transform' : 
+				'rotateY(' + $('input[name="EspacioImage[rotate_y]"]').val() + 'deg) ' + 
+				'translateX(' + $('input[name="EspacioImage[translate_x]"]').val() + '%) ' + 
+				'translateY(' + $('input[name="EspacioImage[translate_y]"]').val() + '%) ' + 
+				'scaleX(' + $('input[name="EspacioImage[scale_x]"]').val()/100 + ') ' +
+				'scaleY(' + $('input[name="EspacioImage[scale_y]"]').val()/100 + ') '
+		});
 	});
+
+
 
 
 

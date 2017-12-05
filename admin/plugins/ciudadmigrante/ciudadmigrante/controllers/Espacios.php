@@ -21,6 +21,7 @@ class Espacios extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('CiudadMigrante.CiudadMigrante', 'main-menu-item', 'side-menu-item4');
+        $this->addCss('/plugins/ciudadmigrante/ciudadmigrante/assets/css/styles.css');
     }
 
 

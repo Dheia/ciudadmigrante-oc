@@ -1,7 +1,7 @@
 
 <section id="espacio-images">
     
-    <span ng-repeat="item in espacioData.images" id="image-{{ $index }}" class="item" style="transform: translateY({{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg); z-index: {{ item.z_index }};">
+    <span ng-repeat="item in espacioData.images" id="image-{{ $index }}" class="item" style="transform: translate({{ item.translate_x }}%, {{ item.translate_y }}%) rotateY({{ item.rotate_y }}deg) scale({{ item.scale_x/100 }}, {{ item.scale_y/100 }}); z-index: {{ item.z_index }};">
         <a ng-show="item['marco_url']" class="marker" href="{{ item['marco_url'] }}" style="
             left: {{ item['marco_x1'] }}%;
             top: {{ item['marco_y1'] }}%;
