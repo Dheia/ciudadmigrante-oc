@@ -1,6 +1,10 @@
 <?php namespace CiudadMigrante\CiudadMigrante\Models;
 
 use Model;
+use CiudadMigrante\CiudadMigrante\Models\Settings;
+use RainLab\Translate\Classes\Translator;
+use KubaMarkiewicz\Translations\Models\Translation;
+use Input;
 
 /**
  * Model
@@ -33,10 +37,23 @@ class PuntoDeAcogida extends Model
 
     public function beforeSave()
     {
+        Translator::instance()->setLocale(Input::get('lang'));
+
         if ($this->latlng) {
             $latlng = json_decode($this->latlng);
             $this->latlng = $latlng->lat.','.$latlng->lng;
-        }           
+        }   
+
+        // send email to user
+        if ($this->isDirty('publicado') && $this->publicado && $this->usuario_email) {
+
+            // send email to admin ---------------------------------------------------------------------
+            $subject = Translation::translate('emails.Punto ayuda publicado.Asunto del email', 'Tu punto de ayuda ha sido publicado');
+            $message = Translation::translate('emails.Punto ayuda publicado.Mensaje del email', "Tu punto de ayuda ha sido publicado en la web de Ciudad Migrante\nhttp://ciudadmigrante.es");
+
+            $result = mail($this->usuario_email, $subject, $message, 'From: Ciudad Migrante <'.Settings::get('admin_email').'>');
+
+        };     
     }
 
 

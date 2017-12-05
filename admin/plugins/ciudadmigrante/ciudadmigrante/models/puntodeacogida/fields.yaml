@@ -8,6 +8,7 @@ fields:
         label: Publicado
         span: right
         type: switch
+        comment: 'al publicar se enviará un aviso al usuario'
     enviado_por_usuario:
         label: Creado por usuario
         span: right

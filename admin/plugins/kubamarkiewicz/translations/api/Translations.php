@@ -58,24 +58,10 @@ class Translations extends Controller
 
         // sort_order
         $section = substr($code, 0, strrpos($code, '.'));
-        $this->fixSortOrder($section);
+        Translation::fixSortOrder($section);
 
         return 'added';
     }
 
-
-    public function fixSortOrder($section)
-    {
-        $query = Translation::where('code', 'LIKE', $section.".%")
-                        ->where('code', 'NOT LIKE', $section.".%.%")
-                        ->orderBy('sort_order', 'asc');
-        $result = $query->get();
-        $i = 1;
-        if ($result) foreach ($result as $item) {
-            $item->sort_order = $i;
-            $item->save();
-            $i++;
-        }
-    }
 
 }

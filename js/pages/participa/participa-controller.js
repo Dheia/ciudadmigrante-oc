@@ -76,6 +76,9 @@ app.controller('ParticpaController', function($scope, $rootScope, $http, config,
                 telefono        : $scope.telefono,
                 usuario_nombre  : $scope.usuario_nombre,
                 usuario_email   : $scope.usuario_email
+            },
+            params  : {
+                'lang': $rootScope.lang
             }
         })
         .then(function(response) {
