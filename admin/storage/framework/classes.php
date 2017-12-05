@@ -106,4 +106,5 @@
   'kubamarkiewicz\\translations\\Controllers\\translations' => 'plugins/kubamarkiewicz/translations/controllers/translations.php',
   'KubaMarkiewicz\\Translations\\Models\\Translation' => 'plugins/kubamarkiewicz/translations/models/Translation.php',
   'KubaMarkiewicz\\Translations\\Api\\Translations' => 'plugins/kubamarkiewicz/translations/api/Translations.php',
+  'CiudadMigrante\\CiudadMigrante\\Models\\Settings' => 'plugins/ciudadmigrante/ciudadmigrante/models/Settings.php',
 );

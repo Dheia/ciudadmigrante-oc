@@ -4,12 +4,13 @@ use Illuminate\Routing\Controller;
 use Input;
 use CiudadMigrante\CiudadMigrante\Models\PuntoDeAcogida;
 use RainLab\Translate\Classes\Translator;
+use CiudadMigrante\CiudadMigrante\Models\Settings;
 
 class PuntosDeAcogida extends Controller
 {
 
     public function index()
-    {
+    { 
         // Translator::instance()->setLocale(Input::get('lang'));
 
         $categories = [];
@@ -55,6 +56,7 @@ class PuntosDeAcogida extends Controller
 
     public function add()
     {
+        
         // print_r(Input::all()); exit;
 
         $data = Input::all();
@@ -70,6 +72,11 @@ class PuntosDeAcogida extends Controller
         $item->enviado_por_usuario = true;
         $item->publicado = false;
         $item->save();
+
+        // send email to admin ---------------------------------------------------------------------
+        $message = "Puedes publicarlo en el panel de administración: \n".url('/')."/admin/ciudadmigrante/ciudadmigrante/puntosdeacogida/update/".$item->id;
+
+        $result = mail(Settings::get('admin_email'), 'Ciudad Migrante: usuario ha añadido un punto de red de acogida', $message);
     }
 
 }

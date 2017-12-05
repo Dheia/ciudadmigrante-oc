@@ -2,10 +2,6 @@
 
     <?= Form::open(['class'=>'layout']) ?>
 
-        <div class="layout-row">
-            <?= $this->formRender() ?>
-        </div>
-
         <div class="form-buttons">
             <div class="loading-indicator-container">
                 <button
@@ -31,6 +27,10 @@
                     <?= e(trans('backend::lang.form.reset_default')) ?>
                 </button>
             </div>
+        </div>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
         </div>
     <?= Form::close() ?>
 

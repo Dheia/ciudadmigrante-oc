@@ -1,0 +1,6 @@
+fields:
+    admin_email:
+        label: 'Notificationes de nuevos puntos de red de acogida se envian a:'
+        span: left
+        default: 0
+        type: text

@@ -10,5 +10,16 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
+        return [
+            'settings' => [
+                'label'       => 'Configuración',
+                'description' => '',
+                'category'    => 'Configuración',
+                'icon'        => 'icon-cog',
+                'class'       => 'CiudadMigrante\CiudadMigrante\Models\Settings',
+                'order'       => 0,
+                'keywords'    => 'security location'
+            ]
+        ];
     }
 }
