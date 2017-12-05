@@ -1,5 +1,11 @@
 <?php if ($value) : ?>
 	<span style="perspective: 150px; display: inline-block;">
-		<img src="<?php echo $value->getThumb(100, 50); ?>" style="transform: rotateY(<?=$record->rotate_y?>deg)">
+		<img src="<?php echo $value->getThumb(100, 50); ?>" style="transform: 
+			rotateY(<?=$record->rotate_y?>deg)
+			translateX(<?=$record->translate_x?>%)
+			translateY(<?=$record->translate_y?>%)
+			scaleX(<?=$record->scale_x / 100?>)
+			scaleY(<?=$record->scale_y / 100?>)
+		">
 	</span>
 <?php endif ?>
