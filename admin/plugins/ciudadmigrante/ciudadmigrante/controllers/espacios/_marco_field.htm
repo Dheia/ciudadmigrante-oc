@@ -20,7 +20,12 @@
 	}
 
 	#FileUpload-relationImagesManageFormImage-image .icon-container {
-		transform: rotateY(<?=$model->rotate_y?>deg) translateY(<?=$model->translate_y?>%);
+		transform: 
+			rotateY(<?=$model->rotate_y?>deg) 
+			translateX(<?=$model->translate_x?>%)
+			translateY(<?=$model->translate_y?>%)
+			scaleX(<?=$model->scale_x / 100?>)
+			scaleY(<?=$model->scale_y / 100?>);
 		margin: 80px 0;
 	}
 	#FileUpload-relationImagesManageFormImage-image .icon-container img {
