@@ -8,8 +8,19 @@ body.page-participa #menu-1 .share {
 	display: inline-block;
 }
 body.page-participa #menu-1 .back {
-	display: inline-block; 
+	display: inline-block;
 }
+
+
+
+/* page transition ciudad > espacios */
+
+body.prev-page-participa.page-participa > main {
+	--webkit-transition: none;
+  	transition: none;
+}
+
+
 
 
 section#participa {
@@ -17,54 +28,60 @@ section#participa {
 	background-attachment: fixed;
 	background-size: cover;
 	padding-bottom: 94px;
-	padding-top: 235px;;;;;;;;
+	padding-top: 235px;
 }
 
-
-section#participa > header {;
+section#participa > header {
 }
+
 section#participa > header .container {
 }
+
 section#participa > header .container > h1 {
 }
-section#participa > header .description {
+
+section#participa > main {
 }
 
-
-section#participa > main {;;
-}
 section#participa > main .container {
 }
+
 section#participa > main .row {
-	background-color: #2c333c;;
-    margin: 0;
+	background-color: #2c333c;
+	margin: 0;
 }
-section#participa > main .col-md-6 {
+
+section#participa > main .col-md-6.left {
+	text-align: center;
+	position: relative;
 }
-section#participa > main .form {
-	text-align: center;;
-}
+
 section#participa > main .form-group {
 }
+
 section#participa > main form {
 	margin: 0 auto;
 	max-width: 490px;
 	width: 100%;
 	padding-top: 25px;
-	text-align: left;;]
+	text-align: left;
 }
+
 section#participa > main form button {
 	margin: 10px 0 5px 0;
 }
+
 section#participa > main #participa-map {
 	padding: 0;
 }
+
 section#participa label {
 	font-size: 14px;
 	font-weight: 300;
 	color: #b8b7b7;
-	padding-left: 20px;;;;;
+	padding-left: 20px;
 }
+
 section#participa .form-control {
 	background: transparent;
 	padding-top: 0;
@@ -72,32 +89,71 @@ section#participa .form-control {
 	height: 25px;
 	text-align: left;
 	font-weight: inherit;
-	font-family: inherit;;;;;;;;
+	font-family: inherit;
 }
-section#participa  div.multiselect {;
-	min-height: 36px;;;;
+
+section#participa  div.multiselect {
+	min-height: 36px;
 }
+
 section#participa  div.multiselect .btn {
 	text-transform: none;
 }
+
 section#participa  div.multiselect .btn-default:hover,
 section#participa  div.multiselect .btn-default:focus,
 section#participa  div.multiselect .btn-default:active {
 	color: inherit;
-	box-shadow: none;;
+	box-shadow: none;
 }
+
 section#participa  .btn-group {
 	display: block;
 }
 
 section#participa .multiselect-container {
-
 }
+
 section#participa .multiselect-container>li>a>label.checkbox {
 	font-size: 18px;
 	color: #ffffff;
 	font-weight: 400;
 	padding-top: 6px;
-	padding-bottom: 6px;;;;;;
+	padding-bottom: 6px;
 }
 
+section#participa > main .gracias {
+	display: none;
+	position: absolute;
+	height: 100%;
+	background-color: #2c333c;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 100;
+	width: calc(100% - 30px);
+	text-align: center;
+}
+
+section#participa > main.show-gracias .gracias {
+	display: flex;
+}
+
+section#participa > main .gracias .wrap {
+	margin: 0 auto;
+	max-width: 490px;
+	text-align: left;
+}
+
+section#participa > main .gracias main {
+	font-size: 24px;
+	font-family: 'DIN Next LT Pro Condensed';
+	margin-bottom: 30px;
+}
+
+section#participa > main .gracias main h2 {
+	font-size: 30px;
+}
+
+section#participa > main .gracias footer {
+	text-align: right;
+}

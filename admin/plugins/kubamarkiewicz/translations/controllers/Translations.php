@@ -88,7 +88,7 @@ class Translations extends Controller
             switch ($item->type) {
                 case 'richeditor':
                     $config->fields[$slug]['type'] = 'richeditor';
-                    $config->fields[$slug]['size'] = 'small';
+                    $config->fields[$slug]['size'] = 'large';
                     $config->fields[$slug]['toolbarButtons'] = 'paragraphFormat|bold|italic|clearFormatting|align|outdent|indent|formatOL|formatUL|insertHR|insertLink|insertFile|insertImage|insertVideo|insertTable|fullscreen|html';
                     break;
                 default:

@@ -48,6 +48,9 @@
     display: block;
     content: '';
 }
+#section-translations > aside a i {
+	margin-right: 4px;
+}
 #section-translations > aside h4 {
 	padding: 15px 20px;
 	text-transform: uppercase;

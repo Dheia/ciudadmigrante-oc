@@ -1,8 +1,8 @@
-app.controller('ParticpaController', function($scope, $rootScope, $http, config, $translate) {  
+app.controller('ParticpaController', function($scope, $rootScope, $http, config, $translate, $route) {  
 
     $scope.translations = [];
 
-    $translate(['participa.Selecciona las opciones', 'participa.seleccionados']).then(function (translations) {
+    $translate(['participa.formulario.Selecciona las opciones', 'participa.formulario.seleccionados']).then(function (translations) {
         $scope.translations = translations;
     });
 
@@ -29,10 +29,10 @@ app.controller('ParticpaController', function($scope, $rootScope, $http, config,
 		            inheritClass: true,
                     buttonText: function(options) {
                         if (options.length === 0) {
-                            return $scope.translations['participa.Selecciona las opciones'];
+                            return $scope.translations['participa.formulario.Selecciona las opciones'];
                         }
                         else if (options.length > 3) {
-                            return options.length + ' ' + $scope.translations['participa.Selecciona las opciones'];
+                            return options.length + ' ' + $scope.translations['participa.formulario.Selecciona las opciones'];
                         }
                         else {
                             var selected = [];
@@ -83,48 +83,63 @@ app.controller('ParticpaController', function($scope, $rootScope, $http, config,
             }
         })
         .then(function(response) {
+            $('section#participa > main').addClass('show-gracias');
         });
     }
 
 
-
-    // Google Maps
-    var map = new google.maps.Map(document.getElementById("participa-map"), config.map); 
-
-    var input = document.getElementById('participa-direccion');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-
-    // Bind the map's bounds (viewport) property to the autocomplete object,
-    // so that the autocomplete requests use the current map bounds for the
-    // bounds option in the request.
-    autocomplete.bindTo('bounds', map);
-
-    var marker = new google.maps.Marker({
-        map: map,
-        anchorPoint: new google.maps.Point(0, -29),
-        icon: 'images/marker-blue.png'
-    });
-
-    autocomplete.addListener('place_changed', function() 
+    $scope.closeGracias = function()
     {
-        marker.setVisible(false);
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-            // User entered the name of a Place that was not suggested and
-            // pressed the Enter key, or the Place Details request failed.
-            window.alert("No details available for input: '" + place.name + "'");
-            return;
-        }
+        $route.reload();
+        $('section#participa > main').removeClass('show-gracias');
+    }
 
-        // If the place has a geometry, then present it on a map.
-        if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-        } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);  // Why 17? Because it looks good.
-        }
-        marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
-    });
+
+    var marker;
+
+
+    setTimeout(function(){
+
+        // Google Maps
+        var map = new google.maps.Map($("#participa-map")[0], config.map); 
+
+        var input = document.getElementById('participa-direccion');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Bind the map's bounds (viewport) property to the autocomplete object,
+        // so that the autocomplete requests use the current map bounds for the
+        // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+
+        marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29),
+            icon: 'images/marker-blue.png'
+        });
+
+        autocomplete.addListener('place_changed', function() 
+        {
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
+
+            // If the place has a geometry, then present it on a map.
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);  // Why 17? Because it looks good.
+            }
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+        });
+
+    }, 0);
+
 
 });

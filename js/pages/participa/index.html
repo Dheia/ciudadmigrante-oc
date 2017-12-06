@@ -4,11 +4,9 @@
 	
 	<header>
 		
-		<div class="container">
+		<div class="container" translate="participa.introduccion" translate-type="richeditor">
 		    <h1>Participa. propón un punto de ayuda solidAria y la pondremos en el mapa</h1>
-		    <div class="description">
-		    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-		    </div>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 		</div><!-- /.container -->
 
 	</header>
@@ -21,17 +19,31 @@
 
 			<div class="row is-flex">
 				
-				<div class="col-md-6 form">
+				<div class="col-md-6 left">			
+
+					<div class="gracias">
+						<div class="wrap">
+							<main translate="participa.gracias.gracias" translate-type="richeditor">
+								<h2>!Gracias por tu propuesta!</h2>
+								<p>
+									La revisaremos y si todo está correcto pronto aparecerá en el mapa.
+								</p>
+							</main>
+							<footer>
+								<button class="btn" ng-click="closeGracias()" translate="participa.gracias.volver">Volver</button>
+							</footer>
+						</div>
+					</div>
 					
 					<form id="participa-form" ng-submit="submitForm()">
 						
 						<div class="form-group">
-							<label>Nombre de la entidad *</label>
+							<label translate="participa.formulario.Nombre de la entidad">Nombre de la entidad *</label>
 							<input type="text" class="form-control" ng-model="name" required>
 						</div>
 						
 						<div class="form-group">
-							<label>Tipo de ayuda *</label>
+							<label translate="participa.formulario.Tipo de ayuda">Tipo de ayuda *</label>
 							<div class="multiselect">
 								<select 
 									id="categories-multiselect" 
@@ -39,43 +51,43 @@
 									multiple="multiple"
 									ng-options="item.name for item in categoriesData track by item.id"
 									ng-model="selectedCategories"
-									required>
+									>
 								</select>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label>Dirección completa *</label>
+							<label translate="participa.formulario.Dirección completa">Dirección completa *</label>
 							<input id="participa-direccion" type="text" class="form-control" ng-model="direccion" required>
 						</div>
 						
 						<div class="form-group">
-							<label>Web *</label>
-							<input type="url" class="form-control" ng-model="web" required>
+							<label translate="participa.formulario.Web">Web *</label>
+							<input type="url" class="form-control" ng-model="web">
 						</div>
 						
 						<div class="form-group">
-							<label>E-mail </label>
+							<label translate="participa.formulario.Email">E-mail </label>
 							<input type="email" class="form-control" ng-model="email">
 						</div>
 						
 						<div class="form-group">
-							<label>Teléfono</label>
+							<label translate="participa.formulario.Teléfono">Teléfono</label>
 							<input type="text" class="form-control" ng-model="telefono">
 						</div>
 						
 						<div class="form-group">
-							<label>Tú nombre *</label>
+							<label translate="participa.formulario.Tú nombre">Tú nombre *</label>
 							<input type="text" class="form-control" ng-model="usuario_nombre" required>
 						</div>
 						
 						<div class="form-group">
-							<label>Tú email *</label>
+							<label translate="participa.formulario.Tú email">Tú email *</label>
 							<input type="email" class="form-control" ng-model="usuario_email" required>
 						</div>
 
 						<p class="text-right">
-							<button type="submit" class="btn">Enviar</button>
+							<button type="submit" class="btn" translate="participa.formulario.Enviar">Enviar</button>
 						</p>
 
 					</form>
