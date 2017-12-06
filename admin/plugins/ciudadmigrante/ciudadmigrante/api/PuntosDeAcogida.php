@@ -60,6 +60,7 @@ class PuntosDeAcogida extends Controller
         // print_r(Input::all()); exit;
 
         $data = Input::all();
+        unset($data['lang']);
 
         // extract categories IDs
         $categories = [];
