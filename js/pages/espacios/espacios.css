@@ -117,23 +117,26 @@ section#espacios-index a:nth-child(even) {
 
 /* mobile */
 
-@media screen and (max-width: 1600px) {
-
-	section#espacios-index a span {
-		font-size: 30px;
-		line-height: 100%;
-	}
-
-}
-
 
 @media screen and (max-width: 1200px) {
 
-	section#espacios-index .wrap {
+/*	section#espacios-index .wrap {
 		width: 100%;
 		display: flex;
 		padding: 0 2vw;
 		height: calc(100vh - 420px);
+	}*/
+
+}
+
+@media screen and (max-width: 1600px) {
+
+	section#espacios-index .wrap {
+		height: calc(100vh - 342px);
+	}
+	section#espacios-index a span {
+		font-size: 30px;
+		line-height: 100%;
 	}
 
 }
