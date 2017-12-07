@@ -117,6 +117,16 @@ section#espacios-index a:nth-child(even) {
 
 /* mobile */
 
+@media screen and (max-width: 1600px) {
+
+	section#espacios-index a span {
+		font-size: 30px;
+		line-height: 100%;
+	}
+
+}
+
+
 @media screen and (max-width: 1200px) {
 
 	section#espacios-index .wrap {

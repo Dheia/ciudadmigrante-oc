@@ -4,6 +4,174 @@
 body.page-espacio #logo {
 	display: block;
 }
+
+
+
+/* responsive */
+
+body.page-espacio #menu-1 .share {
+	display: inline-block;
+
+}
+
+
+
+/* responsive */
+
+body.page-espacio #menu-1 .back {
+	display: inline-block;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images {
+	height: 100vh;
+	background-size: cover;
+	background-position: center center;
+	background-image: url(../../../images/espacios/background.jpg);
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	perspective: 500px;
+	position: relative;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images:before {
+	content: '';
+	display: inline-block;
+	width: 15vw;
+	height: 1px;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images:after {
+	content: '';
+	display: inline-block;
+	width: 10vw;
+	height: 1px;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images .item {
+	display: inline-block;
+	position: relative;
+	margin-top: calc(30vh);
+
+}
+
+
+
+/* responsive */
+
+#espacio-images .item img {
+	max-height: 40vh;
+	max-width: 80vw;
+	box-shadow: 0 10px 60px rgba(0,0,0,0.65);
+	cursor: pointer;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images .item a.marker {
+	border: 4px solid #fff000;
+	position: absolute;
+
+}
+
+
+
+/* responsive */
+
+#espacio-images .item a.marker::before {
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-image: url(../../../images/espacios/plus.png);
+	right: 0;
+	transform: translate(50%, -50%);
+
+}
+
+
+
+/* responsive */
+
+#espacio-description {
+	position: absolute;
+	bottom: 30px;
+	left: 79px;
+	width: 50vw;
+
+}
+
+
+
+/* responsive */
+
+#espacio-description h1 {
+
+}
+
+
+
+/* responsive */
+
+#espacio-description h1 .description {
+
+}
+
+
+
+/* responsive */
+
+#espacio-links {
+	position: absolute;
+	bottom: 40px;
+	right: 30px;
+
+}
+
+
+
+/* responsive */
+
+#espacio-links a {
+	text-transform: uppercase;
+	color: #ffffff;
+	background-color: #2c333c;
+	padding: 10px 25px;
+	display: inline-block;
+	margin-left: 15px;
+
+}
+
+
+
+/* responsive */
+
+@media screen and (max-width: 1600px) {
+
+}
 body.page-espacio #menu-1 .share {
 	display: inline-block; 
 }
@@ -87,4 +255,26 @@ body.page-espacio #menu-1 .back {
 	padding: 10px 25px;
 	display: inline-block;
 	margin-left: 15px;;;;;;;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 1600px) {
+
+	#espacio-images .item a.marker::before {
+		width: 31px;
+		height: 31px;
+		background-size: 100%;;
+	}
+
+}
+
+
+
+/* responsive */
+
+body.page-espacio #logo {
+	display: block;
+
 }

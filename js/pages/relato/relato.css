@@ -93,3 +93,32 @@ section#relato-video > main {
 
 
 
+@media screen and (max-width: 1600px) {
+
+	section#relato-video > aside {
+		width: 279px;
+	}
+
+	section#relato-video > aside .logo img {
+		width: 196px;
+	}
+
+	section#relato-video > aside h1 {
+		font-size: 25px;
+	}
+
+	section#relato-video > aside h2 {
+		font-size: 15px;
+	}
+
+	section#relato-video > aside .handle {
+		height: 62px;
+		width: 31px;
+	}
+	section#relato-video > aside .handle::before {
+		height: 21px;
+		width: 21px;
+		background-size: 100%;;
+	}
+
+}

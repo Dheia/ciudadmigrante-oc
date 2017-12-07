@@ -157,3 +157,17 @@ section#participa > main .gracias main h2 {
 section#participa > main .gracias footer {
 	text-align: right;
 }
+
+
+
+
+
+/* responsive */
+
+@media screen and (max-width: 1600px) {
+
+	section#participa label {
+		font-size: 8.75px;
+	}
+
+}
