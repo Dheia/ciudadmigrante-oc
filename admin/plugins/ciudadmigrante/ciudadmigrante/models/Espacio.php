@@ -29,7 +29,7 @@ class Espacio extends Model
 
     public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
  
-    public $translatable = ['name', 'descripcion', 'button_title'];
+    public $translatable = ['name', 'descripcion', 'button_title', 'button_2_title'];
 
 
     /*

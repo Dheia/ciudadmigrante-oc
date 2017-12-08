@@ -54,3 +54,6 @@
 1.0.19:
     - 'Updated table ciudadmigrante_ciudadmigrante_espacio_images'
     - builder_table_update_ciudadmigrante_ciudadmigrante_espacio_images_3.php
+1.0.20:
+    - 'Updated table ciudadmigrante_ciudadmigrante_espacios'
+    - builder_table_update_ciudadmigrante_ciudadmigrante_espacios_2.php

@@ -41,7 +41,7 @@ tabs:
             type: fileupload
             tab: 'Datos del espacio'
         image_map:
-            label: Imagen del globo
+            label: 'Imagen del globo'
             oc.commentPosition: ''
             mode: image
             useCaption: 0
@@ -59,6 +59,18 @@ tabs:
             tab: 'Datos del espacio'
         button_url:
             label: 'URL del botón'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'Datos del espacio'
+        button_2_title:
+            label: 'Titulo del botón 2'
+            oc.commentPosition: ''
+            span: right
+            type: text
+            tab: 'Datos del espacio'
+        button_2_url:
+            label: 'URL del botón 2'
             oc.commentPosition: ''
             span: right
             type: text
