@@ -696,6 +696,20 @@ section#intro #intro-player {
 		height: 112px;
 	}
 
+	#menu-1 .share,
+	#menu-1 .back,
+	section#intro a.next {
+		width: 31px;
+		height: 31px;
+	}
+	section#intro a.next {
+		background-size: 100%;
+	}
+
+	section#intro .languages {
+		font-size: 12.5px;
+	}
+
 }
 
 
