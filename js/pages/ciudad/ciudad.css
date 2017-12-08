@@ -104,11 +104,16 @@ section#ciudad-map > aside.expanded .handle::before {
 
 
 section#ciudad-map > aside .column {
-	margin: 100px 0 0 0;
+	margin: 106px 0 0 0;
 	max-height: calc(100% - 100px);
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;;;
+}
+section#ciudad-map > aside .column .subtitle {
+	font-weight: bold;
+	margin-left: 40px;
+	margin-bottom: 30px;;
 }
 
 
