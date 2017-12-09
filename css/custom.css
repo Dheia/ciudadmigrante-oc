@@ -525,6 +525,7 @@ h1.page-title {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
+	color: #ffffff;
 }
 #menu-relatos .faces a h3 {
 	position: absolute;
@@ -541,10 +542,12 @@ h1.page-title {
     transition: all 1s cubic-bezier(.46,1,1,1);
 }
 
-#menu-relatos .faces a:hover img {
+#menu-relatos .faces a:hover img,
+#menu-relatos .faces a.selected img {
 	transform: scale(1.1);
 }
-#menu-relatos .faces a:hover h3 {
+#menu-relatos .faces a:hover h3,
+#menu-relatos .faces a.selected h3 {
 	opacity: 1;
 }
 #menu-relatos .horizontal.simplebar-track .simplebar-scrollbar {
