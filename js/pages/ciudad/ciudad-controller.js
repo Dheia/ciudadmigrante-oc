@@ -212,7 +212,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
 
 
     // filters
-    $scope.selectedFilters = {}; 
+    $scope.selectedFilters = {'relatos' : true}; 
 
 
     // categories
@@ -230,6 +230,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
         })
         .then(function(response) {
             $scope.categoriesData = response.data;
+            $scope.selectedCategories[$scope.categoriesData[0].id] = true;
+            $scope.loadData();
         });
     }
     $scope.loadCategoriesData();
@@ -239,37 +241,35 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
     // load data
     $scope.loadData = function()
     {
-        var showAll = true;
-        for (i in $scope.selectedFilters) {
-            if ($scope.selectedFilters[i]) {
-                showAll = false;
-            }
-        }
-
         $scope.deleteAllMarkers();
-        if ($scope.selectedFilters.relatos || showAll) {
+
+        if ($scope.selectedFilters.relatos) {
             $scope.loadRelatosData();
         }
-        if ($scope.selectedFilters.ayuda || showAll) {
+        if ($scope.selectedFilters.ayuda) {
             $scope.loadAyudaData();
         }
-        if ($scope.selectedFilters.espacios || showAll) {
+        if ($scope.selectedFilters.espacios) {
             $scope.loadEspaciosData();
         }
     }
-    $scope.loadData();
+    
 
 
 
     $scope.onFilterClick = function(filter)
     {
-        $scope.selectedFilters[filter] = !$scope.selectedFilters[filter];
+        // $scope.selectedFilters[filter] = !$scope.selectedFilters[filter];
+        $scope.selectedFilters = {};
+        $scope.selectedFilters[filter] = true;
         $scope.loadData();
     }
 
     $scope.onCategoryClick = function(id)
     {
-        $scope.selectedCategories[id] = !$scope.selectedCategories[id];
+        // $scope.selectedCategories[id] = !$scope.selectedCategories[id];
+        $scope.selectedCategories = {};
+        $scope.selectedCategories[id] = true;
         $scope.loadData();
     }
 
