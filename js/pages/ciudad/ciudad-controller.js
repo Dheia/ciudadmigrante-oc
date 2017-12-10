@@ -82,6 +82,15 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 $scope.openedInfoWindowId = type + item.id;
             }
         });
+        google.maps.event.addListener(m, 'mouseover', function() {
+            if ($scope.openedInfoWindowId == (type + item.id)) {
+            }
+            else {
+                $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
+                $scope.infowindow.open(map, m);
+                $scope.openedInfoWindowId = type + item.id;
+            }
+        });
     }
 
 
@@ -276,6 +285,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         $scope.selectedFilters = {};
         $scope.selectedFilters[filter] = true;
         $scope.loadData();
+
+        $rootScope.closeRelatos();
     }
 
     $scope.onCategoryClick = function(id)
@@ -284,6 +295,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         $scope.selectedCategories = {};
         $scope.selectedCategories[id] = true;
         $scope.loadData();
+
+        $rootScope.closeRelatos();
     }
 
 
