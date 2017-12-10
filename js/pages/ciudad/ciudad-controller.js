@@ -43,7 +43,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 continue;
             }
 
-            setTimeout($scope.createMarker.bind(null, data, i, type), i*100);
+            setTimeout($scope.createMarker.bind(null, data, i, type), i*50);
         }
     }
 
