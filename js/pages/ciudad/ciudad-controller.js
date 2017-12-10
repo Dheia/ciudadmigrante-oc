@@ -48,7 +48,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
                 position: new google.maps.LatLng(latlng[0],latlng[1]),
                 map: map,
                 icon: icons[type],
-                title: item.name
+                title: item.name,
+                animation: google.maps.Animation.DROP
             });
             $scope.markers[type].push(marker);
 

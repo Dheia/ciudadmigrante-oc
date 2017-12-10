@@ -114,7 +114,8 @@ app.controller('ParticpaController', function($scope, $rootScope, $http, config,
         marker = new google.maps.Marker({
             map: map,
             anchorPoint: new google.maps.Point(0, -29),
-            icon: 'images/marker-blue.png'
+            icon: 'images/marker-blue.png',
+            animation: google.maps.Animation.DROP
         });
 
         autocomplete.addListener('place_changed', function() 
