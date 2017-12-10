@@ -1,4 +1,4 @@
-app.controller('CiudadController', function($scope, $rootScope, $http, config) {  
+app.controller('CiudadController', function($scope, $rootScope, $http, config, $timeout) {  
 
  
 	$("section#ciudad-map aside .handle").click(function(){
@@ -36,26 +36,38 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config) {
         $scope.deleteMarkers(type);
 
         for (i in data) {
-            var item = data[i];
+
+            var item = data[i]; 
 
             if (!item.latlng) {
                 continue;
             }
 
-            var latlng = item.latlng.split(",");
-
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(latlng[0],latlng[1]),
-                map: map,
-                icon: icons[type],
-                title: item.name,
-                animation: google.maps.Animation.DROP
-            });
-            $scope.markers[type].push(marker);
-
-            $scope.createInfoWindow(marker, item, type);
+            setTimeout($scope.createMarker.bind(null, data, i, type), i*100);
         }
     }
+
+    $scope.createMarker = function(data, i, type)
+    {
+        var item = data[i]; 
+
+        if (!item.latlng) {
+            return;
+        }
+
+        var latlng = item.latlng.split(",");
+
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(latlng[0],latlng[1]),
+            map: map,
+            icon: icons[type],
+            title: item.name,
+            animation: google.maps.Animation.DROP
+        });
+        $scope.markers[type].push(marker);
+
+        $scope.createInfoWindow(marker, item, type);
+    } 
 
     $scope.createInfoWindow = function(m, item, type) 
     {
