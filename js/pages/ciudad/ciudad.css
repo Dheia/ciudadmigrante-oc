@@ -239,6 +239,7 @@ section#ciudad-map > main {
 	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight: 500;;;
 	animation: iwFadeIn 100ms;
+	box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 .gm-style .gm-style-iw > div:first-child {
 	max-width: 100% !important;
@@ -355,11 +356,12 @@ section#ciudad-map > main {
 }
 /* shadow DIV */
 .gm-style-pbc + div + div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(2) {
+	display: none;;;
 	width: 295px !important;
 	left: 15px !important;
 	top: 14px !important;
 	background-color: rgba(0,0,0,0.1) !important;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 2px !important;;;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 2px !important;
 	/*background: transparent !important;*/
 }
 /* Remove the white background DIV */
@@ -410,10 +412,6 @@ section#ciudad-map > main {
 	
 	.gm-style .gm-style-iw .ayuda-content h2 {
 		font-size: 17px;
-	}
-
-	.gm-style-pbc + div + div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(2) {
-		width: 205px !important;
 	}
 
 	section#ciudad-map > aside .handle {
