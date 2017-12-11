@@ -227,7 +227,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
     $rootScope.loadRelatosData();
 
-    if (isTouchDevice()) {
+    if (!isTouchDevice()) {
         $('#menu-relatos .simplebar-content').mousemove(function(event){
             // $(this).stop().animate({scrollLeft: (event.pageX - 100) * ((this.scrollWidth + 150) / this.clientWidth - 1) + 50 }, 200);
             $(this).scrollLeft((event.pageX - 50) * ((this.scrollWidth + 100) / this.clientWidth - 1) + 0);
