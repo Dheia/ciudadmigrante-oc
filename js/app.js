@@ -227,11 +227,31 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
     $rootScope.loadRelatosData();
 
+
+    // hover scroll
     if (!isTouchDevice()) {
-        $('#menu-relatos .simplebar-content').mousemove(function(event){
-            // $(this).stop().animate({scrollLeft: (event.pageX - 100) * ((this.scrollWidth + 150) / this.clientWidth - 1) + 50 }, 200);
-            $(this).scrollLeft((event.pageX - 50) * ((this.scrollWidth + 100) / this.clientWidth - 1) + 0);
-        });       
+
+        var scrollElement = $('#menu-relatos .simplebar-content');
+        var scrollMargin = 50;
+        var scrollFactor;
+
+        $('#menu-relatos .faces').mouseenter(function(event){
+
+            scrollFactor = (scrollElement[0].scrollWidth + 2 * scrollMargin) / window.innerWidth - 1;
+
+            scrollElement.stop().animate({scrollLeft: (event.pageX - scrollMargin) * scrollFactor}, 200, null, bindMouseMove);
+        });
+        $('#menu-relatos .faces').mouseleave(function(){
+            scrollElement.mousemove(null);
+        });
+
+        function bindMouseMove()
+        {
+            scrollElement.mousemove(function(event){
+                $(this).scrollLeft((event.pageX - scrollMargin) * scrollFactor);
+            });
+        }
+       
     }
 
 
