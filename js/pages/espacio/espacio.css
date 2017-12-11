@@ -61,6 +61,26 @@ body.page-espacio #menu-1 .back {
 }
 
 
+section#espacio-scroll-controls .scroll-left,
+section#espacio-scroll-controls .scroll-right {
+	width: 10vw;
+	height: calc(85vh - 150px);
+	/*background-color: rgba(255,0,0,0.5);*/
+	position: fixed;;
+	z-index: 1;
+	top: 20vh;;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+section#espacio-scroll-controls .scroll-left {
+	left: 0;
+	background-image: url(../../../images/arrow-left.png);
+}
+section#espacio-scroll-controls .scroll-right {
+	right: 0;
+	background-image: url(../../../images/arrow-right.png);
+}
+
 
 #espacio-description {
 	position: absolute;
