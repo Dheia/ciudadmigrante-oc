@@ -197,6 +197,9 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     // relatos
     $("#menu-relatos .toggle").click(function(){
         $(this).parent().toggleClass("expanded").find('.faces a').removeClass('selected');
+        if (!isTouchDevice()) {
+            scrollFacesToMiddle();
+        }
     });
     $rootScope.closeRelatos = function()
     {
@@ -251,7 +254,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
                 $(this).scrollLeft((event.pageX - scrollMargin) * scrollFactor);
             });
         }
-       
+
+        function scrollFacesToMiddle()
+        {
+            // scroll to 50%
+            scrollElement.scrollLeft((window.innerWidth/2 - scrollMargin) * scrollFactor);
+        }
+
     }
 
 
