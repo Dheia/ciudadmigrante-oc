@@ -227,11 +227,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
     $rootScope.loadRelatosData();
 
+    if (isTouchDevice()) {
+        $('#menu-relatos .simplebar-content').mousemove(function(event){
+            // $(this).stop().animate({scrollLeft: (event.pageX - 100) * ((this.scrollWidth + 150) / this.clientWidth - 1) + 50 }, 200);
+            $(this).scrollLeft((event.pageX - 50) * ((this.scrollWidth + 100) / this.clientWidth - 1) + 0);
+        });       
+    }
 
-    $('#menu-relatos .simplebar-content').mousemove(function(event){
-        // $(this).stop().animate({scrollLeft: (event.pageX - 100) * ((this.scrollWidth + 150) / this.clientWidth - 1) + 50 }, 200);
-        $(this).scrollLeft((event.pageX - 50) * ((this.scrollWidth + 100) / this.clientWidth - 1) + 0);
-    }); 
 
 
 
@@ -341,5 +343,11 @@ function youtube_parser(url){
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
     return (match&&match[7].length==11)? match[7] : false;
+}
+
+
+function isTouchDevice()
+{
+    return 'ontouchstart' in window || 'onmsgesturechange' in window;
 }
 
