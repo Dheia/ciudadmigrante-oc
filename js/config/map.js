@@ -6,14 +6,14 @@ window.config = window.config || {};
 // Google Maps Options
 
 window.config.map = {
-        zoom: 14,
-        center: new google.maps.LatLng(41.3900844,2.1763873),
+        zoom: 12,
+        center: new google.maps.LatLng(41.400644,2.150295),
         disableDefaultUI: true,
         zoomControl: true,
         // mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeId: 'satellite',
         heading: 90,
-        tilt: 45,
+        tilt: 0,
         styles: [
     {
         "featureType": "water",
