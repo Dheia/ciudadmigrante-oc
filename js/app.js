@@ -228,6 +228,12 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     $rootScope.loadRelatosData();
 
 
+    $('#menu-relatos .simplebar-content').mousemove(function(event){
+        // $(this).stop().animate({scrollLeft: (event.pageX - 100) * ((this.scrollWidth + 150) / this.clientWidth - 1) + 50 }, 200);
+        $(this).scrollLeft((event.pageX - 50) * ((this.scrollWidth + 100) / this.clientWidth - 1) + 0);
+    }); 
+
+
 
     $rootScope.goBack = function() 
     {
@@ -324,6 +330,9 @@ $.extend($.easing,
 {
     easeOutQuart: function (x, t, b, c, d) {
         return -c * ((t=t/d-1)*t*t*t - 1) + b;
+    },
+    easeOutCubic: function (x, t, b, c, d) {
+        return c * ((t=t/d-1)*t*t + 1) + b;
     }
 });
 

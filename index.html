@@ -83,7 +83,7 @@
         <a href="creditos" class="creditos">{{ 'menu.CREDITOS' | translate }}</a>
         <a class="toggle">{{ 'menu.RELATOS' | translate }}</a>
         <div class="faces" data-simplebar data-simplebar-autohide="false">
-            <a ng-repeat="item in relatosData" href="relato/{{ item.id }}" title="{{ item.name }}">
+            <a ng-repeat="item in relatosData" href="relato/{{ item.id }}">
                 <h3>{{ item.name }}</h3>
                 <img src="{{ item.image_url }}" alt="{{ item.name }}">
             </a>
