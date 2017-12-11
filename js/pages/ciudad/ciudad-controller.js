@@ -82,15 +82,17 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 $scope.openedInfoWindowId = type + item.id;
             }
         });
-        google.maps.event.addListener(m, 'mouseover', function() {
-            if ($scope.openedInfoWindowId == (type + item.id)) {
-            }
-            else {
-                $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
-                $scope.infowindow.open(map, m);
-                $scope.openedInfoWindowId = type + item.id;
-            }
-        });
+        if (!isTouchDevice()) {
+            google.maps.event.addListener(m, 'mouseover', function() {
+                if ($scope.openedInfoWindowId == (type + item.id)) {
+                }
+                else {
+                    $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
+                    $scope.infowindow.open(map, m);
+                    $scope.openedInfoWindowId = type + item.id;
+                }
+            });
+        }
     }
 
 
