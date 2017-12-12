@@ -38,7 +38,7 @@ body.page-espacio #menu-1 .back {
 #espacio-images .item {
 	display: inline-block;
 	position: relative;
-	margin-top: calc(30vh);
+	margin-top: 30vh;;
 }
 #espacio-images .item img {
 	max-height: 40vh;
@@ -74,11 +74,11 @@ section#espacio-scroll-controls .scroll-right {
 }
 section#espacio-scroll-controls .scroll-left {
 	left: 0;
-	background-image: url(../../../images/arrow-left.png);
+	cursor: w-resize;
 }
 section#espacio-scroll-controls .scroll-right {
 	right: 0;
-	background-image: url(../../../images/arrow-right.png);
+	cursor: e-resize;
 }
 
 

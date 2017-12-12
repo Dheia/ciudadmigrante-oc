@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <base href="/2017/ciudadmigrante/www/">
-    <!-- <base href="/test/ciudadmigrante/"> -->
+    <!-- <base href="/"> -->
     <title>Ciudad Migrante</title>
 
     <!-- Le styles -->
@@ -38,8 +38,8 @@
 
             <span class="share" title="COMPARTIR">
                 <span class="links">
-                    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                    <a ng-click="shareFacebook()"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/intent/tweet?text={{ metaUrl }}"><img src="images/twitter.png" alt="Twitter"></a>
                     <a href="#"><img src="images/google-plus.png" alt="Google+"></a>
                     <a href="#"><img src="images/youtube.png" alt="Youtube"></a>
                     <a href="#"><img src="images/vimeo.png" alt="Vimeo"></a>
@@ -125,6 +125,19 @@
     <!-- more libraries -->
     <script src="js/node_modules/simplebar/dist/simplebar.js"></script>
     <script src="js/node_modules/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+    <script src="//platform.twitter.com/widgets.js"></script>
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({appId: '2457360881156031', status: true, cookie: true, xfbml: true});
+        };
+        (function() {
+            var e = document.createElement('script'); e.async = true;
+            e.src = document.location.protocol +
+            '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        }());
+    </script>
 
 </body>
 </html>

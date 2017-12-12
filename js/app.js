@@ -154,7 +154,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         })
         .addClass("page-"+$rootScope.pageSlug);
 
-        $rootScope.setMetadata();
+        $rootScope.setMetadata(); 
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
@@ -284,6 +284,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     // set meta data
     $rootScope.setMetadata = function()
     {
+        $rootScope.metaUrl = $location.absUrl().split('?')[0];
+
 /*        var pageSlug = $rootScope.pageSlug;
         if (pageSlug == 'home') {
             pageSlug = '';
@@ -351,6 +353,34 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         }
     }
     $window.sessionStorage.intro = 'hide';
+
+
+
+    // share
+
+    $('#menu-1 .share').click(function(){
+        $(this).toggleClass('expanded');
+    });
+
+
+    // facebook
+    // 2457360881156031
+
+
+
+    $rootScope.shareFacebook = function()
+    {
+        FB.ui(
+        {
+            method: 'feed',
+            name: 'This is the content of the "name" field.',
+            link: $rootScope.metaUrl,
+            picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+            caption: 'cap',
+            description: 'This is the content of the "description" field, below the caption.',
+            message: ''
+        });
+    };
 
 });
 

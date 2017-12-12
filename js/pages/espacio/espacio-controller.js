@@ -21,6 +21,8 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
 
 
 
+    // click to scroll
+
 	$scope.scrollTo = function(id)
 	{
 		var anchor = $('#' + id);
@@ -43,26 +45,36 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
 	}
 
 
-    // hover scroll
 
-    var scrollElement = $('section#espacio-images');
-    var scrollSpeed = 400; // px/s
+    if (!isTouchDevice()) {
 
-    $('section#espacio-scroll-controls .scroll-left').mouseenter(function(event){
-        scrollElement.stop().animate({scrollLeft: 0}, scrollElement.scrollLeft() / scrollSpeed * 1000, 'swing');
-    });
+        // hover scroll
 
-    $('section#espacio-scroll-controls .scroll-left').mouseleave(function(event){
-        scrollElement.stop().animate({scrollLeft: scrollElement.scrollLeft() - 100}, 300 / scrollSpeed * 1000, 'easeOutCubic');
-    });
+        var scrollElement = $('section#espacio-images');
+        var scrollSpeed = 400; // px/s
 
-    $('section#espacio-scroll-controls .scroll-right').mouseenter(function(event){
-        scrollElement.stop().animate({scrollLeft: scrollElement[0].scrollWidth}, (scrollElement[0].scrollWidth - scrollElement.scrollLeft()) / scrollSpeed * 1000, 'swing');
-    });
+        $('section#espacio-scroll-controls .scroll-left').mouseenter(function(event){
+            scrollElement.stop().animate({scrollLeft: 0}, scrollElement.scrollLeft() / scrollSpeed * 1000, 'swing');
+        });
 
-    $('section#espacio-scroll-controls .scroll-right').mouseleave(function(event){
-        scrollElement.stop().animate({scrollLeft: scrollElement.scrollLeft() + 100}, 300 / scrollSpeed * 1000, 'easeOutCubic');
-    });
+        $('section#espacio-scroll-controls .scroll-right').mouseenter(function(event){
+            scrollElement.stop().animate({scrollLeft: scrollElement[0].scrollWidth}, (scrollElement[0].scrollWidth - scrollElement.scrollLeft()) / scrollSpeed * 1000, 'swing');
+        });
 
+
+
+        var baseScroll = 0;
+        var baseX = 0;
+        scrollElement.mouseenter(function(event){
+            baseScroll = scrollElement.scrollLeft();
+            baseX = event.pageX;
+            scrollElement.stop();
+        });
+        scrollElement.mousemove(function(){
+            scrollElement.scrollLeft(baseScroll + (event.pageX - baseX) / 2);
+        });
+
+
+    }
 
 });

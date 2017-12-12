@@ -367,16 +367,63 @@ body.loading .preload {
 	background-size: contain;
 }
 #menu-1 .share .links {
-	display: none;
+	position: absolute;
+	z-index: 100;
+	margin-left: -10px;
+	margin-top: 50px;
+	display: block;;
+}
+#menu-1 .share.expanded .links {
 }
 #menu-1 .share .links a {
 	display: block;
 	width: 50px;
 	height: 50px;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	box-shadow: 0 2px 5px 0px rgba(0,0,0,.5);
 	margin: 10px;
 	border-radius: 50%;
 	overflow: hidden;
+	transform: scale(0);
+	visibility: hidden;
+	transition: visibility 0s linear 0.2s, transform .3s cubic-bezier(.55,0,.55,.2);
+}
+#menu-1 .share .links a:nth-child(1) {
+	transition-delay: 0.2s, 0.15s;
+}
+#menu-1 .share .links a:nth-child(2) {
+	transition-delay: 0.2s, 0.12s;
+}
+#menu-1 .share .links a:nth-child(3) {
+	transition-delay: 0.2s, 0.09s;
+}
+#menu-1 .share .links a:nth-child(4) {
+	transition-delay: 0.2s, 0.06s;
+}
+#menu-1 .share .links a:nth-child(5) {
+	transition-delay: 0.2s, 0.03s;
+}
+#menu-1 .share .links a:nth-child(6) {
+	transition-delay: 0.2s, 0s;
+}
+#menu-1 .share.expanded .links a {
+	transform: scale(1);
+	visibility: visible;
+	transition-delay:0s;
+}
+#menu-1 .share.expanded .links a:nth-child(2) {
+	transition-delay: 0s, 0.03s;
+}
+#menu-1 .share.expanded .links a:nth-child(3) {
+	transition-delay: 0s, 0.06s;
+}
+#menu-1 .share.expanded .links a:nth-child(4) {
+	transition-delay: 0s, 0.09s;
+}
+#menu-1 .share.expanded .links a:nth-child(5) {
+	transition-delay: 0s, 0.12s;
+}
+#menu-1 .share.expanded .links a:nth-child(6) {
+	transition-delay: 0s, 0.15s;
 }
 #menu-1 .share .links a img {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -387,6 +434,9 @@ body.loading .preload {
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
 }
+
+
+
 #menu-1 .back {
 	display: none;
 	background-image: url(../images/close.png);
@@ -657,6 +707,20 @@ section#intro #intro-player {
 	#menu-1 {
 		font-size: 12.5px;
 		top: 16px;;
+	}
+
+	#menu-1 .share {
+	}
+	#menu-1 .share .links {
+		margin-top: 31px;;
+	}
+	#menu-1 .share .links a {
+		width: 31px;
+		height: 31px;;;
+	}
+	#menu-1 .share .links a img {
+	}
+	#menu-1 .share .links a:hover img {
 	}
 
 	#menu-2 {
