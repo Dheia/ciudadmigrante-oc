@@ -285,6 +285,7 @@ section#ciudad-map > main {
 	position: relative;;
 	background-size: cover;
 	background-position: center center;
+	bottom: 0;;
 }
 .gm-style .gm-style-iw a.relato::before {
 	content:"";
@@ -305,9 +306,11 @@ section#ciudad-map > main {
 	z-index: 1;
 	bottom: 0px;
 	color: #ffffff;
-	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-	right: 30px;
-	min-width: 0;;
+	right: 14px;
+	min-width: 0;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);;
+	font-weight: 500;
+	margin-bottom: 0;;
 }
 .gm-style .gm-style-iw a.espacio {
 	display: block;
@@ -417,24 +420,23 @@ section#ciudad-map > main {
 	}
 
 	section#ciudad-map > aside .markers {
-	padding: 29px 0 15px 50px;;
-		
+		padding: 29px 0 15px 50px;;	
 	}
 
 	section#ciudad-map > aside .markers a {
-	font-size: 13px;
-	background-size: auto 25px;
-	padding: 5px 0px 5px 25px;
-	min-height: 25px;
-	margin-left: -25px;;;;
+		font-size: 13px;
+		background-size: auto 25px;
+		padding: 5px 0px 5px 25px;
+		min-height: 25px;
+		margin-left: -25px;;;;
 	}
 
 	.gm-style .gm-style-iw {
-		width: 197px !important;
-		font-size: 9.4px;
+		width: 180px !important;
+		padding: 5px 5px 0 5px;;
 	}
 	.gm-style .gm-style-iw .lead {
-		font-size: 15px;
+		font-size: 14px;
 	}
 
 	.gm-style .gm-style-iw a.espacio {
@@ -443,12 +445,20 @@ section#ciudad-map > main {
 	}
 
 	.gm-style .gm-style-iw a.espacio h2 {
-		font-size: 10px;
+		font-size: 16px;
+		bottom: 2px;
+		right: 13px;;;
 	}
 
 	.gm-style .gm-style-iw a.relato {
-		height: 94px;
-		width: 179px;
+		height: 95px;
+		width: 170px;
+	}
+
+	.gm-style .gm-style-iw a.relato h2 {
+		font-size: 16px;
+		right: 4px;
+		margin-bottom: 0;;
 	}
 	
 	.gm-style .gm-style-iw .ayuda-content h2 {

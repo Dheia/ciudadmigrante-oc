@@ -131,6 +131,9 @@ p em {
 	}
 	h4 {
 	}
+	p {
+		margin-bottom: 10px;
+	}
 
 }
 /***********************************************/
@@ -360,8 +363,10 @@ body.loading .preload {
 	margin-left: -10px;
 	margin-top: 50px;
 	display: block;;
+	visibility: hidden;
 }
 #menu-1 .share.expanded .links {
+	visibility: visible;
 }
 #menu-1 .share .links a {
 	display: block;
@@ -622,7 +627,8 @@ section#intro .description {
 	position: absolute;
 	z-index: 3;
 	left: 0;
-	bottom: 40px;;;;;;;;
+	bottom: 40px;
+	text-align: justify;;;;;;;;;
 }
 section#intro .description .logo {
 	margin-bottom: 45px;
@@ -687,8 +693,8 @@ section#intro #intro-player {
 @media screen and (max-width: 1600px) {
 
 	#logo {
-	top: 37px;
-	left: 50px;;
+		top: 37px;
+		left: 50px;;
 	}
 	
 	#logo img {
@@ -778,24 +784,27 @@ section#intro #intro-player {
 	}
 	section#intro a.next {
 		background-size: 100%;
+		bottom: 30px;;;
 	}
 
 	section#intro .languages {
 		font-size: 12.5px;
+		top: 35px;;
+	}
+	section#intro .description .logo {
+		width: 280px;
+		margin-bottom: 30px;;
+	}
+	section#intro .description {
+		padding: 35px 50px 25px 50px;
+		max-width: 370px;
+		font-size: 14px;
+		line-height: 130%;
+		bottom: 30px;;;;;;;
 	}
 
 }
 
-
-
-@media screen and (max-width: 992px) {
-
-/*	h1.page-title {
-		margin-left: 15px;
-		margin-top: 15px;
-	}*/
-
-}
 
 @media screen and (max-width: 768px) {
 	

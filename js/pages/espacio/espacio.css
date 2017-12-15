@@ -12,6 +12,14 @@ body.page-espacio #menu-1 .back {
 }
 
 
+
+body.page-espacio-makingof #logo,
+body.page-espacio-makingof #menu-1 .share,
+body.page-espacio-makingof #menu-1 .languages {
+	display: none; 
+}
+
+
 #espacio-images {
 	height: 100vh;;
 	background-size: cover;;
@@ -121,22 +129,15 @@ section#espacio-scroll-controls .scroll-right {
 
 	#espacio-description {
 		left: 50px;
-		bottom: 15px;;
+		bottom: 25px;;
 	}
 	#espacio-description h1 {
 		font-size: 30px;
 	}
 	#espacio-links {
-		bottom: 30px;
+		bottom: 35px;
 	}
 
 }
 
 
-
-/* responsive */
-
-body.page-espacio #logo {
-	display: block;
-
-}

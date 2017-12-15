@@ -56,9 +56,17 @@ class Espacios extends Controller
         $query = Espacio::where('id', $id)
                         ->with('images.image');
 
-        $result = $query->first();   
+        $item = $query->first();   
 
-        return response()->json($result, 200, array(), JSON_PRETTY_PRINT);
+        // find youtube id
+        if ($item->button_url) {
+            preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $item->button_url, $matches);
+            if ($matches) {
+                $item->youtube_id = $matches[0];
+            }
+        }
+
+        return response()->json($item, 200, array(), JSON_PRETTY_PRINT);
     }
 
 

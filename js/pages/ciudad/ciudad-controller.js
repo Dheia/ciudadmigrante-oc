@@ -135,7 +135,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
         function getContentRelatos(itemData)
         {
-            return '<a href="relato/' + itemData.id + '" class="relato" title="' + itemData.name + '" style="background-image:url(' + itemData.image_map_url + ')"></a>';
+            return '<a href="relato/' + itemData.id + '" class="relato" title="' + itemData.name + '" style="background-image:url(' + itemData.image_map_url + ')"><h2>' + itemData.name + '</h2></a>';
         }
 
 

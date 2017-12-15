@@ -101,6 +101,10 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'EspacioController', 
             templateUrl: 'js/pages/espacio/index.html' 
         })     
+        .when('/espacio/:id/makingof', { 
+            controller: 'EspacioMakingOfController', 
+            templateUrl: 'js/pages/espacio/makingof.html' 
+        })     
         .when('/creditos', { 
             controller: 'CreditosController', 
             templateUrl: 'js/pages/creditos/index.html' 

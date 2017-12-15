@@ -14,7 +14,8 @@ class Metadata extends Controller
     {
         $data = [
             'title'         => 'Ciudad Migrante',
-            'description'   => Translation::translate('compartir.descripcion')
+            'description'   => Translation::translate('compartir.descripcion'),
+            'image'   		=> Translation::translate('compartir.url de imagen'),
         ];
 
         return View::make('ciudadmigrante.ciudadmigrante::metadata', $data);

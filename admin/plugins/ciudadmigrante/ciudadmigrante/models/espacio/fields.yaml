@@ -52,13 +52,13 @@ tabs:
             type: fileupload
             tab: 'Datos del espacio'
         button_title:
-            label: 'Titulo del botón'
+            label: 'Titulo del botón Making of'
             oc.commentPosition: ''
             span: right
             type: text
             tab: 'Datos del espacio'
         button_url:
-            label: 'URL del botón'
+            label: 'URL del video Making of en YouTube'
             oc.commentPosition: ''
             span: right
             type: text
