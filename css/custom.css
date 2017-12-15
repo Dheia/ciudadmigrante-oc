@@ -237,6 +237,18 @@ body > main {
 }
 
 
+
+
+/* responsive */
+
+@media screen and (max-width: 1600px) {
+
+	.container {
+		width: calc(100% - 70px);
+	}
+
+}
+
 /* Page transitions */
 .ng-enter {
     transition: all 1s cubic-bezier(.46,1,1,1);

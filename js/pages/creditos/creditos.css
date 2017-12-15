@@ -39,3 +39,13 @@ section#creditos .license {
 }
 
 
+
+/* responsive */
+
+@media screen and (max-width: 1600px) {
+
+	section#creditos {
+		margin-top: 150px;
+	}
+
+}
