@@ -1,4 +1,4 @@
-app.controller('CiudadController', function($scope, $rootScope, $http, config, $timeout) {  
+app.controller('CiudadController', function($scope, $rootScope, $http, config, $timeout, $routeParams, $route, $location) {  
 
  
 	$("section#ciudad-map aside .handle").click(function(){
@@ -18,9 +18,9 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
 
     $scope.markers = {
-        'ayuda':    [],
-        'relatos':  [],
-        'espacios': []
+        'ayuda':    {},
+        'relatos':  {},
+        'espacios': {}
     };
 
     $scope.infowindow = new google.maps.InfoWindow({
@@ -35,6 +35,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     {
         $scope.deleteMarkers(type);
 
+        var j;
         for (i in data) {
 
             var item = data[i]; 
@@ -43,8 +44,10 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 continue;
             }
 
-            setTimeout($scope.createMarker.bind(null, data, i, type), i*50);
+            setTimeout($scope.createMarker.bind(null, data, i, type), i*5);
+            j = i;
         }
+        setTimeout($scope.openInfoWindowByUrl.bind(null, type), j*5+5);
     }
 
     $scope.createMarker = function(data, i, type)
@@ -64,7 +67,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             title: item.name,
             animation: google.maps.Animation.DROP
         });
-        $scope.markers[type].push(marker);
+        $scope.markers[type][item.id] = marker;
 
         $scope.createInfoWindow(marker, item, type);
     } 
@@ -81,6 +84,14 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 $scope.infowindow.open(map, m);
                 $scope.openedInfoWindowId = type + item.id;
             }
+            // change URL
+            // console.log('ciudad/' + type + '/' + item.id);
+            // window.location.href = 'ciudad/' + type + '/' + item.id;
+            // $route.updateParams({
+            //     filters : type, 
+            //     id      : item.id
+            // });
+            // $location.path('ciudad/' + type + '/' + item.id, false);
         });
         if (!isTouchDevice()) {
             google.maps.event.addListener(m, 'mouseover', function() {
@@ -147,7 +158,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         for (i in $scope.markers[type]) {
             $scope.markers[type][i].setMap(null);
         }
-        $scope.markers[type] = [];
+        $scope.markers[type] = {};
     }
 
 
@@ -155,6 +166,26 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     {
         for (i in $scope.markers) {
             $scope.deleteMarkers(i);
+        }
+    }
+
+
+
+
+
+    // open info window
+    $scope.infoWindowToOpen = true;
+
+    $scope.openInfoWindowByUrl = function(type)
+    {
+        if ($scope.infoWindowToOpen && $routeParams.filter && $routeParams.id && $routeParams.filter==type)
+        {
+            var marker = $scope.markers[$routeParams.filter][$routeParams.id];
+            // console.log(marker);
+            map.panTo(marker.getPosition());
+            google.maps.event.trigger(marker, 'click');
+            map.setZoom(14);
+            $scope.infoWindowToOpen = false;
         }
     }
 
@@ -211,7 +242,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             method  : 'GET',
             url     : config.api.urls.get_espacios,
             params  : {
-                categories: selectedCategoriesToString(),
+                // categories: selectedCategoriesToString(),
                 'lang': $rootScope.lang
             }
         })
@@ -236,7 +267,13 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
 
     // filters
-    $scope.selectedFilters = {'relatos' : true}; 
+    $scope.selectedFilters = {};
+    if ($routeParams.filter) {
+        $scope.selectedFilters[$routeParams.filter] = true;
+    }
+    else {
+        $scope.selectedFilters['relatos'] = true;
+    }
 
 
     // categories
@@ -254,7 +291,6 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         })
         .then(function(response) {
             $scope.categoriesData = response.data;
-            $scope.selectedCategories[$scope.categoriesData[0].id] = true;
             $scope.loadData();
         });
     }
@@ -283,9 +319,9 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
     $scope.onFilterClick = function(filter)
     {
-        // $scope.selectedFilters[filter] = !$scope.selectedFilters[filter];
         $scope.selectedFilters = {};
         $scope.selectedFilters[filter] = true;
+        $scope.selectedCategories = {};
         $scope.loadData();
 
         $rootScope.closeRelatos();
@@ -293,14 +329,17 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
     $scope.onCategoryClick = function(id)
     {
-        // $scope.selectedCategories[id] = !$scope.selectedCategories[id];
-        $scope.selectedCategories = {};
-        $scope.selectedCategories[id] = true;
+        if ($scope.selectedCategories[id]) {
+            $scope.selectedCategories[id] = false;
+        }
+        else {
+            $scope.selectedCategories = {};
+            $scope.selectedCategories[id] = true;
+        }
         $scope.loadData();
 
         $rootScope.closeRelatos();
     }
-
 
 
 

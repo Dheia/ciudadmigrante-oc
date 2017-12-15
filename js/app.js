@@ -88,9 +88,10 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'ParticpaController', 
             templateUrl: 'js/pages/participa/index.html' 
         })     
-        .when('/ciudad', { 
+        .when('/ciudad/:filter?/:id?', { 
             controller: 'CiudadController', 
-            templateUrl: 'js/pages/ciudad/index.html' 
+            templateUrl: 'js/pages/ciudad/index.html',
+            reloadOnSearch: false
         })       
         .when('/relato/:id', { 
             controller: 'RelatoController', 
@@ -414,4 +415,9 @@ function isTouchDevice()
 {
     return 'ontouchstart' in window || 'onmsgesturechange' in window;
 }
+
+
+
+
+
 

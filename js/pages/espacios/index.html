@@ -13,7 +13,7 @@
     <div class="list">
 
         <div class="wrap">
-            <a ng-repeat="item in espaciosData" href="espacio/{{ item.id }}">
+            <a ng-repeat="item in espaciosData" href="espacio/{{ item.id }}" ng-click="closeRelatos()">
             	<div class="image" style="background-image: url({{ item.image_url }})"></div>
             	<h2>{{ item.name }}</h2>
             </a>

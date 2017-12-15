@@ -24,14 +24,14 @@
 			<br>
  -->
 			<h2 translate="relatos.Localizar en ciudad"></h2>
-			<a href="javascript:" translate="relatos.Ver en el mapa"></a>
+			<a href="ciudad/relatos/{{ relatoData.id }}" translate="relatos.Ver en el mapa"></a>
 
 			<br>
 			<br>
 
 			<h2 translate="relatos.Ayuda relacionada"></h2>
 			<div ng-repeat="punto in relatoData.puntos_de_acogida">
-				<a href="javascript:">{{ punto.name }}</a>
+				<a href="ciudad/ayuda/{{ punto.id }}">{{ punto.name }}</a>
 			</div>
 			
 		</div><!--  /.scroll  -->
