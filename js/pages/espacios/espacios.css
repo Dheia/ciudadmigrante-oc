@@ -132,11 +132,14 @@ section#espacios-index a:nth-child(even) {
 @media screen and (max-width: 1600px) {
 
 	section#espacios-index .wrap {
-		height: calc(100vh - 342px);
+		height: calc(100vh - 319px);
 	}
 	section#espacios-index a span {
 		font-size: 30px;
 		line-height: 100%;
+	}
+	section#espacios-index h1.page-title {
+		margin-bottom: 27px;
 	}
 
 }

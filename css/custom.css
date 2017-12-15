@@ -529,7 +529,8 @@ h1.page-title {
 	right: 34px;
 	color: #ffffff;
 	font-size: 14px;
-	top: 34px;;;;;
+	top: 34px;
+	text-transform: uppercase;;;;;;
 }
 #menu-relatos .toggle {
 	margin: 15px 0;
@@ -576,6 +577,7 @@ h1.page-title {
 	display: inline-block;
 	overflow: hidden;
 	color: #ffffff;
+	margin: 0 1px;;
 }
 #menu-relatos .faces a h3 {
 	position: absolute;
@@ -697,7 +699,8 @@ section#intro #intro-player {
 @media screen and (max-width: 1600px) {
 
 	#logo {
-		top: 26px;
+	top: 37px;
+	left: 50px;;
 	}
 	
 	#logo img {
@@ -706,7 +709,8 @@ section#intro #intro-player {
 
 	#menu-1 {
 		font-size: 12.5px;
-		top: 16px;;
+		top: 16px;
+		right: 12px;;;
 	}
 
 	#menu-1 .share {
@@ -725,11 +729,13 @@ section#intro #intro-player {
 
 	#menu-2 {
 		font-size: 15px;
-		top: 74px;
+		top: 75px;
+		right: 12px;;
 	}
 
 	section.header-with-background a.link-up {
 		font-size: 25px;
+		top: 12px;;
 	}
 	section.header-with-background a.link-up::after {
 		width: 31px;
@@ -743,20 +749,28 @@ section#intro #intro-player {
 
 	h1.page-title {
 		font-size: 25px;
+		margin-left: 50px;
+		margin-top: 20px;;;
 	}
 
 	#menu-relatos .toggle {
 		font-size: 25px;
+		margin: 7px 0;;
 	}
 	#menu-relatos .toggle::after {
 		width: 31px;
 		height: 31px;
 		background-size: 100%;;
 	}
+	#menu-relatos a.creditos {
+		font-size: 12px;
+		right: 12px;
+		top: 17px;;;
+	}
 
 
 	#menu-relatos.expanded .faces {
-		height: 125px;
+		height: 128px;
 	}
 	#menu-relatos .faces a img {
 		height: 112px;

@@ -7,7 +7,7 @@ window.config = window.config || {};
 
 window.config.map = {
         zoom: 12,
-        center: new google.maps.LatLng(41.400644,2.150295),
+        center: new google.maps.LatLng(41.427164,2.151668),
         disableDefaultUI: true,
         zoomControl: true,
         // mapTypeId: google.maps.MapTypeId.ROADMAP,
