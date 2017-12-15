@@ -376,7 +376,7 @@ section#ciudad-map > main {
 @media screen and (max-width: 1600px) {
 
 	section#ciudad-map {
-		height: calc(100vh - 165px);
+		height: calc(100vh - 149px);
 	}
 
 	section#ciudad-map > aside {
@@ -411,7 +411,8 @@ section#ciudad-map > main {
 	}
 	section#ciudad-map > aside .categories a:not(:last-child):after {
 		border-width: 4px;
-		left: -18px;;;
+		left: -18px;
+		height: calc(100% + 15px);;;;
 	}
 
 	section#ciudad-map > aside .markers {

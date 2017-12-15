@@ -709,7 +709,7 @@ section#intro #intro-player {
 
 	#menu-1 {
 		font-size: 12.5px;
-		top: 16px;
+		top: 30px;
 		right: 12px;;;
 	}
 
@@ -725,6 +725,12 @@ section#intro #intro-player {
 	#menu-1 .share .links a img {
 	}
 	#menu-1 .share .links a:hover img {
+	}
+	#menu-1 a, #menu-1 span, #menu-1 a:hover, #menu-1 a:focus, #menu-1 a:active {
+		margin-left: 18px;
+	}
+	.languages a, .languages span {
+		margin-left: 3px !important;;
 	}
 
 	#menu-2 {
