@@ -119,6 +119,17 @@ section#espacio-scroll-controls .scroll-right {
 		background-size: 100%;;
 	}
 
+	#espacio-description {
+		left: 50px;
+		bottom: 15px;;
+	}
+	#espacio-description h1 {
+		font-size: 30px;
+	}
+	#espacio-links {
+		bottom: 30px;
+	}
+
 }
 
 

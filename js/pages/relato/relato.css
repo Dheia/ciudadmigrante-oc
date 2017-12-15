@@ -33,7 +33,6 @@ section#relato-video > aside {
 	width: 448px;
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	z-index: 100;
-	padding-right: 15px;
 	transform: translateX(calc(-100% + 15px));
 	padding: 50px 15px 5px 60px;
 	display: flex;
@@ -85,6 +84,7 @@ section#relato-video > aside .scroll {
 	margin-bottom: 50px;
 }
 section#relato-video > aside .description {
+	text-align: justify;;
 }
 
 section#relato-video > main {
@@ -97,6 +97,10 @@ section#relato-video > main {
 
 	section#relato-video > aside {
 		width: 279px;
+		padding: 32px 30px 5px 50px;;
+	}
+	section#relato-video > aside .logo {
+		margin-bottom: 30px;
 	}
 
 	section#relato-video > aside .logo img {
@@ -119,6 +123,16 @@ section#relato-video > main {
 		height: 21px;
 		width: 21px;
 		background-size: 100%;;
+	}
+
+	section#relato-video > aside .scroll {
+		margin-right: 0;
+		margin-bottom: 0;;;
+	}
+
+	section#relato-video > aside .description {
+		font-size: 13px;
+		line-height: 130%;;
 	}
 
 }

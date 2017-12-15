@@ -113,7 +113,8 @@ section#ciudad-map > aside .column {
 section#ciudad-map > aside .column .subtitle {
 	font-weight: bold;
 	margin-left: 40px;
-	margin-bottom: 30px;;
+	margin-bottom: 30px;
+	text-transform: uppercase;;;
 }
 
 
@@ -412,7 +413,7 @@ section#ciudad-map > main {
 	section#ciudad-map > aside .categories a:not(:last-child):after {
 		border-width: 4px;
 		left: -18px;
-		height: calc(100% + 15px);;;;
+		height: calc(100% + 15px);
 	}
 
 	section#ciudad-map > aside .markers {
@@ -423,7 +424,7 @@ section#ciudad-map > main {
 	section#ciudad-map > aside .markers a {
 	font-size: 13px;
 	background-size: auto 25px;
-	padding: 5px 10px 5px 25px;
+	padding: 5px 0px 5px 25px;
 	min-height: 25px;
 	margin-left: -25px;;;;
 	}

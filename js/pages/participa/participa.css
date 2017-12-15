@@ -166,8 +166,19 @@ section#participa > main .gracias footer {
 
 @media screen and (max-width: 1600px) {
 
+	section#participa {
+		padding-top: 150px;
+	}
+	section#participa > header .container > h1 {
+		font-size: 26px;
+	}
 	section#participa label {
-		font-size: 8.75px;
+	}
+	section#participa .multiselect-container>li>a>label.checkbox {
+		font-size:14px;
+	}
+	section#participa div.multiselect .btn {
+		font-size:14px;
 	}
 
 }

@@ -120,43 +120,19 @@ p em {
 @media screen and (max-width: 1600px) {
 
 	body {
-		font-size: 13px;
-	}
-/*	h1 {
-		font-size: 30px;
-	}
-	h2 {
-		font-size: 18px;
-	}
-	h3{
-		font-size: 16px;
-	}
-	h4 {
-		font-size: 15px;
-	}*/
-
-}
-
-@media screen and (max-width: 1200px) {
-
-/*	body {
 		font-size: 14px;
 	}
 	h1 {
-		font-size: 30px;
+		font-size: 36px;
 	}
 	h2 {
-		font-size: 18px;
 	}
 	h3{
-		font-size: 16px;
 	}
 	h4 {
-		font-size: 15px;
-	}*/
+	}
 
 }
-
 /***********************************************/
 /* Overwritten Plugins Styles.                 */
 /***********************************************/
@@ -730,7 +706,7 @@ section#intro #intro-player {
 		margin-left: 18px;
 	}
 	.languages a, .languages span {
-		margin-left: 3px !important;;
+		margin-left: 3px !important;
 	}
 
 	#menu-2 {
