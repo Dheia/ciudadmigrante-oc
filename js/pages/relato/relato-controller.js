@@ -37,6 +37,10 @@ app.controller('RelatoController', function($scope, $rootScope, $http, $routePar
                         }
                     });
                 }
+
+                // set metadata
+                document.title = 'Ciudad Migrante - ' + $scope.relatoData.name;
+                document.querySelector('meta[name=description]').setAttribute('content', $($scope.relatoData.descripcion).text());
                 
             }
 

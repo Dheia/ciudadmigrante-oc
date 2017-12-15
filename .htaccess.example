@@ -15,6 +15,11 @@
     Options +FollowSymlinks
     RewriteEngine On
     RewriteBase /2017/ciudadmigrante/www/
+    
+	# remove www from URL
+	RewriteCond %{HTTPS}s on(s)|
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$
+	RewriteRule ^ http%2://%1%{REQUEST_URI} [R=301,L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

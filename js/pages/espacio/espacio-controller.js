@@ -15,6 +15,10 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
         })
         .then(function(response) {
             $scope.espacioData = response.data;
+        
+            // set metadata
+            document.title = 'Ciudad Migrante - ' + $scope.espacioData.name;
+            document.querySelector('meta[name=description]').setAttribute('content', $($scope.espacioData.descripcion).text());
         });
     };
     $scope.loadEspacioData();
@@ -22,7 +26,7 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
 
 
     // click to scroll
-
+/*
 	$scope.scrollTo = function(id)
 	{
 		var anchor = $('#' + id);
@@ -43,7 +47,7 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
             scrollLeft: scrollTo
         }, 1000, 'easeOutQuart');
 	}
-
+*/
 
 
     if (!isTouchDevice()) {
@@ -70,7 +74,7 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
             baseX = event.pageX;
             scrollElement.stop();
         });
-        scrollElement.mousemove(function(){
+        scrollElement.mousemove(function(event){
             scrollElement.scrollLeft(baseScroll + (event.pageX - baseX) / 2);
         });
 

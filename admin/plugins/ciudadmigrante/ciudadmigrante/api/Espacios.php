@@ -61,4 +61,36 @@ class Espacios extends Controller
         return response()->json($result, 200, array(), JSON_PRETTY_PRINT);
     }
 
+
+
+    public function metadata($id)
+    {
+        $query = Espacio::where('id', $id)
+                        ->with('image');
+        $item = $query->first(); 
+
+        // dump($item);
+
+        if ($item) : 
+          
+?>
+<!doctype html>
+<html>
+<head>
+    <title>Ciudad Migrante - <?=$item->name?></title>
+    <meta name="description" content="<?=strip_tags($item->descripcion)?>">
+    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="espacio/<?=$id?>">
+    <meta property="og:type"          content="website">
+    <meta property="og:title"         content="Ciudad Migrante - <?=$item->name?>">
+    <meta property="og:description"   content="<?=strip_tags($item->descripcion)?>">
+    <meta property="og:image"         content="<?=$item->image->getThumb(null,null)?>">
+    <!-- <meta property="fb:app_id"        content=""> -->
+</head>
+<body></body>
+</html>
+        <?php endif;
+    }
+
 }

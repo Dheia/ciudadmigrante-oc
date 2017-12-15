@@ -43,8 +43,7 @@ body.page-espacio #menu-1 .back {
 #espacio-images .item img {
 	max-height: 40vh;
 	max-width: 80vw;
-	box-shadow: 0 10px 60px rgba(0,0,0,0.65);
-	cursor: pointer;;
+	box-shadow: 0 10px 60px rgba(0,0,0,0.65);;
 }
 #espacio-images .item a.marker {;
 	border: 4px solid #fff000;;

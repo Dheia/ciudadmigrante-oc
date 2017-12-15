@@ -82,8 +82,7 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider 
 
         .when('/espacios', { 
-            controller: 'EspaciosController', 
-            templateUrl: 'js/pages/espacios/index.html' 
+            redirectTo: '/' 
         })     
         .when('/participa', { 
             controller: 'ParticpaController', 
@@ -106,7 +105,9 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'js/pages/creditos/index.html' 
         })   
         .otherwise({ 
-            redirectTo: '/espacios' 
+            // redirectTo: '/espacios' 
+            controller: 'EspaciosController', 
+            templateUrl: 'js/pages/espacios/index.html' 
         }); 
 
     // remove hashbang
@@ -137,12 +138,18 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         .addClass("prev-page-"+$rootScope.pageSlug);
 
         // find page slug
+        if (next.originalPath == undefined) {
+            next.originalPath = '/' + $rootScope.homeSlug;
+        }
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
             // substring until first slash
             if ($rootScope.pageSlug.indexOf('/') != -1) {
                 $rootScope.pageSlug = $rootScope.pageSlug.substr(0, $rootScope.pageSlug.indexOf('/'));
             }
+        }
+        if ($rootScope.pageSlug == undefined) {
+            $rootScope.pageSlug = $rootScope.homeSlug;
         }
 
 
@@ -286,16 +293,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     {
         $rootScope.metaUrl = $location.absUrl().split('?')[0];
 
-/*        var pageSlug = $rootScope.pageSlug;
-        if (pageSlug == 'home') {
-            pageSlug = '';
-        }
-        var page = $rootScope.pagesData[pageSlug];
+        var pageSlug = $rootScope.pageSlug;
 
-        if (page) {
-            document.title = page.meta_title;
-            document.querySelector('meta[name=description]').setAttribute('content', page.meta_description);
-        }*/
+        if (pageSlug != 'relato' && pageSlug != 'espacio') {
+            $translate('compartir.descripcion').then(function (descripcion) {
+                document.querySelector('meta[name=description]').setAttribute('content', descripcion);
+            });
+       }
     }
 
 
@@ -323,7 +327,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         function onYoutubeReady() {
 
             $translate('intro.URL de video en YouTube').then(function (videoURL) {
-                console.log(videoURL);
+                // console.log(videoURL);
                 var player = new YT.Player('intro-player', {
                     videoId: youtube_parser(videoURL),
                     height: '600',
