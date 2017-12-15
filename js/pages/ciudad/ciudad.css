@@ -174,7 +174,6 @@ section#ciudad-map > aside .categories a:not(:last-child):after {
 }
 
 section#ciudad-map > aside .markers {
-	padding-left: 79px;
 	padding: 40px 0 15px 79px;;;
 }
 section#ciudad-map > aside .markers a {
@@ -386,6 +385,7 @@ section#ciudad-map > main {
 
 	section#ciudad-map > aside .column {
 		margin-top: 65px;
+		max-height: calc(100% - 65px);
 	}
 
 	section#ciudad-map > aside .column .subtitle {
@@ -414,8 +414,17 @@ section#ciudad-map > main {
 		left: -18px;;;
 	}
 
+	section#ciudad-map > aside .markers {
+	padding: 29px 0 15px 50px;;
+		
+	}
+
 	section#ciudad-map > aside .markers a {
-		font-size: 11.25px;
+	font-size: 13px;
+	background-size: auto 25px;
+	padding: 5px 10px 5px 25px;
+	min-height: 25px;
+	margin-left: -25px;;;;
 	}
 
 	.gm-style .gm-style-iw {
