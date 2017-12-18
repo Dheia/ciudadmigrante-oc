@@ -29,7 +29,7 @@
 			<br>
 			<br>
 
-			<h2 translate="relatos.Ayuda relacionada"></h2>
+			<h2 translate="relatos.Ayuda relacionada" ng-show="relatoData.puntos_de_acogida.length"></h2>
 			<div ng-repeat="punto in relatoData.puntos_de_acogida">
 				<a href="ciudad/ayuda/{{ punto.id }}">{{ punto.name }}</a>
 			</div>

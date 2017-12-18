@@ -30,7 +30,7 @@ app.controller('RelatoController', function($scope, $rootScope, $http, $routePar
                             'controls': 1, 
                             'rel' : 0,
                             'showinfo' : 0,
-                            'cc_load_policy': 1,
+                            'cc_load_policy': 0,
                             'color': 'white',
                             // 'modestbranding': 1,
                             'fs': 0
