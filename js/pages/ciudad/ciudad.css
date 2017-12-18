@@ -271,6 +271,7 @@ section#ciudad-map > main {
 	height: 40px;
 	background-image: url('../../../images/icon_link.png');
 	background-repeat: no-repeat;
+	background-size: 100%;;
 }
 .gm-style .gm-style-iw .ayuda-content {
 	padding: 4px 4px 0 4px;
@@ -297,6 +298,7 @@ section#ciudad-map > main {
 	width: 50px;
 	height: 50px;
 	background-image:url(../../../images/icon-play.png);
+	background-size:100%;
 }
 .gm-style .gm-style-iw a.relato img {
 	max-height: 171px;
@@ -329,6 +331,7 @@ section#ciudad-map > main {
 	width: 50px;
 	height: 50px;
 	background-image:url(../../../images/icon_more_white.png);
+	background-size:100%;
 }
 .gm-style .gm-style-iw a.espacio h2 {
 	position: absolute;
@@ -341,7 +344,6 @@ section#ciudad-map > main {
 	margin-bottom: 5px;
 	font-weight: 500;;
 }
-
 /* remove close button */
 .gm-style .gm-style-iw + div {
     display: none;
@@ -440,8 +442,8 @@ section#ciudad-map > main {
 	}
 
 	.gm-style .gm-style-iw a.espacio {
-		height: 87px;
-		width: 150px;
+		height: 95px;
+		width: 170px;
 	}
 
 	.gm-style .gm-style-iw a.espacio h2 {
@@ -450,9 +452,19 @@ section#ciudad-map > main {
 		right: 13px;;;
 	}
 
+	.gm-style .gm-style-iw a.espacio::before {
+		width: 31px;
+		height: 31px;
+	}
+
 	.gm-style .gm-style-iw a.relato {
 		height: 95px;
 		width: 170px;
+	}
+
+	.gm-style .gm-style-iw a.relato::before {
+		width: 31px;
+		height: 31px;
 	}
 
 	.gm-style .gm-style-iw a.relato h2 {
@@ -464,6 +476,12 @@ section#ciudad-map > main {
 	.gm-style .gm-style-iw .ayuda-content h2 {
 		font-size: 17px;
 	}
+	
+	.gm-style .gm-style-iw .web a {
+		width: 24px;
+		height: 24px;
+	}
+
 
 	section#ciudad-map > aside .handle {
 		height: 104px;

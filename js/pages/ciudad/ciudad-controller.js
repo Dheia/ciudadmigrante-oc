@@ -10,10 +10,19 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     var map = new google.maps.Map(document.getElementById("map"), config.map); 
 
 
-    var icons = {
-        'relatos':  'images/marker-yellow.png',
-        'ayuda':    'images/marker-blue.png',
-        'espacios': 'images/marker-green.png'
+    if ($(document).width() > 1600) {
+        var icons = {
+            'relatos':  'images/marker-yellow.png',
+            'ayuda':    'images/marker-blue.png',
+            'espacios': 'images/marker-green.png'
+        }
+    }
+    else {
+        var icons = {
+            'relatos':  'images/1200/marker-yellow.png',
+            'ayuda':    'images/1200/marker-blue.png',
+            'espacios': 'images/1200/marker-green.png'
+        }
     }
 
 
@@ -26,6 +35,15 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     $scope.infowindow = new google.maps.InfoWindow({
         maxWidth: 286
     });
+
+
+    var oms = new OverlappingMarkerSpiderfier(map, { 
+        markersWontMove: true,   // we promise not to move any markers, allowing optimizations
+        markersWontHide: true,   // we promise not to change visibility of any markers, allowing optimizations
+        basicFormatEvents: true  // allow the library to skip calculating advanced formatting information
+    });
+
+
 
     var marker;
 
@@ -72,16 +90,17 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         $scope.createInfoWindow(marker, item, type);
     } 
 
-    $scope.createInfoWindow = function(m, item, type) 
+    $scope.createInfoWindow = function(marker, item, type) 
     {
-        google.maps.event.addListener(m, 'click', function() {
+        // google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(marker, 'spider_click', function(e) {  // 'spider_click', not plain 'click'
             if ($scope.openedInfoWindowId == (type + item.id)) {
                 $scope.infowindow.close();
                 $scope.openedInfoWindowId = null;
             }
             else {
                 $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
-                $scope.infowindow.open(map, m);
+                $scope.infowindow.open(map, marker);
                 $scope.openedInfoWindowId = type + item.id;
             }
             // change URL
@@ -93,13 +112,17 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             // });
             // $location.path('ciudad/' + type + '/' + item.id, false);
         });
+
+        oms.addMarker(marker);  // adds the marker to the spiderfier _and_ the map
+
         if (!isTouchDevice()) {
-            google.maps.event.addListener(m, 'mouseover', function() {
+            google.maps.event.addListener(marker, 'mouseover', function() {
+                // google.maps.event.trigger(marker, 'click');
                 if ($scope.openedInfoWindowId == (type + item.id)) {
                 }
                 else {
                     $scope.infowindow.setContent($scope.generateInfowindowContent(item, type));
-                    $scope.infowindow.open(map, m);
+                    $scope.infowindow.open(map, marker);
                     $scope.openedInfoWindowId = type + item.id;
                 }
             });
