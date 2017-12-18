@@ -126,7 +126,7 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route) {
+app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route, $animate) {
 
     $rootScope.homeSlug = 'espacios';
     $rootScope.urlChangeCount = 0;
@@ -200,7 +200,12 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     // language menu
     $('.languages a').click(function(){
         $rootScope.setLanguage($(this).data('language'));
+        // $route.reload();
+        $animate.enabled(false);
         $route.reload();
+        $timeout(function () {
+            $animate.enabled(true);
+        });
         $rootScope.loadRelatosData();
         $rootScope.setMetadata();
     });
