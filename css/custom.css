@@ -137,6 +137,23 @@ p em {
 	}
 
 }
+
+@media screen and (max-width: 767px) {
+
+	body {
+	}
+	h1 {
+	}
+	h2 {
+	}
+	h3{
+	}
+	h4 {
+	}
+	p {
+	}
+
+}
 /***********************************************/
 /* Overwritten Plugins Styles.                 */
 /***********************************************/
@@ -222,6 +239,23 @@ p em {
 
 }
 
+@media screen and (max-width: 767px) {
+
+	.row.is-flex {
+	    display: block;
+	}
+	.row.is-flex > [class*='col-'] {
+	    display: block;
+	}
+	.form-group {
+		margin-bottom: 10px;
+	}
+	label {
+		margin-bottom: 0px;
+	}
+
+}
+
 /***********************************************/
 /* Layout Divs                                 */
 /***********************************************/
@@ -249,6 +283,14 @@ body > main {
 
 	.container {
 		width: calc(100% - 70px);
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.container {
+		width: calc(100%);
 	}
 
 }
@@ -876,6 +918,10 @@ section#intro #intro-player {
 	}
 	section#intro .overlay {
 		display: none;
+	}
+
+	#menu-relatos {
+		position: fixed;
 	}
 
 	#menu-relatos .toggle {

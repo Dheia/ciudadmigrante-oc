@@ -10,7 +10,6 @@ body.page-relato #menu-1 .back {
 body.page-relato.prev-page-espacios #menu-relatos,
 body.page-relato.prev-page-ciudad #menu-relatos {
 	display: block;
-	z-index: 0;
 }
 
 
@@ -133,6 +132,28 @@ section#relato-video > main {
 	section#relato-video > aside .description {
 		font-size: 13px;
 		line-height: 130%;;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	body.page-relato #menu-1 {
+    	top: 15px;
+	}
+	body.page-relato #menu-relatos {
+		z-index: -1 !important;;;
+	}
+	section#relato-video {
+	z-index: inherit;; 
+	}
+	section#relato-video > aside {
+		padding: 15px;
+		width: 240px;
+		transform: translateX(calc(-100% + 7px));;
+	}
+	section#relato-video > main {
+	z-index: 3;
 	}
 
 }

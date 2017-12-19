@@ -31,6 +31,17 @@ section#participa {
 	padding-top: 235px;
 }
 
+
+
+section#participa {
+	background-image: url(../../../images/background-participa.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	padding-bottom: 94px;
+	padding-top: 235px;
+
+}
+
 section#participa > header {
 }
 
@@ -179,6 +190,25 @@ section#participa > main .gracias footer {
 	}
 	section#participa div.multiselect .btn {
 		font-size:14px;
+	}
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+	section#participa {
+		padding-top: 125px;
+		padding-bottom: 50px;;
+	}
+	section#participa > header .container > h1 {
+		font-size: 24px;
+	}
+	section#participa > main #participa-map {
+		min-height: 300px;
+	}
+	section#participa label {
+		font-size: 12px;;
 	}
 
 }

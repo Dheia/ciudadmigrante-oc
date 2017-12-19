@@ -141,3 +141,46 @@ section#espacio-scroll-controls .scroll-right {
 }
 
 
+
+@media screen and (max-width: 767px) {
+
+	body.page-espacio #logo {
+		display: none;
+	}
+	body.page-espacio #menu-1 {
+    	top: 15px;
+	}
+
+	#espacio-scroll-controls {
+		display: none;
+	}
+	#espacio-images .item {
+		margin-top: 100px;
+	}
+	#espacio-description {
+		left: 15px;
+		bottom: 55px;
+		width: calc(100% - 30px);
+		font-size: 13px;;
+	}
+	#espacio-description h1 {
+		font-size: 24px;
+	}
+	#espacio-links {;
+	bottom: 15px;;
+	text-align: right;;
+	right: 15px;;
+	left: 5px;;
+	width: calc(100% - 20px);;;;;;
+
+	}
+	#espacio-links a {
+	font-size: 12px;
+	padding: 3px 6px;
+	margin-top: 6px;
+	margin-left: 10px;;;;
+		
+	}
+
+
+}
