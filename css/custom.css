@@ -117,6 +117,7 @@ p em {
 
 /* responsive */
 
+
 @media screen and (max-width: 1600px) {
 
 	body {
@@ -806,8 +807,52 @@ section#intro #intro-player {
 }
 
 
-@media screen and (max-width: 768px) {
-	
+@media screen and (max-width: 767px) {
+
+	#logo {
+	    top: 15px;
+	    left: 15px;
+	}
+
+	#menu-1 {
+		top: 83px;;
+	}
+
+	#menu-2 {
+		right: auto;
+		left: 15px;
+		top: 92px;
+		font-size: 12.5px;;
+	}
+
+	section.header-with-background {
+		height: 120px;;
+	}
+
+	section.header-with-background a.link-up {
+		top: 122px;;
+		background-color: #2c333c;
+		width: 100%;
+		text-align: center;
+		font-size: 18px;
+		line-height: 31px;
+		box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+		z-index: 48;;;;;;;;
+	}
+
+	section.header-with-background a.link-up::after {;
+		vertical-align: middle;;
+		height: 25px;;
+		width: 25px;;
+		margin-left: 6px;
+	}
+
+	h1.page-title {
+		font-size: 18px;
+		margin-left: 15px;
+		margin-top: 10px;
+	}
+
 	section#intro .description {
 		bottom: 0;
 		max-width: 100%;

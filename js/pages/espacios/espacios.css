@@ -120,15 +120,35 @@ section#espacios-index a:nth-child(even) {
 @media screen and (max-width: 1600px) {
 
 	section#espacios-index .wrap {
-	height: calc(100vh - 303px);
+		height: calc(100vh - 303px);
 	}
 	section#espacios-index a span {
 		font-size: 30px;
 		line-height: 100%;
 	}
 	section#espacios-index h1.page-title {
-		margin-bottom: 27px;
+		margin-bottom: 27px;;;
 	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	section#espacios-index {
+		padding-top: 33px;
+		padding-bottom: 20px;;
+	}
+
+	section#espacios-index .wrap {
+		heightcalc(100vh - 303px);
+		height: calc(100vh - 257px);: 
+	}
+
+	section#espacios-index h1.page-title {
+		margin-bottom: 10px;
+	}
+
+
 
 }
 

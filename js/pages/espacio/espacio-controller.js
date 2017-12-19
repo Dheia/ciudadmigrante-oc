@@ -1,9 +1,12 @@
-app.controller('EspacioController', function($scope, $rootScope, $routeParams, $http, config, $timeout, $anchorScroll) {  
+app.controller('EspacioController', function($scope, $rootScope, $routeParams, $http, config, $timeout, $interval, $anchorScroll) {  
     
 	$scope.id = $routeParams.id;
 
     $scope.espacioData = [];
-    
+
+    // var scrollElement = $('section#espacio-images');
+    // var scrollInterval;
+
     $scope.loadEspacioData = function()
     {
         $http({
@@ -15,39 +18,18 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
         })
         .then(function(response) {
             $scope.espacioData = response.data;
-        
+
             // set metadata
             document.title = 'Ciudad Migrante - ' + $scope.espacioData.name;
             document.querySelector('meta[name=description]').setAttribute('content', $($scope.espacioData.descripcion).text());
+
+/*            scrollInterval = $interval(function(){
+                scrollElementToMiddle();
+                // $('section#espacio-images').mouseenter();
+            }, 200);*/
         });
     };
     $scope.loadEspacioData();
-
-
-
-    // click to scroll
-/*
-	$scope.scrollTo = function(id)
-	{
-		var anchor = $('#' + id);
-		var firstChild = anchor.parent().find('*:first-child');
-		var scrollTo = anchor.position().left - firstChild.position().left - $( window ).width() / 2 + anchor.width() / 2;
-
-		if (scrollTo < 0) {
-			scrollTo = 0;
-		}
-
-		var maxScroll = $('#espacio-images').prop("scrollWidth") - $( window ).width();
-
-		if (scrollTo > maxScroll) {
-			scrollTo = maxScroll;
-		}
-
-		$('#espacio-images').stop().animate({
-            scrollLeft: scrollTo
-        }, 1000, 'easeOutQuart');
-	}
-*/
 
 
     if (!isTouchDevice()) {
@@ -78,6 +60,44 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
             scrollElement.scrollLeft(baseScroll + (event.pageX - baseX) / 2);
         });
 
+
+
+        
+/*
+        var scrollElement = $('section#espacio-images');
+        var scrollMargin = 50;
+        var scrollFactor;
+
+        scrollElement.mouseenter(function(event){
+
+            // $interval.cancel(scrollInterval);
+
+            // console.log('mouseenter');
+
+            scrollFactor = (scrollElement[0].scrollWidth + 2 * scrollMargin) / window.innerWidth - 1;
+
+            scrollElement.stop().animate({scrollLeft: (event.pageX - scrollMargin) * scrollFactor}, 200, null, bindMouseMove);
+            // bindMouseMove();
+        });
+        scrollElement.mouseleave(function(){
+            scrollElement.mousemove(null);
+        });
+
+        function bindMouseMove()
+        {
+            scrollElement.mousemove(function(event){
+                $(this).scrollLeft((event.pageX - scrollMargin) * scrollFactor);
+            });
+        }
+
+        function scrollElementToMiddle()
+        {
+            // scroll to 50%
+            console.log('scrollElementToMiddle');
+            var scrollFactor = (scrollElement[0].scrollWidth + 2 * scrollMargin) / window.innerWidth - 1;
+            // scrollElement.scrollLeft((window.innerWidth/2 - scrollMargin) * scrollFactor);
+            scrollElement.stop().animate({scrollLeft: (window.innerWidth/2 - scrollMargin) * scrollFactor}, 200);
+        }*/
 
     }
 

@@ -55,6 +55,7 @@ section#ciudad-map {
 }
 section#ciudad-map h1.page-title {
 	position: absolute;
+	margin-top: 44px;
 }
 
 
