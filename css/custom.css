@@ -171,7 +171,7 @@ p em {
 	font-family: 'DIN Next LT Pro Condensed';
 	font-size: 24px;
 	padding-bottom: 1px;
-	font-weight: 700;;;;
+	font-weight: 700;
 }
 .form-group {
 }
@@ -181,7 +181,7 @@ p em {
 	border-width: 0 0 1px 0;
 	box-shadow: none;
 	font-size: 18px;
-	color: #ffffff;;;
+	color: #ffffff;
 }
 .form-control:focus {
 	border-color: #d5d6d8;
@@ -193,7 +193,7 @@ p em {
 	border: none;
 }
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
-	background-color: #26292c;;
+	background-color: #26292c;
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
 	background-color: #3d434b;
@@ -203,7 +203,7 @@ p em {
 }
 .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
 	color: #ffffff;
-	box-shadow: none;;;
+	box-shadow: none;
 	
 }
 
@@ -228,7 +228,7 @@ p em {
 
 body > header {
 	z-index: 50;
-	position: relative;;
+	position: relative;
 }
 body > main {
 	position: absolute;
@@ -318,7 +318,7 @@ body.loading .preload {
 	position: absolute;
 	top: 53px;
 	right: 22px;
-	text-align: right;;
+	text-align: right;
 }
 #menu-1 a, 
 #menu-1 span,
@@ -341,7 +341,7 @@ body.loading .preload {
 }
 .languages a, .languages span {
 	margin-left: 6px !important;
-	color: #c7c7c7 !important;;
+	color: #c7c7c7 !important;
 }
 .languages a.selected {
 	color: #ffffff !important;
@@ -363,7 +363,7 @@ body.loading .preload {
 	z-index: 100;
 	margin-left: -10px;
 	margin-top: 50px;
-	display: block;;
+	display: block;
 	visibility: hidden;
 }
 #menu-1 .share.expanded .links {
@@ -447,7 +447,7 @@ body.loading .preload {
 	font-size: 24px;
 	position: absolute;
 	right: 30px;
-	top: 125px;;;;
+	top: 125px;
 }
 #menu-2 a {
 	color: #ffffff;
@@ -465,7 +465,7 @@ section.header-with-background {
 	height: 166px;
 	background-size: cover;
 	background-position: center center;
-	z-index: 49;;
+	z-index: 49;
 }
 section.header-with-background a.link-up {
 	font-size: 40px;
@@ -475,7 +475,7 @@ section.header-with-background a.link-up {
 	top: 25px;
 	line-height: 50px;
 	z-index: 103;
-	position: absolute;;
+	position: absolute;
 	color: #ffffff;
 	font-family: 'DIN Next LT Pro Condensed';
 }
@@ -489,7 +489,7 @@ section.header-with-background a.link-up::after {
 	height: 50px;
 	background-image: url(../images/expand-arrow.png);
 	background-repeat: no-repeat;
-	display: inline-block;;
+	display: inline-block;
 	margin-left: 15px;
 	transition: all 0.35s cubic-bezier(.26,1,1,1);
 	transform: rotate(180deg);
@@ -514,7 +514,7 @@ h1.page-title {
 	bottom: 0;
 	width: 100%;
 	z-index: 102;
-	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
 }
 #menu-relatos.expanded {
 }
@@ -524,7 +524,7 @@ h1.page-title {
 	color: #ffffff;
 	font-size: 14px;
 	top: 34px;
-	text-transform: uppercase;;;;;;
+	text-transform: uppercase;
 }
 #menu-relatos .toggle {
 	margin: 15px 0;
@@ -563,7 +563,7 @@ h1.page-title {
 }
 #menu-relatos.expanded .faces {
 	height: 200px;
-	white-space: nowrap;;;
+	white-space: nowrap;
 }
 
 #menu-relatos .faces a {
@@ -571,7 +571,7 @@ h1.page-title {
 	display: inline-block;
 	overflow: hidden;
 	color: #ffffff;
-	margin: 0 1px;;
+	margin: 0 1px;
 }
 #menu-relatos .faces a h3 {
 	position: absolute;
@@ -581,7 +581,7 @@ h1.page-title {
 	opacity: 0;
     transition: all 0.2s cubic-bezier(.46,1,1,1);
 	z-index: 3;
-	text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);;;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 }
 #menu-relatos .faces a img {
 	height: 180px;
@@ -629,7 +629,7 @@ section#intro .description {
 	z-index: 3;
 	left: 0;
 	bottom: 40px;
-	text-align: justify;;;;;;;;;
+	text-align: justify;;
 }
 section#intro .description .logo {
 	margin-bottom: 45px;
@@ -645,7 +645,7 @@ section#intro .languages {
     font-weight: 500;
 }
 section#intro a.next {
-	position: absolute;;
+	position: absolute;
 	width: 50px;
 	height: 50px;
 	background-image: url(../images/expand-arrow.png);
@@ -653,7 +653,7 @@ section#intro a.next {
 	z-index: 4;
 	bottom: 64px;
 	left: 50%;
-	transform: translateX(-50%);;;;;
+	transform: translateX(-50%);
 }
 section#intro .overlay {
 	position: absolute;
@@ -669,8 +669,8 @@ section#intro .videoWrapper {;
 section#intro #intro-player {
 	position: relative;
 	left: 50%;
-	transform: translateX(-50%);;
-	min-height: 56vw;;
+	transform: translateX(-50%);
+	min-height: 56vw;
 	min-width: 178vh;
 }
 
@@ -695,7 +695,7 @@ section#intro #intro-player {
 
 	#logo {
 		top: 37px;
-		left: 50px;;
+		left: 50px;
 	}
 	
 	#logo img {
@@ -705,17 +705,17 @@ section#intro #intro-player {
 	#menu-1 {
 		font-size: 12.5px;
 		top: 30px;
-		right: 12px;;;
+		right: 12px;
 	}
 
 	#menu-1 .share {
 	}
 	#menu-1 .share .links {
-		margin-top: 31px;;
+		margin-top: 31px;
 	}
 	#menu-1 .share .links a {
 		width: 31px;
-		height: 31px;;;
+		height: 31px;
 	}
 	#menu-1 .share .links a img {
 	}
@@ -731,17 +731,17 @@ section#intro #intro-player {
 	#menu-2 {
 		font-size: 15px;
 		top: 75px;
-		right: 12px;;
+		right: 12px;
 	}
 
 	section.header-with-background a.link-up {
 		font-size: 25px;
-		top: 12px;;
+		top: 12px;
 	}
 	section.header-with-background a.link-up::after {
 		width: 31px;
 		height: 31px;
-		background-size: 100%;;
+		background-size: 100%;
 	}
 
 	section.header-with-background {
@@ -751,22 +751,22 @@ section#intro #intro-player {
 	h1.page-title {
 		font-size: 25px;
 		margin-left: 50px;
-		margin-top: 20px;;;
+		margin-top: 20px;
 	}
 
 	#menu-relatos .toggle {
 		font-size: 25px;
-		margin: 7px 0;;
+		margin: 7px 0;
 	}
 	#menu-relatos .toggle::after {
 		width: 31px;
 		height: 31px;
-		background-size: 100%;;
+		background-size: 100%;
 	}
 	#menu-relatos a.creditos {
 		font-size: 12px;
 		right: 12px;
-		top: 17px;;;
+		top: 17px;
 	}
 
 
@@ -785,23 +785,23 @@ section#intro #intro-player {
 	}
 	section#intro a.next {
 		background-size: 100%;
-		bottom: 30px;;;
+		bottom: 30px;
 	}
 
 	section#intro .languages {
 		font-size: 12.5px;
-		top: 35px;;
+		top: 35px;
 	}
 	section#intro .description .logo {
 		width: 280px;
-		margin-bottom: 30px;;
+		margin-bottom: 30px;
 	}
 	section#intro .description {
 		padding: 35px 50px 25px 50px;
 		max-width: 370px;
 		font-size: 14px;
 		line-height: 130%;
-		bottom: 30px;;;;;;;
+		bottom: 30px;
 	}
 
 }
@@ -815,35 +815,35 @@ section#intro #intro-player {
 	}
 
 	#menu-1 {
-		top: 83px;;
+		top: 83px;
 	}
 
 	#menu-2 {
 		right: auto;
 		left: 15px;
 		top: 92px;
-		font-size: 12.5px;;
+		font-size: 12.5px;
 	}
 
 	section.header-with-background {
-		height: 120px;;
+		height: 120px;
 	}
 
 	section.header-with-background a.link-up {
-		top: 122px;;
+		top: 122px;
 		background-color: #2c333c;
 		width: 100%;
 		text-align: center;
 		font-size: 18px;
 		line-height: 31px;
 		box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
-		z-index: 48;;;;;;;;
+		z-index: 48;
 	}
 
 	section.header-with-background a.link-up::after {;
-		vertical-align: middle;;
-		height: 25px;;
-		width: 25px;;
+		vertical-align: middle;
+		height: 25px;
+		width: 25px;
 		margin-left: 6px;
 	}
 
@@ -866,16 +866,31 @@ section#intro #intro-player {
 	section#intro .languages {
 	    top: 34px;
 	    right: 17px;
-	    font-size: 14px;;
+	    font-size: 14px;
 	}
-	section#intro a.next {;;;
-		bottom: 20px;;;;
-		background-size: 25px;;;;
-		height: 25px;;;;
-		width: 25px;;
+	section#intro a.next {;
+		bottom: 20px;
+		background-size: 25px;
+		height: 25px;
+		width: 25px;
 	}
 	section#intro .overlay {
 		display: none;
+	}
+
+	#menu-relatos .toggle {
+		font-size: 18px;
+		margin: 5px 0 0 0;
+		line-height: 26px;	
+	}
+	#menu-relatos .toggle::after {
+		width: 25px;
+		height: 25px;
+		vertical-align: text-bottom;;
+	}
+	#menu-relatos a.creditos {
+	top: 10px;;
+
 	}
 
 

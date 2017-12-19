@@ -501,7 +501,8 @@ section#ciudad-map > main {
 @media screen and (max-width: 767px) {
 	
 	section#ciudad-map > aside .column {
-	margin-top: 70px;;
+	margin-top: 70px;
+	max-height: calc(100% - 72px);;;
 
 	}
 	section#ciudad-map > aside .column .subtitle {
@@ -514,6 +515,9 @@ section#ciudad-map > main {
 	}
 
 	section#ciudad-map > aside .markers {
+	padding-left: 40px;
+	padding-top: 15px;
+	padding-bottom: 10px;;;;
 		
 	}
 

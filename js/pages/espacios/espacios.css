@@ -141,7 +141,7 @@ section#espacios-index a:nth-child(even) {
 
 	section#espacios-index .wrap {
 		heightcalc(100vh - 303px);
-		height: calc(100vh - 257px);: 
+	height: calc(100vh - 243px);: 
 	}
 
 	section#espacios-index h1.page-title {
