@@ -495,3 +495,26 @@ section#ciudad-map > main {
 	}
 
 }
+
+
+
+@media screen and (max-width: 767px) {
+	
+	section#ciudad-map > aside .column {
+	margin-top: 70px;;
+
+	}
+	section#ciudad-map > aside .column .subtitle {
+		margin-left: 15px;
+		margin-bottom: 15px;;;
+	}
+	section#ciudad-map > aside .categories a {
+		margin-left: 30px;;;
+
+	}
+
+	section#ciudad-map > aside .markers {
+		
+	}
+
+}
