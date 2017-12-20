@@ -5,6 +5,11 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 		$(this).parent().toggleClass('expanded');
 	});
 
+    // on mobile close sidebar
+    if ($(document).width() < 768) {
+        $("section#ciudad-map aside").removeClass('expanded');
+    }
+
 
     // Google Maps
     var map = new google.maps.Map(document.getElementById("map"), config.map); 
