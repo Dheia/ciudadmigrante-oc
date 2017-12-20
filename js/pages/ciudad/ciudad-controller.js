@@ -70,7 +70,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             setTimeout($scope.createMarker.bind(null, data, i, type), i*5);
             j = i;
         }
-        setTimeout($scope.openInfoWindowByUrl.bind(null, type), j*5+5);
+        // setTimeout($scope.openInfoWindowByUrl.bind(null, type), j*5+5);
     }
 
     $scope.createMarker = function(data, i, type)
@@ -198,31 +198,10 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     }
 
 
-
-
-
-    // open info window
-    $scope.infoWindowToOpen = true;
-
-    $scope.openInfoWindowByUrl = function(type)
-    {
-        if ($scope.infoWindowToOpen && $routeParams.filter && $routeParams.id && $routeParams.filter==type)
-        {
-            var marker = $scope.markers[$routeParams.filter][$routeParams.id];
-            // console.log(marker);
-            map.panTo(marker.getPosition());
-            google.maps.event.trigger(marker, 'click');
-            map.setZoom(14);
-            $scope.infoWindowToOpen = false;
-        }
-    }
-
-
-
     // load relatos
     $scope.relatosData = null;
     
-    $scope.loadRelatosData = function()
+    $scope.loadRelatosData = function(onLoad)
     {
         $http({
             method  : 'GET',
@@ -234,7 +213,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         })
         .then(function(response) {
             $scope.relatosData = response.data;
-            $scope.createMarkers('relatos', $scope.relatosData);
+            onLoad();
         });
     }
 
@@ -243,7 +222,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     // load ayuda
     $scope.ayudaData = null;
     
-    $scope.loadAyudaData = function()
+    $scope.loadAyudaData = function(onLoad)
     {
         $http({
             method  : 'GET',
@@ -255,7 +234,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         })
         .then(function(response) {
             $scope.ayudaData = response.data;
-            $scope.createMarkers('ayuda', $scope.ayudaData);
+            onLoad();
         });
     }
 
@@ -264,7 +243,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     // load espacios
     $scope.espaciosData = null;
     
-    $scope.loadEspaciosData = function()
+    $scope.loadEspaciosData = function(onLoad)
     {
         $http({
             method  : 'GET',
@@ -276,7 +255,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         })
         .then(function(response) {
             $scope.espaciosData = response.data;
-            $scope.createMarkers('espacios', $scope.espaciosData);
+            onLoad();
         });
     }
 
@@ -297,7 +276,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     // filters
     $scope.selectedFilters = {};
     if ($routeParams.filter) {
-        $scope.selectedFilters[$routeParams.filter] = true;
+        // $scope.selectedFilters[$routeParams.filter] = true;
     }
     else {
         $scope.selectedFilters['relatos'] = true;
@@ -332,13 +311,19 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         $scope.deleteAllMarkers();
 
         if ($scope.selectedFilters.relatos) {
-            $scope.loadRelatosData();
+            $scope.loadRelatosData(function(){
+                $scope.createMarkers('relatos', $scope.relatosData);
+            });
         }
         if ($scope.selectedFilters.ayuda) {
-            $scope.loadAyudaData();
+            $scope.loadAyudaData(function(){
+                $scope.createMarkers('ayuda', $scope.ayudaData);
+            });
         }
         if ($scope.selectedFilters.espacios) {
-            $scope.loadEspaciosData();
+            $scope.loadEspaciosData(function(){
+                $scope.createMarkers('espacios', $scope.espaciosData);
+            });
         }
     }
     
@@ -370,5 +355,71 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     }
 
 
+
+
+
+
+    // create marker by id
+
+    $scope.createMarkerByUrl = function()
+    {
+        if (!$routeParams.filter || !$routeParams.id) {
+            return;
+        }
+
+        switch ($routeParams.filter) {
+            case 'relatos' :
+                var data = $scope.relatosData;
+                break;
+            case 'espacios' :
+                var data = $scope.espaciosData;
+                break;
+            case 'ayuda' :
+                var data = $scope.ayudaData;
+                break;
+        }
+
+        // find item by id
+        for (i in data) {
+            if (data[i].id == $routeParams.id) {
+                var item = data[i];
+                break;
+            }
+        }
+
+        // create marker
+        $scope.createMarkers($routeParams.filter, [data[i]]);
+        
+        // open infowindow
+        setTimeout($scope.openInfoWindowByUrl, 100);
+    }
+
+    if ($routeParams.filter && $routeParams.id) {
+        switch ($routeParams.filter) {
+            case 'relatos' :
+                $scope.loadRelatosData($scope.createMarkerByUrl);
+                break;
+            case 'espacios' :
+                $scope.loadEspaciosData($scope.createMarkerByUrl);
+                break;
+            case 'ayuda' :
+                $scope.loadAyudaData($scope.createMarkerByUrl);
+                break;
+        }
+    }
+
+
+    // open info window by id    
+    $scope.openInfoWindowByUrl = function()
+    {
+        if ($routeParams.filter && $routeParams.id)
+        {
+            var marker = $scope.markers[$routeParams.filter][$routeParams.id];
+            console.log($scope.markers[$routeParams.filter]);
+            map.panTo(marker.getPosition());
+            google.maps.event.trigger(marker, 'click');
+            map.setZoom(14);
+        }
+    }
 
 });
