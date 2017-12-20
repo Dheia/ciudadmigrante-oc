@@ -29,7 +29,7 @@ body.prev-page-ciudad.page-espacios > .ng-leave {
 body.prev-page-ciudad.page-espacios > .ng-leave.ng-leave-active {
     z-index: 10;
     opacity: 1;
-    transform: translateY(-100%);;
+    transform: translateY(-100%);
 }
 
 
@@ -40,14 +40,14 @@ section#espacios-index {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	padding: 0;;
+	padding: 0;
 }
 section#espacios-index .list {
 	display: flex;
   	align-items: center;
 	flex-grow: 1;
 	overflow-x: auto;
-	height: calc(100vh - 361px);;;;;;;
+	height: calc(100vh - 361px);
 }
 section#espacios-index h1.page-title {	
 	color: #2c333c;	
@@ -59,7 +59,7 @@ section#espacios-index h1.page-title {
 section#espacios-index .wrap {
 	display: flex;
 	height: 100%;
-	margin-left: 50px;;;;;
+	margin-left: 50px;
 }
 section#espacios-index a {
  	margin: 0 -20px 60px -20px;
@@ -70,7 +70,7 @@ section#espacios-index a {
  	width: 15.5vw;
  	flex-grow: 0;
  	flex-shrink: 0;
- 	min-width: 180px;;;;
+ 	min-width: 180px;
 }
 section#espacios-index a .image {
 	background-size: cover;
@@ -92,7 +92,7 @@ section#espacios-index a h2 {
  	left: 25px;
     transition: all 1s cubic-bezier(.46,1,1,1);
 	font-size: 48px;
-	margin-top: -40px;;;;;
+	margin-top: -40px;
 }
 section#espacios-index .wrap:hover a .image,
 section#espacios-index .wrap:hover a h2 {
@@ -135,10 +135,10 @@ section#espacios-index a:nth-child(even) {
 	}
 	section#espacios-index a h2 {
 		font-size: 25px;
-		margin-top: -25px;;
+		margin-top: -25px;
 	}
 	section#espacios-index h1.page-title {
-		margin-bottom: 27px;;;
+		margin-bottom: 27px;
 	}
 	section#espacios-index .list {
 		height: calc(100vh - 223px);
@@ -151,11 +151,11 @@ section#espacios-index a:nth-child(even) {
 
 	section#espacios-index {
 		padding-top: 33px;
-		padding-bottom: 20px;;
+		padding-bottom: 20px;
 	}
 
 	section#espacios-index .list {
-		height: calc(100vh - 226px);;
+		height: calc(100vh - 226px);
 	}
 
 	section#espacios-index .wrap { 

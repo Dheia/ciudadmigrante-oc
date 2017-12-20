@@ -62,7 +62,7 @@ section#participa > main .row {
 	margin: 0;
 }
 
-section#participa > main .col-md-6.left {
+section#participa > main .col-sm-6.left {
 	text-align: center;
 	position: relative;
 }
@@ -199,7 +199,7 @@ section#participa > main .gracias footer {
 
 	section#participa {
 		padding-top: 125px;
-		padding-bottom: 50px;;
+		padding-bottom: 50px;
 	}
 	section#participa > header .container > h1 {
 		font-size: 24px;
@@ -208,7 +208,7 @@ section#participa > main .gracias footer {
 		min-height: 300px;
 	}
 	section#participa label {
-		font-size: 12px;;
+		font-size: 12px;
 	}
 
 }

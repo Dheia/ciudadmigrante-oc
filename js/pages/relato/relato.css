@@ -37,7 +37,7 @@ section#relato-video > aside {
 	padding: 50px 15px 5px 60px;
 	display: flex;
 	flex-direction: column;
-	max-width: calc(100% - 50px);;;;
+	max-width: calc(100% - 50px);
 }
 section#relato-video > aside.expanded {
 	transform: translateX(0);
@@ -53,7 +53,7 @@ section#relato-video > aside .handle {
 	border-radius: 0 50px 50px 0;
 	cursor: pointer;
 	display: flex;
-	justify-content: flex-start;;
+	justify-content: flex-start;
 	align-items: center;
 }
 section#relato-video > aside .handle::before {
@@ -84,7 +84,7 @@ section#relato-video > aside .scroll {
 	margin-bottom: 50px;
 }
 section#relato-video > aside .description {
-	text-align: justify;;
+	text-align: justify;
 }
 
 section#relato-video > main {
@@ -97,7 +97,7 @@ section#relato-video > main {
 
 	section#relato-video > aside {
 		width: 279px;
-		padding: 32px 30px 5px 50px;;
+		padding: 32px 30px 5px 50px;
 	}
 	section#relato-video > aside .logo {
 		margin-bottom: 30px;
@@ -122,17 +122,17 @@ section#relato-video > main {
 	section#relato-video > aside .handle::before {
 		height: 21px;
 		width: 21px;
-		background-size: 100%;;
+		background-size: 100%;
 	}
 
 	section#relato-video > aside .scroll {
 		margin-right: 0;
-		margin-bottom: 0;;;
+		margin-bottom: 0;
 	}
 
 	section#relato-video > aside .description {
 		font-size: 13px;
-		line-height: 130%;;
+		line-height: 130%;
 	}
 
 }
@@ -143,15 +143,15 @@ section#relato-video > main {
     	top: 15px;
 	}
 	body.page-relato #menu-relatos {
-		z-index: -1 !important;;;
+		z-index: -1 !important;
 	}
 	section#relato-video {
-	z-index: inherit;; 
+	z-index: inherit; 
 	}
 	section#relato-video > aside {
 		padding: 15px;
 		width: 240px;
-		transform: translateX(calc(-100% + 7px));;
+		transform: translateX(calc(-100% + 7px));
 	}
 	section#relato-video > main {
 	z-index: 3;

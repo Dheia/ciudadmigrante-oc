@@ -51,7 +51,7 @@ body.page-ciudad > header {
 section#ciudad-map {
 	height: calc(100vh - 248px);
 	position: relative;
-	z-index: 48;;;
+	z-index: 48;
 }
 section#ciudad-map h1.page-title {
 	position: absolute;
@@ -109,13 +109,13 @@ section#ciudad-map > aside .column {
 	max-height: calc(100% - 100px);
 	display: flex;
 	flex-direction: column;
-	overflow-x: hidden;;;
+	overflow-x: hidden;
 }
 section#ciudad-map > aside .column .subtitle {
 	font-weight: bold;
 	margin-left: 40px;
 	margin-bottom: 30px;
-	text-transform: uppercase;;;
+	text-transform: uppercase;
 }
 
 
@@ -123,7 +123,7 @@ section#ciudad-map > aside .categories {
 	position: relative;
 	margin-left: 40px;
 	overflow-y: auto;
-	overflow-x: hidden;;
+	overflow-x: hidden;
 }
 body > main.ciudad.ng-enter section#ciudad-map > aside .categories {
 	visibility: hidden;
@@ -172,11 +172,11 @@ section#ciudad-map > aside .categories a:not(:last-child):after {
 	border-left: 5px solid #ffffff;
 	left: -30px;
 	top:9px;
-	z-index: 1;;
+	z-index: 1;
 }
 
 section#ciudad-map > aside .markers {
-	padding: 40px 0 15px 79px;;;
+	padding: 40px 0 15px 79px;
 }
 section#ciudad-map > aside .markers a {
 	display: block;
@@ -219,7 +219,7 @@ section#ciudad-map > main {
 }
 #map {
 	height: 100%;
-	margin-left: 15px;;
+	margin-left: 15px;
 }
 
 
@@ -230,7 +230,7 @@ section#ciudad-map > main {
 }
 .gm-style .gm-style-iw {
 	width: 286px !important;
-	left: 19px !important;;
+	left: 19px !important;
 	background-color: #fff;
 	color: #2d343d;
 	font-size: 14px;
@@ -238,9 +238,10 @@ section#ciudad-map > main {
 	padding: 8px 8px 2px 8px;
 	top: 14px !important;
 	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
-	font-weight: 500;;;
+	font-weight: 500;
 	animation: iwFadeIn 100ms;
 	box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.1);
+	line-height: 120%;;
 }
 .gm-style .gm-style-iw > div:first-child {
 	max-width: 100% !important;
@@ -250,7 +251,7 @@ section#ciudad-map > main {
 }
 .gm-style .gm-style-iw h2 {
 	font-size: 24px;
-	font-weight: bold;;;
+	font-weight: bold;
 }
 .gm-style .gm-style-iw p {
 	margin-bottom: 6px;
@@ -272,22 +273,21 @@ section#ciudad-map > main {
 	height: 40px;
 	background-image: url('../../../images/icon_link.png');
 	background-repeat: no-repeat;
-	background-size: 100%;;
+	background-size: 100%;
 }
 .gm-style .gm-style-iw .ayuda-content {
 	padding: 4px 4px 0 4px;
 }
 .gm-style .gm-style-iw .ayuda-content h2 {
-	min-width: 262px;
 }
 .gm-style .gm-style-iw a.relato {
 	display: block;
 	height: 150px;
 	width: 270px;
-	position: relative;;
+	position: relative;
 	background-size: cover;
 	background-position: center center;
-	bottom: 0;;
+	bottom: 0;
 }
 .gm-style .gm-style-iw a.relato::before {
 	content:"";
@@ -311,9 +311,9 @@ section#ciudad-map > main {
 	color: #ffffff;
 	right: 14px;
 	min-width: 0;
-	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 	font-weight: 500;
-	margin-bottom: 0;;
+	margin-bottom: 0;
 }
 .gm-style .gm-style-iw a.espacio {
 	display: block;
@@ -343,7 +343,7 @@ section#ciudad-map > main {
 	min-width: 0;
 	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 	margin-bottom: 5px;
-	font-weight: 500;;
+	font-weight: 500;
 }
 /* remove close button */
 .gm-style .gm-style-iw + div {
@@ -362,7 +362,7 @@ section#ciudad-map > main {
 }
 /* shadow DIV */
 .gm-style-pbc + div + div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(2) {
-	display: none;;;
+	display: none;
 	width: 295px !important;
 	left: 15px !important;
 	top: 14px !important;
@@ -398,17 +398,17 @@ section#ciudad-map > main {
 
 	section#ciudad-map > aside .column .subtitle {
 		margin-left: 50px;
-		margin-bottom: 18px;;
+		margin-bottom: 18px;
 	}
 
 	section#ciudad-map > aside .categories {
-		margin-left: 8px;;
+		margin-left: 8px;
 	}
 
 	section#ciudad-map > aside .categories a {
 		margin-left: 42px;
 		font-size: 16px;
-		margin-bottom: 12px;;;
+		margin-bottom: 12px;
 	}
 
 	section#ciudad-map > aside .categories a::before {
@@ -424,7 +424,7 @@ section#ciudad-map > main {
 	}
 
 	section#ciudad-map > aside .markers {
-		padding: 29px 0 15px 50px;;	
+		padding: 29px 0 15px 50px;	
 	}
 
 	section#ciudad-map > aside .markers a {
@@ -432,7 +432,11 @@ section#ciudad-map > main {
 		background-size: auto 25px;
 		padding: 5px 0px 5px 25px;
 		min-height: 25px;
-		margin-left: -25px;;;;
+		margin-left: -25px;
+	}
+
+	section#ciudad-map h1.page-title {
+		margin-top: 20px;
 	}
 
 	#map {
@@ -441,7 +445,7 @@ section#ciudad-map > main {
 
 	.gm-style .gm-style-iw {
 		width: 180px !important;
-		padding: 5px 5px 0 5px;;
+		padding: 5px 5px 0 5px;
 	}
 	.gm-style .gm-style-iw .lead {
 		font-size: 14px;
@@ -455,7 +459,7 @@ section#ciudad-map > main {
 	.gm-style .gm-style-iw a.espacio h2 {
 		font-size: 16px;
 		bottom: 2px;
-		right: 13px;;;
+		right: 13px;
 	}
 
 	.gm-style .gm-style-iw a.espacio::before {
@@ -476,7 +480,7 @@ section#ciudad-map > main {
 	.gm-style .gm-style-iw a.relato h2 {
 		font-size: 16px;
 		right: 4px;
-		margin-bottom: 0;;
+		margin-bottom: 0;
 	}
 	
 	.gm-style .gm-style-iw .ayuda-content h2 {
@@ -507,23 +511,29 @@ section#ciudad-map > main {
 	
 	section#ciudad-map > aside .column {
 	margin-top: 70px;
-	max-height: calc(100% - 72px);;;
+	max-height: calc(100% - 72px);
 
 	}
 	section#ciudad-map > aside .column .subtitle {
 		margin-left: 15px;
-		margin-bottom: 15px;;;
+		margin-bottom: 15px;
 	}
 	section#ciudad-map > aside .categories a {
-		margin-left: 30px;;;
+		margin-left: 30px;
 
 	}
 
 	section#ciudad-map > aside .markers {
-	padding-left: 40px;
-	padding-top: 15px;
-	padding-bottom: 10px;;;;
-		
+		padding-left: 40px;
+		padding-top: 15px;
+		padding-bottom: 10px;	
+	}
+
+	.gm-style .gm-style-iw {
+		font-size: 13px;
+		line-height: 115%;
+	}
+	.gm-style .gm-style-iw .lead {
 	}
 
 }

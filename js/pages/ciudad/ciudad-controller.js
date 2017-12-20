@@ -42,13 +42,6 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     });
 
 
-    var oms = new OverlappingMarkerSpiderfier(map, { 
-        markersWontMove: true,   // we promise not to move any markers, allowing optimizations
-        markersWontHide: true,   // we promise not to change visibility of any markers, allowing optimizations
-        basicFormatEvents: true  // allow the library to skip calculating advanced formatting information
-    });
-
-
 
     var marker;
 
@@ -97,8 +90,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
     $scope.createInfoWindow = function(marker, item, type) 
     {
-        // google.maps.event.addListener(marker, 'click', function() {
-        google.maps.event.addListener(marker, 'spider_click', function(e) {  // 'spider_click', not plain 'click'
+        google.maps.event.addListener(marker, 'click', function() {
             if ($scope.openedInfoWindowId == (type + item.id)) {
                 $scope.infowindow.close();
                 $scope.openedInfoWindowId = null;
@@ -108,18 +100,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
                 $scope.infowindow.open(map, marker);
                 $scope.openedInfoWindowId = type + item.id;
             }
-            // change URL
-            // console.log('ciudad/' + type + '/' + item.id);
-            // window.location.href = 'ciudad/' + type + '/' + item.id;
-            // $route.updateParams({
-            //     filters : type, 
-            //     id      : item.id
-            // });
-            // $location.path('ciudad/' + type + '/' + item.id, false);
         });
-
-        oms.addMarker(marker);  // adds the marker to the spiderfier _and_ the map
-
         if (!isTouchDevice()) {
             google.maps.event.addListener(marker, 'mouseover', function() {
                 // google.maps.event.trigger(marker, 'click');
@@ -415,7 +396,6 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         if ($routeParams.filter && $routeParams.id)
         {
             var marker = $scope.markers[$routeParams.filter][$routeParams.id];
-            console.log($scope.markers[$routeParams.filter]);
             map.panTo(marker.getPosition());
             google.maps.event.trigger(marker, 'click');
             map.setZoom(14);
