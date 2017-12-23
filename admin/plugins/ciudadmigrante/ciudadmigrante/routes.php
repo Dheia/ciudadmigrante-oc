@@ -9,3 +9,4 @@ Route::get('/api/espacio/{id}', 'CiudadMigrante\CiudadMigrante\Api\Espacios@find
 Route::get('/api/espacio/{id}/metadata', 'CiudadMigrante\CiudadMigrante\Api\Espacios@metadata');
 Route::get('/api/categories', 'CiudadMigrante\CiudadMigrante\Api\Categories@index');
 Route::get('/api/metadata', 'CiudadMigrante\CiudadMigrante\Api\Metadata@index');
+Route::get('/api/settings', 'CiudadMigrante\CiudadMigrante\Api\Settings@index');

@@ -226,4 +226,5 @@
   'Backend\\Behaviors\\ImportExportController' => 'modules/backend/behaviors/ImportExportController.php',
   'Backend\\Models\\ImportModel' => 'modules/backend/models/ImportModel.php',
   'Backend\\Traits\\InspectableContainer' => 'modules/backend/traits/InspectableContainer.php',
+  'CiudadMigrante\\CiudadMigrante\\Api\\Settings' => 'plugins/ciudadmigrante/ciudadmigrante/api/Settings.php',
 );

@@ -90,6 +90,8 @@
             </a>
         </div>
     </nav>
+
+    <audio id="background-audio" ng-src="{{ settings.background_audio }}" loop autoplay></audio>
 		
 
     <!-- Le javascript -->
@@ -139,6 +141,16 @@
             '//connect.facebook.net/en_US/all.js';
             document.getElementById('fb-root').appendChild(e);
         }());
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111490485-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111490485-1');
     </script>
 
 </body>

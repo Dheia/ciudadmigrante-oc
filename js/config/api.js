@@ -13,7 +13,8 @@ window.config.api = {
         "get_espacio" 				: "admin/api/espacio/:id",
         "get_categories" 			: "admin/api/categories",
         "getTranslations"			: "admin/api/translations",
-        "missingTranslation"		: "admin/api/translation"
+        "missingTranslation"        : "admin/api/translation",
+        "get_settings"		        : "admin/api/settings"
     }
 
 }

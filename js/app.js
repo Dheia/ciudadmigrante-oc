@@ -167,6 +167,16 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         .addClass("page-"+$rootScope.pageSlug);
 
         $rootScope.setMetadata(); 
+
+        // background audio
+        if ($rootScope.pageSlug == 'relato') {
+            $rootScope.pauseBackgroundAudio();
+        }
+        else {
+            $rootScope.playBackgroundAudio();
+        }
+        
+
     });
 
     $rootScope.$on('$routeChangeSuccess', function() {
@@ -350,7 +360,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
                         'cc_load_policy': 0,
                         'color': 'white',
                         // 'modestbranding': 1,
-                        'fs': 0
+                        'fs': 0,
+                        'mute': 1
                     },
                     events: {
                         'onStateChange': onStateChange
@@ -395,6 +406,31 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             message: ''
         });
     };
+
+
+    // load settings
+    $http({
+        method  : 'GET',
+        url     : config.api.urls.get_settings
+    })
+    .then(function(response) {
+        $rootScope.settings = response.data;
+    });
+
+
+    // background audio
+    $rootScope.pauseBackgroundAudio = function()
+    {
+        $("#background-audio").animate({volume: 0}, 1000);
+        $timeout(function(){
+            document.getElementById("background-audio").pause()
+        }, 1000);
+    }
+    $rootScope.playBackgroundAudio = function()
+    {
+        document.getElementById("background-audio").play();
+        $("#background-audio").animate({volume: 1}, 1000);
+    }
 
 });
 

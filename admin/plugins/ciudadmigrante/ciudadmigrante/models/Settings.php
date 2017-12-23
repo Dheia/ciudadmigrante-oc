@@ -12,4 +12,12 @@ class Settings extends Model
     // Reference to field configuration
     public $settingsFields = 'fields.yaml';
 
+
+    /*
+     * Relations
+     */
+    public $attachOne = [
+        'background_audio' => 'System\Models\File'
+    ];
+
 }

@@ -4,3 +4,13 @@ fields:
         span: left
         default: 0
         type: text
+    background_audio:
+        label: 'Audio de fondo (mp3):'
+        oc.commentPosition: ''
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

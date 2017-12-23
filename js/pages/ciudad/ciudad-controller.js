@@ -1,6 +1,5 @@
 app.controller('CiudadController', function($scope, $rootScope, $http, config, $timeout, $routeParams, $route, $location) {  
 
- 
 	$("section#ciudad-map aside .handle").click(function(){
 		$(this).parent().toggleClass('expanded');
 	});
