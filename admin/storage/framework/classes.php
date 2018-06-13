@@ -227,4 +227,6 @@
   'Backend\\Models\\ImportModel' => 'modules/backend/models/ImportModel.php',
   'Backend\\Traits\\InspectableContainer' => 'modules/backend/traits/InspectableContainer.php',
   'CiudadMigrante\\CiudadMigrante\\Api\\Settings' => 'plugins/ciudadmigrante/ciudadmigrante/api/Settings.php',
+  'backend\\Controllers\\userroles' => 'modules/backend/controllers/userroles.php',
+  'backend\\Controllers\\usergroups' => 'modules/backend/controllers/usergroups.php',
 );

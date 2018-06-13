@@ -315,6 +315,11 @@ body > main {
 /* Components	               		           */
 /***********************************************/
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 
 body .preload {
 	visibility: visible;
@@ -544,6 +549,8 @@ h1.page-title {
 	margin-top: 30px;
 	margin-bottom: 0;
 	z-index: 101;
+	width: auto;
+	margin-right: auto;;;
 }
 
 
@@ -675,8 +682,14 @@ section#intro .description {
 }
 section#intro .description .logo {
 	margin-bottom: 45px;
+	opacity: 0;
+	animation: fadein 0.5s linear 1s;
+	animation-fill-mode: forwards;
 }
 section#intro .description .text {
+	opacity: 0;
+	animation: fadein 0.5s linear 2s;
+	animation-fill-mode: forwards;
 }
 section#intro .languages {
 	position: absolute;
@@ -696,6 +709,9 @@ section#intro a.next {
 	bottom: 64px;
 	left: 50%;
 	transform: translateX(-50%);
+	opacity: 0;
+	animation: fadein 0.5s linear 3s;
+	animation-fill-mode: forwards;
 }
 section#intro .overlay {
 	position: absolute;

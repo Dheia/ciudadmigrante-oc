@@ -47,20 +47,14 @@ app.controller('EspacioController', function($scope, $rootScope, $routeParams, $
             scrollElement.stop().animate({scrollLeft: scrollElement[0].scrollWidth}, (scrollElement[0].scrollWidth - scrollElement.scrollLeft()) / scrollSpeed * 1000, 'swing');
         });
 
-
-
-        var baseScroll = 0;
-        var baseX = 0;
+        var oldX;
         scrollElement.mouseenter(function(event){
-            baseScroll = scrollElement.scrollLeft();
-            baseX = event.pageX;
-            scrollElement.stop();
+            oldX = event.pageX;
         });
         scrollElement.mousemove(function(event){
-            scrollElement.scrollLeft(baseScroll + (event.pageX - baseX) / 2);
+            scrollElement.scrollLeft(scrollElement.scrollLeft() + event.pageX - oldX);
+            oldX = event.pageX;
         });
-
-
 
         
 /*
