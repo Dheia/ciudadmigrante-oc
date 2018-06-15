@@ -432,6 +432,20 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $("#background-audio").animate({volume: 1}, 1000);
     }
 
+
+    /* Kiosk mode */
+    var url = new URL(window.location);
+    $rootScope.isKiosk = url.searchParams.get("kiosk");
+
+    if ($rootScope.isKiosk) {
+        // disable right click
+        $(function() {
+            $(this).bind("contextmenu", function(e) {
+                e.preventDefault();
+            });
+        }); 
+    }
+
 });
 
 
