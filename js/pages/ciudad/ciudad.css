@@ -376,6 +376,10 @@ section#ciudad-map > main {
 	/*border: 1px solid red;*/
 }
 
+.gm-style-cc {
+    display: none;
+}
+
 
 
 /* responsive */

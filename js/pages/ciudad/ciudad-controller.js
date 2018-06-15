@@ -124,10 +124,10 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             if (itemData.telefono) {
                 html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
             }
-            if (itemData.email) {
+            if (itemData.email && !$rootScope.isKiosk) {
                 html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
             }      
-            if (itemData.web) {
+            if (itemData.web && !$rootScope.isKiosk) {
                 html += '<p class="web"><a href="' + itemData.web + '" target="_blank" title="' + itemData.web + '"></a></p>';
             }  
             html += '</div>';

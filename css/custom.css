@@ -276,7 +276,6 @@ body > main {
 
 
 
-
 /* responsive */
 
 @media screen and (max-width: 1600px) {
@@ -310,6 +309,8 @@ body > main {
 .ng-leave.ng-leave-active {
   	opacity:0;
 }
+
+
 
 /***********************************************/
 /* Components	               		           */
@@ -404,6 +405,9 @@ body.loading .preload {
 	overflow: hidden;
 	cursor: pointer;
 	background-size: contain;
+}
+body.kiosk #menu-1 .share {
+	display: none !important;
 }
 #menu-1 .share .links {
 	position: absolute;
@@ -956,4 +960,13 @@ section#intro #intro-player {
 	}
 
 
+}
+
+
+/***********************************************/
+/* Kiosk mode	               		           */
+/***********************************************/
+
+body.kiosk .mejs__mediaelement iframe {
+    pointer-events: none;
 }

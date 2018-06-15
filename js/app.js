@@ -169,11 +169,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $rootScope.setMetadata(); 
 
         // background audio
-        if ($rootScope.pageSlug == 'relato') {
-            $rootScope.pauseBackgroundAudio();
-        }
-        else {
-            $rootScope.playBackgroundAudio();
+        if (!$rootScope.isKiosk) {
+            if ($rootScope.pageSlug == 'relato') {
+                $rootScope.pauseBackgroundAudio();
+            }
+            else {
+                $rootScope.playBackgroundAudio();
+            }
         }
         
 
@@ -438,12 +440,16 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     $rootScope.isKiosk = url.searchParams.get("kiosk");
 
     if ($rootScope.isKiosk) {
+
         // disable right click
         $(function() {
             $(this).bind("contextmenu", function(e) {
                 e.preventDefault();
             });
         }); 
+
+        // select catalan language
+        $('.languages a[data-language=ca]').click();
     }
 
 });

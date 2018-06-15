@@ -40,7 +40,7 @@
 
 <section id="espacio-links">
     <a href="espacio/{{ espacioData.id }}/makingof" ng-show="espacioData.button_title">{{ espacioData.button_title }}</a>
-    <a href="{{ espacioData.button_2_url }}" target="_blank" ng-show="espacioData.button_2_title">{{ espacioData.button_2_title }}</a>
+    <a href="{{ espacioData.button_2_url }}" target="_blank" ng-show="espacioData.button_2_title && !isKiosk">{{ espacioData.button_2_title }}</a>
     <a href="ciudad/espacios/{{ espacioData.id }}" translate="espacios.localizar">localizar en la ciudad</a>
 </section>
 
