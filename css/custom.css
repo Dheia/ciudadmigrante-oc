@@ -745,14 +745,14 @@ section#intro #intro-player {
 
 
 
-/* Google Map colors */
+/* Google Map black&white filter */
 .google-map > div {
 	background: transparent !important;
 }
-.google-map .gm-style > div > div > div > div > div:not(.gm-style-iw) {
+.google-map .gm-style > div > div > div:nth-child(5) > div > div {
 	background-color: #203041;
 }
-.google-map .gm-style > div > div > div > div > div > img {
+.google-map .gm-style > div > div > div:nth-child(5) > div > div > img {
 	mix-blend-mode: luminosity;
 }
 

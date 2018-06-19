@@ -37,7 +37,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     };
 
     $scope.infowindow = new google.maps.InfoWindow({
-        maxWidth: 286
+        maxWidth: 133
     });
 
 
