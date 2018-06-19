@@ -9,10 +9,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
         $("section#ciudad-map aside").removeClass('expanded');
     }
 
-
     // Google Maps
     var map = new google.maps.Map(document.getElementById("map"), config.map); 
-
 
     if ($(document).width() > 1600) {
         var icons = {
@@ -20,6 +18,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             'ayuda':    'images/marker-blue.png',
             'espacios': 'images/marker-green.png'
         }
+        var infoWindowMaxWidth = 247;
     }
     else {
         var icons = {
@@ -27,8 +26,8 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
             'ayuda':    'images/1200/marker-blue.png',
             'espacios': 'images/1200/marker-green.png'
         }
+        var infoWindowMaxWidth = 133;
     }
-
 
     $scope.markers = {
         'ayuda':    {},
@@ -37,7 +36,7 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
     };
 
     $scope.infowindow = new google.maps.InfoWindow({
-        maxWidth: 133
+        maxWidth: infoWindowMaxWidth
     });
 
 

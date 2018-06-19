@@ -1,4 +1,4 @@
-
+// 
 var app = angular.module("myApp", [
     "ngRoute",
     "ngSanitize",
@@ -460,7 +460,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
 
 
-
     $rootScope.loadYoutubeVideo = function(youtube_id, element_id, config)
     {
         // create youtube player
@@ -472,6 +471,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             YT.ready(onYoutubeReady);
         }
 
+        var player;
+
         function onYoutubeReady() {
             var playerVars = $rootScope.isKiosk ? config.youtube.playerVars_kiosk : config.youtube.playerVars_web;
             switch ($rootScope.lang) {
@@ -481,37 +482,42 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
                 case 'ca':
                     playerVars.hl = 'ES_ca';
             }
-            var player = new YT.Player(element_id, {
+            player = new YT.Player(element_id, {
                 videoId: youtube_id,
                 height: '600',
                 width: '800',
                 playerVars: playerVars
             });
-
-/*            $('#'+element_id).parent().find('.overlay').click(function(){
-                player.pauseVideo();
-                console.log(player);
-                switch (player.getPlayerState()) {
-                    case -1: // unstarted
-                        break;
-                    case 0: // ended
-                        player.seekTo(0)
-                        player.playVideo();
-                        break;
-                    case 1: // playing
-                        player.pauseVideo();
-                        break;
-                    case 2: // paused
-                        player.playVideo();
-                        break;
-                    case 3: // buffering
-                        player.pauseVideo();
-                        break;
-                    // case 5: // video cued
-                }
-            });*/
         }
+
+        $('#'+element_id).parent().find('.overlay').click(function(){
+            switch (player.getPlayerState()) {
+                case YT.PlayerState.ENDED:
+                    player.seekTo(0)
+                    player.playVideo();
+                    break;
+                case YT.PlayerState.PLAYING:
+                    player.pauseVideo();
+                    break;
+                case YT.PlayerState.PAUSED:
+                    player.playVideo();
+                    break;
+                case YT.PlayerState.BUFFERING:
+                    player.pauseVideo();
+                    break;
+            }
+        });
+
+        return player;
     }
+
+
+    // touch sound
+    $(document).on('touchstart', function(){
+        var sound = document.getElementById("tap-player");
+        sound.currentTime = 0;
+        sound.play();
+    })
 
 });
 

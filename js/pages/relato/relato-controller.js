@@ -4,14 +4,15 @@ app.controller('RelatoController', function($scope, $rootScope, $http, $routePar
         $(this).parent().toggleClass('expanded');
     });
 
+    $scope.player = null;
 
     $rootScope.$watch('relatosData', function() {
         if ($rootScope.relatosData) {
             $scope.relatoData = $rootScope.relatosData[$routeParams.id];
 
-            if ($scope.relatoData.youtube_id) {
+            if (!$scope.player && $scope.relatoData.youtube_id) {
 
-                $rootScope.loadYoutubeVideo($scope.relatoData.youtube_id, 'my-player', config);
+                $scope.player = $rootScope.loadYoutubeVideo($scope.relatoData.youtube_id, 'my-player', config);
 
                 // set metadata
                 document.title = 'Ciudad Migrante - ' + $scope.relatoData.name;

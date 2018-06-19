@@ -23,7 +23,7 @@ body.prev-page-espacios.page-ciudad .ng-enter {
     opacity:1;
     transform: translateY(-100%);
     animation-delay: 0s;
-    transition-duration: 1s;
+    transition-duration: 0.25s;
 }
 /* The finishing CSS styles for the enter animation */
 body.prev-page-espacios.page-ciudad .ng-enter.ng-enter-active {
@@ -32,7 +32,7 @@ body.prev-page-espacios.page-ciudad .ng-enter.ng-enter-active {
 /* now the element will fade out before it is removed from the DOM */
 body.prev-page-espacios.page-ciudad .ng-leave {
     transition-delay: 1s;
-    transition-duration: 0.01s;
+    transition-duration: 0.1s;
 }
 
 
@@ -64,7 +64,7 @@ section#ciudad-map > aside {
 	background-color: #2c333c;
 	height: 100%;
 	width: 286px;
-	transition: all 0.35s cubic-bezier(.26,1,1,1);
+	transition: all 0.1s cubic-bezier(.26,1,1,1);
 	z-index: 100;
 	padding-right: 15px;
 	transform: translateX(calc(-100% + 15px));
@@ -229,19 +229,15 @@ section#ciudad-map > main {
     to {opacity: 1;}
 }
 .gm-style .gm-style-iw {
-	/* width: 286px !important; */
-	/* left: 19px !important; */
 	background-color: #fff;
 	color: #2d343d;
 	font-size: 14px;
 	z-index: 1;
-	/* padding: 8px 8px 2px 8px; */
-	/* top: 14px !important; */
 	font-family: 'DIN Next LT Pro',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight: 500;
 	animation: iwFadeIn 100ms;
-	/* box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.1); */
 	line-height: 120%;
+	top: 12px !important;
 }
 .gm-style .gm-style-iw > div:first-child {
 	max-width: 100% !important;
@@ -351,7 +347,7 @@ section#ciudad-map > main {
 }
 
 .gm-style .gm-style-iw > div > div {
-	/* overflow-x: hidden !important; */
+	overflow-x: hidden !important;
 }
 .gm-style-pbc + div + div > div:nth-child(4) > div {
 	width: auto !important;
