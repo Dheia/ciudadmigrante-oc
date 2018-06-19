@@ -31,7 +31,7 @@ section#relato-video > aside {
 	background-color: rgba(44,51,60,0.87);
 	height: 100%;
 	width: 448px;
-	transition: all 0.35s cubic-bezier(.26,1,1,1);
+	transition: all 0.15s cubic-bezier(.26,1,1,1);
 	z-index: 100;
 	transform: translateX(calc(-100% + 15px));
 	padding: 50px 15px 5px 60px;
@@ -146,7 +146,7 @@ section#relato-video > main {
 		z-index: -1 !important;
 	}
 	section#relato-video {
-	z-index: inherit; 
+		z-index: inherit; 
 	}
 	section#relato-video > aside {
 		padding: 15px;
@@ -154,7 +154,7 @@ section#relato-video > main {
 		transform: translateX(calc(-100% + 7px));
 	}
 	section#relato-video > main {
-	z-index: 3;
+		z-index: 3;
 	}
 
 }

@@ -613,7 +613,7 @@ h1.page-title {
 	display: inline-block;
 	vertical-align: bottom;
 	margin-left: 15px;
-	transition: all 0.1s cubic-bezier(.26,1,1,1);
+	transition: all 0.05s cubic-bezier(.26,1,1,1);
 	transform: rotate(180deg);
 }
 #menu-relatos.expanded .toggle::after {
@@ -622,7 +622,7 @@ h1.page-title {
 #menu-relatos .faces {
 	height: 0;
 	overflow: hidden;
-	transition: all 0.1s cubic-bezier(.26,1,1,1);
+	transition: all 0.15s cubic-bezier(.26,1,1,1);
 }
 #menu-relatos.expanded .faces {
 	height: 200px;
@@ -642,13 +642,13 @@ h1.page-title {
 	bottom: 0;
 	margin-bottom: 0;
 	opacity: 0;
-    transition: all 0.2s cubic-bezier(.46,1,1,1);
+    transition: all 0.15s cubic-bezier(.46,1,1,1);
 	z-index: 3;
 	text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 }
 #menu-relatos .faces a img {
 	height: 180px;
-    transition: all 1s cubic-bezier(.46,1,1,1);
+    transition: all 0.15s cubic-bezier(.46,1,1,1);
 }
 
 #menu-relatos .faces a:hover img,
@@ -672,7 +672,7 @@ section#intro {
 	position: absolute;
 	display: none;
     visibility: visible;
-	transition: visibility 0s linear, transform 1s cubic-bezier(.26,1,1,1);
+	transition: visibility 0s linear, transform 0.25s cubic-bezier(.26,1,1,1);
 	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
 }
 section#intro.show {
@@ -681,7 +681,7 @@ section#intro.show {
 section#intro.closed {
 	/*visibility: hidden;*/
 	transform: translateY(-100%);
-	transition: visibility 0s linear 1s, transform 1s cubic-bezier(.26,1,1,1);
+	transition: visibility 0s linear 0.25s, transform 0.25s cubic-bezier(.26,1,1,1);
 }
 section#intro .description {
 	background-color: rgba(0,0,0,0.4);
