@@ -338,16 +338,26 @@ body.loading .preload {
 	position: relative;
 	height: 100vh;
 }
-.videoWrapper iframe {
+.videoWrapper .overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%;
+	z-index: 2;
+	cursor: default;
+	display: none;
+}
+body.kiosk .videoWrapper .overlay {
+    display: block;
+}
+.videoWrapper iframe {
 	position: absolute; 
 	top: 0; 
 	left: 0; 
 	width: 100%; 
 	height: 100%;
+	z-index: 1;
 }
 
 
@@ -717,16 +727,13 @@ section#intro a.next {
 	animation: fadein 0.5s linear 3s;
 	animation-fill-mode: forwards;
 }
-section#intro .overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-}
-section#intro .videoWrapper {;
+section#intro .videoWrapper {
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+}
+section#intro .overlay {
+	display: block;
 }
 section#intro #intro-player {
 	position: relative;

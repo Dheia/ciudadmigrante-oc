@@ -350,8 +350,9 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
             $translate('intro.URL de video en YouTube').then(function (videoURL) {
                 // console.log(videoURL);
+                var videoId = youtube_parser(videoURL);
                 var player = new YT.Player('intro-player', {
-                    videoId: youtube_parser(videoURL),
+                    videoId: videoId,
                     height: '600',
                     width: '800',
                     playerVars: { 
@@ -363,11 +364,13 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
                         'color': 'white',
                         // 'modestbranding': 1,
                         'fs': 0,
-                        'mute': 1
-                    },
-                    events: {
-                        'onStateChange': onStateChange
+                        'mute': 1,
+                        playlist: videoId,
+                        loop: 1
                     }
+/*                    events: {
+                        'onStateChange': onStateChange
+                    }*/
                 });
             });
             
@@ -436,8 +439,12 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
 
     /* Kiosk mode */
+    $rootScope.isKiosk = false;
     var url = new URL(window.location);
-    $rootScope.isKiosk = url.searchParams.get("kiosk");
+    if (url.searchParams.get("kiosk")) {
+        $window.sessionStorage.isKiosk = true;
+    }
+    $rootScope.isKiosk = $window.sessionStorage.isKiosk;
 
     if ($rootScope.isKiosk) {
 
@@ -450,6 +457,60 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
 
         // select catalan language
         $('.languages a[data-language=ca]').click();
+    }
+
+
+
+    $rootScope.loadYoutubeVideo = function(youtube_id, element_id, config)
+    {
+        // create youtube player
+        if (!YT) {
+            $window.onYouTubePlayerAPIReady = onYoutubeReady;
+        } else if (YT.loaded) {
+            onYoutubeReady();
+        } else {
+            YT.ready(onYoutubeReady);
+        }
+
+        function onYoutubeReady() {
+            var playerVars = $rootScope.isKiosk ? config.youtube.playerVars_kiosk : config.youtube.playerVars_web;
+            switch ($rootScope.lang) {
+                case 'es': 
+                    playerVars.hl = 'ES_es';
+                    break;
+                case 'ca':
+                    playerVars.hl = 'ES_ca';
+            }
+            var player = new YT.Player(element_id, {
+                videoId: youtube_id,
+                height: '600',
+                width: '800',
+                playerVars: playerVars
+            });
+
+/*            $('#'+element_id).parent().find('.overlay').click(function(){
+                player.pauseVideo();
+                console.log(player);
+                switch (player.getPlayerState()) {
+                    case -1: // unstarted
+                        break;
+                    case 0: // ended
+                        player.seekTo(0)
+                        player.playVideo();
+                        break;
+                    case 1: // playing
+                        player.pauseVideo();
+                        break;
+                    case 2: // paused
+                        player.playVideo();
+                        break;
+                    case 3: // buffering
+                        player.pauseVideo();
+                        break;
+                    // case 5: // video cued
+                }
+            });*/
+        }
     }
 
 });

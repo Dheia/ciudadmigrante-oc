@@ -21,33 +21,7 @@ app.controller('EspacioMakingOfController', function($scope, $rootScope, $http, 
 
             if ($scope.espacioData.youtube_id) {
 
-                // create youtube player
-                if (!YT) {
-                    $window.onYouTubePlayerAPIReady = onYoutubeReady;
-                } else if (YT.loaded) {
-                    onYoutubeReady();
-                } else {
-                    YT.ready(onYoutubeReady);
-                }
-
-                function onYoutubeReady() {
-                    var player = new YT.Player('my-player', {
-                        videoId: $scope.espacioData.youtube_id,
-                        height: '600',
-                        width: '800',
-                        playerVars: { 
-                            'autoplay': 1,
-                            'controls': 1, 
-                            'rel' : 0,
-                            'showinfo' : 0,
-                            'cc_load_policy': 1,
-                            'color': 'white',
-                            // 'modestbranding': 1,
-                            'fs': 0
-                        }
-                    });
-                }
-
+                $rootScope.loadYoutubeVideo($scope.espacioData.youtube_id, 'my-player', config);
         
                 // set metadata
                 document.title = 'Ciudad Migrante - ' + $scope.espacioData.name;

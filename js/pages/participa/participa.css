@@ -65,6 +65,7 @@ section#participa > main .row {
 section#participa > main .col-sm-6.left {
 	text-align: center;
 	position: relative;
+	min-height: calc(100vh - 308px);
 }
 
 section#participa > main .form-group {
@@ -167,6 +168,31 @@ section#participa > main .gracias main h2 {
 
 section#participa > main .gracias footer {
 	text-align: right;
+}
+
+
+
+
+body.kiosk section#participa > main .col-sm-6.left {
+	display: flex;
+	justify-content: center;
+}
+body.kiosk section#participa > main form {
+	display: none;
+}
+section#participa > main .kiosk-info {
+	display: none;
+}
+body.kiosk section#participa > main .kiosk-info {
+	display: block;
+	margin: auto;
+	max-width: 490px;
+	text-align: left;
+}
+body.kiosk section#participa > main .google-map {
+	background-image: url(../../../images/participa/kiosk-map.jpg);
+	background-size: cover;
+	background-position: center center;
 }
 
 
