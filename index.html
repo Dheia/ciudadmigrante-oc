@@ -24,7 +24,7 @@
 
 	<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<body class="loading" ng-app="myApp" translate-cloak ng-class="isKiosk ? 'kiosk' : ''">
+<body class="loading" ng-app="myApp" ng-class="isKiosk ? 'kiosk' : ''">
 
     <audio id="tap-player" src="sounds/tap.mp3"></audio>
 
@@ -79,7 +79,7 @@
     </section>
 
 
-    <main ng-view></main>
+    <main ng-view translate-cloak></main>
 
 
     <nav id="menu-relatos">

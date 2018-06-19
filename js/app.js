@@ -11,67 +11,88 @@ app.constant('config', window.config);
 
 
 
+// translations
 
-// TRANSLATIONS ===============================================
-
-app.config(['$translateProvider', function ($translateProvider) {
-
-    // try to find out preferred language by yourself
-    // $translateProvider.determinePreferredLanguage();
+app.config(function ($translateProvider, config) {
 
     // choose language form local storage or default
-    var lang = localStorage.lang;
-    if (!lang) {
-        lang = localStorage.lang = config.lang;
+    if (!window.localStorage.lang) {
+        window.localStorage.lang = config.lang;
     }
-    $translateProvider.preferredLanguage(lang);
+    $translateProvider.preferredLanguage(window.localStorage.lang);
 
-    // load default language Synchronously
-    $.get({
-        url: config.api.getTranslations,
-        data: ['lang', lang],
-        async: false,
-        contentType: "application/json",
-        dataType: 'json',
-        success: function (json) {
-            $translateProvider.translations(lang, json);
-        }
-    });
-    
-    $translateProvider.useUrlLoader(config.api.urls.getTranslations);
+    $translateProvider.useUrlLoader(config.api.urls.translations);
     $translateProvider.useSanitizeValueStrategy(null);
     // tell angular-translate to use your custom handler
     $translateProvider.useMissingTranslationHandler('missingTranslationHandlerFactory');
-}]);
+
+
+});
 
 // define missing Translation Handler
 app.factory('missingTranslationHandlerFactory', function () {
-    var called = [];
-    return function (translationID) {
-        // use last element from code as default translation
-        var translation = translationID.substr(translationID.lastIndexOf(".") + 1);
 
-        var element = $("[translate='" + translationID + "']");
-        if (element && element.html()) {
-            translation = element.html();
-        }
-        
-        if (!called[translationID]) {
-            // call API
-            $.post({
-                url     : config.api.urls.missingTranslation,
-                data    : {
-                    code : translationID,
-                    type : element.attr('translate-type'),
-                    translation : translation
-                }
-            });
-        }
-        
-        called[translationID] = true;
+    var missingTranslations = {
+        codes : [],
+        translations : [],
+        types : [],
+        parameters : []
+    };
 
+    return function (translationId) {
+
+        // prevent multiple calls
+        var index = missingTranslations.codes.indexOf(translationId);
+        if (index != -1) {
+            return missingTranslations.translations[index];
+        }
+
+        // call API: send all missing translations at once
+        if (!missingTranslations.codes.length) {
+            setTimeout(function(){ 
+                $.post({
+                    url     : config.api.urls.translations,
+                    data    : {
+                        codes : missingTranslations.codes,
+                        types : missingTranslations.types,
+                        translations : missingTranslations.translations,
+                        parameters : missingTranslations.parameters
+                    }
+                });
+            }, 1000);
+        }
+
+        // use last element from translationId as default translation
+        var translation = translationId.substr(translationId.lastIndexOf(".") + 1);
+        var type;
+        var parameters = {};
+
+        // find html element
+        var element = $("[translate='" + translationId + "'], [translate-cloak='" + translationId + "'], [translate-attr-src='" + translationId + "']");
+        if (element) {
+            if (element.html()) {
+                translation = element.html();
+            }
+            type = element.attr('translate-type');
+            switch (type) {
+                case 'image-mediafinder':
+                    parameters.width = element.attr('translate-width');
+                    parameters.height = element.attr('translate-height');
+                    parameters.mode = element.attr('translate-mode');
+                    translation = element.attr('src');
+                    break;
+            }
+        }
+
+        // add missing translation to the table         
+        missingTranslations.codes.push(translationId);
+        missingTranslations.translations.push(translation);
+        missingTranslations.types.push(type);
+        missingTranslations.parameters.push(parameters);
+        
         return translation;
     };
+
 });
 
 
@@ -128,7 +149,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route, $animate) {
 
-    $rootScope.homeSlug = 'espacios';
+    $rootScope.homeSlug = config.homeSlug;
     $rootScope.urlChangeCount = 0;
 
     $('body').removeClass('loading');
@@ -196,7 +217,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     $rootScope.setLanguage = function(lang)
     {
         // save language in local storage
-        $rootScope.lang = localStorage.lang = lang;
+        $rootScope.lang = window.localStorage.lang = lang;
+        console.log($rootScope.lang);
         // change translations language
         $translate.use(lang);
         // set HTML lang
@@ -205,8 +227,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $('.languages a').removeClass('selected');
         $('.languages a[data-language=' + lang + ']').addClass('selected');
     }
-    $rootScope.setLanguage(localStorage.lang);
-
+    $rootScope.setLanguage(window.localStorage.lang);
 
 
     // language menu
@@ -301,7 +322,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
             window.history.back();
         }
         else {
-            window.location.href = config.homepageSlug; 
+            window.location.href = config.homeSlug; 
         }
     }
 

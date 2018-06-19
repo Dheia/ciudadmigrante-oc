@@ -3,16 +3,10 @@
 
 window.config = window.config || {};
 
-window.config.web = {};
-
 /* Default language */
 window.config.lang = 'es';
 
-window.config.config = {
-
-	'homepageSlug': 'espacios'
-
-}
+window.config.homeSlug = 'espacios';
 
 window.config.youtube = {
 	'playerVars_web' : {
