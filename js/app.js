@@ -536,6 +536,7 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     // touch sound
     $(document).on('touchstart', function(){
         var sound = document.getElementById("tap-player");
+        sound.volume = 0.1;
         sound.currentTime = 0;
         sound.play();
     })
