@@ -252,6 +252,11 @@ section#ciudad-map > main {
 .gm-style .gm-style-iw p {
 	margin-bottom: 6px;
 }
+.gm-style .gm-style-iw .ayuda-content {
+	padding: 4px 4px 0 4px;
+}
+.gm-style .gm-style-iw .ayuda-content h2 {
+}
 .gm-style .gm-style-iw .lead {
 	font-size: 16px;
 	margin-bottom: 0;
@@ -263,6 +268,9 @@ section#ciudad-map > main {
 	margin-top: 6px;
 	margin-bottom: 0px;
 }
+.gm-style .gm-style-iw .ayuda-content.kiosk .web {
+	text-align: left;
+}
 .gm-style .gm-style-iw .web a {
 	display: inline-block;
 	width: 40px;
@@ -270,11 +278,6 @@ section#ciudad-map > main {
 	background-image: url('../../../images/icon_link.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
-}
-.gm-style .gm-style-iw .ayuda-content {
-	padding: 4px 4px 0 4px;
-}
-.gm-style .gm-style-iw .ayuda-content h2 {
 }
 .gm-style .gm-style-iw a.relato {
 	display: block;

@@ -119,15 +119,30 @@ app.controller('CiudadController', function($scope, $rootScope, $http, config, $
 
         function getContentAyuda(itemData)
         {
-            var html = '<div class="ayuda-content"><h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
+            var html = '<div class="ayuda-content ' + ($rootScope.isKiosk ? 'kiosk' : '') + '"><h2>' + itemData.name + '</h2><p>' + itemData.direccion + ' ' + itemData.codigo_postal + ' - ' + itemData.ciudad + '</p>';
             if (itemData.telefono) {
-                html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
+                if ($rootScope.isKiosk) {
+                    html += '<p class="lead">T. ' + itemData.telefono + '</p>';
+                }
+                else {
+                    html += '<p class="lead">T. <a href="tel:' + itemData.telefono + '">' + itemData.telefono + '</a></p>';
+                }
             }
-            if (itemData.email && !$rootScope.isKiosk) {
-                html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
+            if (itemData.email) {
+                if ($rootScope.isKiosk) {
+                    html += '<p class="lead">' + itemData.email + '</p>';
+                }
+                else {
+                    html += '<p class="lead"><a href="mailto:' + itemData.email + '">' + itemData.email + '</a></p>';
+                }
             }      
-            if (itemData.web && !$rootScope.isKiosk) {
-                html += '<p class="web"><a href="' + itemData.web + '" target="_blank" title="' + itemData.web + '"></a></p>';
+            if (itemData.web) {
+                if ($rootScope.isKiosk) {
+                    html += '<p class="web">' + itemData.web + '</p>';
+                }
+                else {
+                    html += '<p class="web"><a href="' + itemData.web + '" target="_blank" title="' + itemData.web + '"></a></p>';
+                }
             }  
             html += '</div>';
             return html;

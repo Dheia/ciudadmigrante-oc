@@ -378,6 +378,10 @@ body.kiosk .videoWrapper .overlay {
 	right: 22px;
 	text-align: right;
 }
+body.kiosk #menu-1 {
+	top: 65px;
+	right: 32px;
+}
 #menu-1 a, 
 #menu-1 span,
 #menu-1 a:hover, 
@@ -509,6 +513,10 @@ body.kiosk #menu-1 .share {
 	position: absolute;
 	right: 30px;
 	top: 125px;
+}
+body.kiosk #menu-2 {
+	top: 63px;
+	right: 145px;
 }
 #menu-2 a {
 	color: #ffffff;
@@ -776,6 +784,10 @@ section#intro #intro-player {
 		top: 30px;
 		right: 12px;
 	}
+	body.kiosk #menu-1 {
+		top: 49px;
+		/* right: 120px; */
+	}
 
 	#menu-1 .share {
 	}
@@ -801,6 +813,10 @@ section#intro #intro-player {
 		font-size: 15px;
 		top: 75px;
 		right: 12px;
+	}
+	body.kiosk #menu-2 {
+		top: 48px;
+		right: 103px;
 	}
 
 	section.header-with-background a.link-up {

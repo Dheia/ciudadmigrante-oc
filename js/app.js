@@ -148,11 +148,21 @@ app.config(['$httpProvider', function($httpProvider) {
 ]);
 
 app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $translate, $route, $animate) {
-
+    
     $rootScope.homeSlug = config.homeSlug;
     $rootScope.urlChangeCount = 0;
 
     $('body').removeClass('loading');
+
+
+    /* Kiosk mode */
+    $rootScope.isKiosk = false;
+    var url = new URL(window.location);
+    if (url.searchParams.get("kiosk")) {
+        $window.sessionStorage.isKiosk = true;
+    }
+    $rootScope.isKiosk = $window.sessionStorage.isKiosk;
+
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
@@ -190,13 +200,11 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $rootScope.setMetadata(); 
 
         // background audio
-        if (!$rootScope.isKiosk) {
-            if ($rootScope.pageSlug == 'relato') {
-                $rootScope.pauseBackgroundAudio();
-            }
-            else {
-                $rootScope.playBackgroundAudio();
-            }
+        if ($rootScope.pageSlug == 'relato') {
+            $rootScope.pauseBackgroundAudio();
+        }
+        else {
+            $rootScope.playBackgroundAudio();
         }
         
 
@@ -218,7 +226,6 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     {
         // save language in local storage
         $rootScope.lang = window.localStorage.lang = lang;
-        console.log($rootScope.lang);
         // change translations language
         $translate.use(lang);
         // set HTML lang
@@ -355,8 +362,9 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $timeout(function(){
             $('#intro').remove();
         }, 1000);
+        $rootScope.playBackgroundAudio();
     }
-    if ($window.sessionStorage.intro !== 'hide') { // show intro
+    if (($window.sessionStorage.intro !== 'hide') || $rootScope.isKiosk) { // show intro
         $('#intro').addClass('show');
         // create youtube player
         if (!YT) {
@@ -454,18 +462,15 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
     }
     $rootScope.playBackgroundAudio = function()
     {
-        document.getElementById("background-audio").play();
-        $("#background-audio").animate({volume: 1}, 1000);
+        var audio = document.getElementById("background-audio");
+        if (audio.paused) {
+            audio.play();
+            $("#background-audio").animate({volume: 1}, 1000);
+        }
     }
 
 
     /* Kiosk mode */
-    $rootScope.isKiosk = false;
-    var url = new URL(window.location);
-    if (url.searchParams.get("kiosk")) {
-        $window.sessionStorage.isKiosk = true;
-    }
-    $rootScope.isKiosk = $window.sessionStorage.isKiosk;
 
     if ($rootScope.isKiosk) {
 
