@@ -18,6 +18,12 @@
 		<div class="container">
 
 			<div class="row is-flex">
+
+				<div class="kiosk-overlay">
+					<div class="kiosk-info" translate="participa.kiosk.text" translate-type="richeditor">
+						<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+					</div>
+				</div>
 				
 				<div class="col-sm-6 left">			
 
@@ -87,14 +93,10 @@
 						</div>
 
 						<p class="text-right">
-							<button type="submit" class="btn" translate="participa.formulario.Enviar">Enviar</button>
+							<button type="submit" class="btn" translate="participa.formulario.Enviar" ng-disabled="isKiosk">Enviar</button>
 						</p>
 
 					</form>
-
-					<div class="kiosk-info" translate="participa.kiosk.text" translate-type="richeditor">
-						<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
-					</div>
 
 				</div>
 				
