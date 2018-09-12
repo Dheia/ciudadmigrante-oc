@@ -238,9 +238,7 @@ section#ciudad-map > main {
 	animation: iwFadeIn 100ms;
 	line-height: 120%;
 	top: 12px !important;
-}
-.gm-style .gm-style-iw > div:first-child {
-	max-width: 100% !important;
+	overflow-y: hidden;
 }
 .gm-style .gm-style-iw a {
 	color: #2d343d;
@@ -287,6 +285,7 @@ section#ciudad-map > main {
 	background-size: cover;
 	background-position: center center;
 	bottom: 0;
+	overflow-y: hidden;
 }
 .gm-style .gm-style-iw a.relato::before {
 	content:"";
@@ -349,8 +348,12 @@ section#ciudad-map > main {
     display: none;
 }
 
+.gm-style .gm-style-iw > div:first-child {
+	max-width: 100% !important;
+	overflow-y: hidden !important;
+}
 .gm-style .gm-style-iw > div > div {
-	overflow-x: hidden !important;
+	overflow: hidden !important;
 }
 .gm-style-pbc + div + div > div:nth-child(4) > div {
 	width: auto !important;
