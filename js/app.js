@@ -200,7 +200,8 @@ app.run(function($rootScope, $sce, $http, $location, $timeout, $window, $transla
         $rootScope.setMetadata(); 
 
         // background audio
-        if ($rootScope.pageSlug == 'relato') {
+        if (($rootScope.pageSlug == 'relato') 
+            || (next.$$route && next.$$route.controller == "EspacioMakingOfController")) {
             $rootScope.pauseBackgroundAudio();
         }
         else {
